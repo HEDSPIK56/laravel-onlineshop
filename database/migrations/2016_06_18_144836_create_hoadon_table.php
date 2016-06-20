@@ -24,7 +24,7 @@ class CreateHoadonTable extends Migration
             /**
              * Foreign key
              */
-            $table->foreign('ma_khach_hang')->references('ma_khach_hang')->on('khachhang')->onDelete('cascade');
+            //$table->foreign('ma_khach_hang')->references('ma_khach_hang')->on('khachhang')->onDelete('cascade');
         });
     }
 

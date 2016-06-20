@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ChiTietHoaDonTableSeeder' => $baseDir . '/database/seeds/ChiTietHoaDonTableSeeder.php',
     'CreateChitiethoadonTable' => $baseDir . '/database/migrations/2016_06_18_160621_create_chitiethoadon_table.php',
     'CreateHinhanhTable' => $baseDir . '/database/migrations/2016_06_18_155813_create_hinhanh_table.php',
     'CreateHoadonTable' => $baseDir . '/database/migrations/2016_06_18_144836_create_hoadon_table.php',
@@ -86,7 +87,10 @@ return array(
     'Hamcrest\\Type\\IsString' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+    'HoaDonTableSeeder' => $baseDir . '/database/seeds/HoaDonTableSeeder.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+    'KhachHangTableSeeder' => $baseDir . '/database/seeds/KhachHangTableSeeder.php',
+    'LoaiSanPhamTableSeeder' => $baseDir . '/database/seeds/LoaiSanPhamTableSeeder.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
     'PHPUnit_Extensions_PhptTestCase' => $vendorDir . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -482,6 +486,7 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'SanPhamTableSeeder' => $baseDir . '/database/seeds/SanPhamTableSeeder.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',

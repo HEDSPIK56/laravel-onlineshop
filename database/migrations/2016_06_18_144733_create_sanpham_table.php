@@ -19,13 +19,13 @@ class CreateSanphamTable extends Migration
             $table->string('gia_tien')->nullable();
             $table->string('don_vi_tinh',10)->nullable();
             $table->integer('so_luong_ton')->default(0);
-            $table->integer('ma_loai');
+            $table->string('ma_loai', 10);
             $table->timestamps();
             
             /**
              * Foreign key
              */
-            $table->foreign('ma_loai')->references('id')->on('loaisanpham')->onDelete('cascade');
+            //$table->foreign('ma_loai')->references('ma_loai')->on('loaisanpham')->onDelete('cascade');
         });
     }
 

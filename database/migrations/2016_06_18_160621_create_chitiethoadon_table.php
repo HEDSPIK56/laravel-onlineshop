@@ -21,7 +21,7 @@ class CreateChitiethoadonTable extends Migration {
             /**
              * Foreign key
              */
-            $table->foreign('ma_hoa_don')->references('ma_hoa_don')->on('hoadon')->onDelete('cascade');
+            //$table->foreign('ma_hoa_don')->references('ma_hoa_don')->on('hoadon')->onDelete('cascade');
         });
     }
 

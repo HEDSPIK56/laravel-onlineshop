@@ -14,6 +14,7 @@ class CreateLoaisanphamTable extends Migration
     {
         Schema::create('loaisanpham', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('ma_loai', 10)->unique();
             $table->string('ten_loai')->nullable();
             $table->timestamps();
         });
