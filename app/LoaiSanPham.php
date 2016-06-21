@@ -2,11 +2,19 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\SanPham;
+use App\BaseAbstractBean;
 
-class LoaiSanPham extends Model
+/**
+ * @property int $id Description
+ * @property string $ma_san_pham Description
+ */
+class LoaiSanPham extends BaseAbstractBean
 {
+
+    public $id;
+    public $ma_loai;
+    public $ten_loai;
 
     /**
      * The table associated with the model.
@@ -29,6 +37,11 @@ class LoaiSanPham extends Model
     public function sanPhams()
     {
         return $this->hasMany('App\SanPham', 'ma_loai', 'ma_loai');
+    }
+
+    public function getTenLoai()
+    {
+        return $this->ten_loai;
     }
 
 }

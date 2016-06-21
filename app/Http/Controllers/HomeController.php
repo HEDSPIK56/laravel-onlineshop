@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\LoaiSanPham;
+use App\SanPham;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        $cau1 = SanPham::where('gia_tien', '>', '100')->get();
+        //var_dump($cau1);
+        //die;
         return view('pages/home');
     }
 
