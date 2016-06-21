@@ -4,17 +4,14 @@ namespace App;
 
 use App\SanPham;
 use App\BaseAbstractBean;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $id Description
  * @property string $ma_san_pham Description
  */
-class LoaiSanPham extends BaseAbstractBean
+class LoaiSanPham extends Model
 {
-
-    public $id;
-    public $ma_loai;
-    public $ten_loai;
 
     /**
      * The table associated with the model.
@@ -41,7 +38,7 @@ class LoaiSanPham extends BaseAbstractBean
 
     public function getTenLoai()
     {
-        return $this->ten_loai;
+        return $this->getAttribute('ten_loai');
     }
 
 }

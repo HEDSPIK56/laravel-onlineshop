@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 use App\LoaiSanPham;
 use App\BaseAbstractBean;
 
-class SanPham extends BaseAbstractBean
+class SanPham extends Model
 {
-
-    public $id;
-    public $ma_san_pham;
-    public $ten_san_pham;
-    public $ma_loai;
-    public $gia_tien;
-    public $so_luong_tien;
-    public $don_vi_tinh;
+//    public $id;
+//    public $ma_san_pham;
+//    public $ten_san_pham;
+//    public $ma_loai;
+//    public $gia_tien;
+//    public $so_luong_tien;
+//    public $don_vi_tinh;
 
     /**
      * The table associated with the model.

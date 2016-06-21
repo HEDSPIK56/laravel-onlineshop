@@ -17,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -28,8 +28,10 @@ class HomeController extends Controller
     public function index()
     {
 
-        $cau1 = SanPham::where('gia_tien', '>', '100')->get();
-        //var_dump($cau1);
+        //$cau1 = SanPham::where('gia_tien', '>', '100')->get();
+        $cau2 = LoaiSanPham::where('ten_loai', '=', 'Đồ dùng')->first();
+        var_dump($cau2->sanPhams()->first());
+        die;
         //die;
         return view('pages/home');
     }
