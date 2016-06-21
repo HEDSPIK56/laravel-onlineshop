@@ -14,4 +14,22 @@ class HoaDon extends Model
      */
     protected $table = 'hoadon';
 
+    /**
+     * Hoa don has one Khach Hang
+     * @return type
+     */
+    public function khachHang()
+    {
+        return $this->belongsTo('App\KhachHang');
+    }
+
+    /*
+     * Hoa Don has many ChiTietHoaDon
+     */
+
+    public function chiTietHoaDons()
+    {
+        return $this->hasMany('App\ChiTietHoaDon');
+    }
+
 }

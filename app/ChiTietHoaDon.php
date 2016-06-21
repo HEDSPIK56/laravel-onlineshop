@@ -14,4 +14,13 @@ class ChiTietHoaDon extends Model
      */
     protected $table = 'chitiethoadon';
 
+    /**
+     * Defind relationship one - to many
+     * @return type
+     */
+    public function hoaDon()
+    {
+        return $this->belongsTo('App\HoaDon');
+    }
+
 }

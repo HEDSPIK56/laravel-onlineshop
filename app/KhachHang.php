@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\HoaDon;
 
 class KhachHang extends Model
 {
@@ -13,5 +14,14 @@ class KhachHang extends Model
      * @var string
      */
     protected $table = 'khachhang';
+
+    /**
+     * Khach hang has many hoa don
+     * @return type
+     */
+    public function hoaDons()
+    {
+        return $this->hasMany('App\HoaDon');
+    }
 
 }
