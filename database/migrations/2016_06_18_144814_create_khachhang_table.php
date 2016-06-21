@@ -5,6 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateKhachhangTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -12,12 +13,14 @@ class CreateKhachhangTable extends Migration
      */
     public function up()
     {
-        Schema::create('khachhang', function (Blueprint $table) {
+        Schema::create('khachhang', function (Blueprint $table)
+        {
             $table->increments('id');
-            $table->string('ma_khach_hang',10)->unique();
+            $table->string('ma_khach_hang', 10)->unique();
             $table->string('ho_ten')->nullable();
             $table->string('dia_chi')->nullable();
-            $table->dateTime('nam_sinh')->nullable();
+            $table->string('so_dien_thoai')->nullable();
+            $table->integer('nam_sinh')->nullable();
             $table->tinyInteger('gioi_tinh')->nullable();
             $table->timestamps();
         });
@@ -32,4 +35,5 @@ class CreateKhachhangTable extends Migration
     {
         Schema::drop('khachhang');
     }
+
 }

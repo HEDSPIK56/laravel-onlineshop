@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -11,6 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call(LoaiSanPhamTableSeeder::class);
+        $this->call(SanPhamTableSeeder::class);
+        $this->call(KhachHangTableSeeder::class);
+        $this->call(HoaDonTableSeeder::class);
+        $this->call(ChiTietHoaDonTableSeeder::class);
     }
+
 }
