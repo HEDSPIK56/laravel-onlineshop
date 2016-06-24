@@ -140,6 +140,7 @@ return [
         /**
          * Extenal Application added
          */
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class
     ],
     /*
@@ -188,5 +189,6 @@ return [
          * Extenal App added
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
     ],
 ];
