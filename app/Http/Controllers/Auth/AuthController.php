@@ -94,7 +94,7 @@ use AuthenticatesAndRegistersUsers,
 //        try
 //        {
         $user = $this->create($request->all());
-        $this->activationService->sendActivationMail($user);
+        //$this->activationService->sendActivationMail($user);
         //DB::commit();
         return redirect('/login')->with('status', 'We sent you an activation code. Check your email.');
 //        } catch (Exception $exc)

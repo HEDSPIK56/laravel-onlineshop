@@ -141,6 +141,7 @@ return [
          * Extenal Application added
          */
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class
     ],
     /*
@@ -190,5 +191,6 @@ return [
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 ];
