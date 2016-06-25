@@ -9,6 +9,8 @@
 namespace App\Services;
 
 use Laravel\Socialite\Contracts\User as ProviderUser;
+use App\SocialAccount;
+use App\User;
 
 /**
  * Description of SocialAccountService
