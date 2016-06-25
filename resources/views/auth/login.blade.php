@@ -55,7 +55,10 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                                <a href="redirect">FB Login</a>
+                                <a href="redirect" class="btn btn-block btn-social btn-facebook">
+                                    <span class="fa fa-facebook"></span>
+                                    Đăng nhập bằng facebook
+                                </a>
                             </div>
                         </div>
                     </form>
