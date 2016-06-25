@@ -31,5 +31,14 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    /**
+     * add facebook ID 
+     */
+    'facebook' => [
+        'client_id'     => '1212597675425450',
+        'client_secret' => '17b9a15d03236486d1835959ca2a7ed2',
+        'redirect'      => 'http://cuahangbachhoa247.com/laravel-onlineshop/public/callback'
+    ],
 ];
 //http://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html#.V2yPlfmLTcs
+//'http://localhost:8888/laravel-onlineshop/public/callback',

@@ -22,3 +22,12 @@ Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name(
 Route::get('/home', [
     'as' => 'home', 'uses' => 'HomeController@index'
 ]);
+
+/**
+ * Social Auth
+ */
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
+/**
+ * End Social Auth
+ */
