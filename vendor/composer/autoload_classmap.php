@@ -7,11 +7,13 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ChiTietHoaDonTableSeeder' => $baseDir . '/database/seeds/ChiTietHoaDonTableSeeder.php',
+    'CreateAboutusTable' => $baseDir . '/database/migrations/2016_06_26_091648_create_aboutus_table.php',
     'CreateChitiethoadonTable' => $baseDir . '/database/migrations/2016_06_18_160621_create_chitiethoadon_table.php',
     'CreateHinhanhTable' => $baseDir . '/database/migrations/2016_06_18_155813_create_hinhanh_table.php',
     'CreateHoadonTable' => $baseDir . '/database/migrations/2016_06_18_144836_create_hoadon_table.php',
     'CreateKhachhangTable' => $baseDir . '/database/migrations/2016_06_18_144814_create_khachhang_table.php',
     'CreateLoaisanphamTable' => $baseDir . '/database/migrations/2016_06_18_144757_create_loaisanpham_table.php',
+    'CreateMailtosTable' => $baseDir . '/database/migrations/2016_06_26_091601_create_mailtos_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateSanphamTable' => $baseDir . '/database/migrations/2016_06_18_144733_create_sanpham_table.php',
     'CreateSocialAccountsTable' => $baseDir . '/database/migrations/2016_06_25_150256_create_social_accounts_table.php',
