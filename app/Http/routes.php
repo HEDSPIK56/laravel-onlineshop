@@ -57,16 +57,14 @@ Route::group(['middleware' => 'auth'], function ()
 
 Route::get('sendemail', function ()
 {
-
+//    dd(Config::get("mail"));
+//    die;
     $data = array (
         'name' => "Learning Laravel",
     );
 
     Mail::send('emails.welcome', $data, function ($message)
     {
-
-        $message->from('peiu.14992@gmail.com', 'Learning Laravel');
-
         $message->to('taihanh0310@gmail.com')->subject('Learning Laravel test email');
     });
 

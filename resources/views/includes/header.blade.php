@@ -5,8 +5,15 @@
                 <ul>
                     <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@taihanh0310@gmail.com">taihanh0310@gmail.com</a></li>
                     <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+8401676460626</li>
+                    @if(Auth::check())
+
+                    <li><i class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></i><a href="logout">Hi, {{Auth::user()->name}}</a></li>
+
+                    @else
+
                     <li><i class="glyphicon glyphicon-log-in" aria-hidden="true"></i><a href="login">Login</a></li>
                     <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="register">Register</a></li>
+                    @endif
                 </ul>
             </div>
             <div class="header-grid-right animated wow slideInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInRight;">
@@ -136,7 +143,7 @@
                 <script src="js/classie.js"></script>
                 <script src="js/uisearch.js"></script>
                 <script>
-                    new UISearch(document.getElementById('sb-search'));
+new UISearch(document.getElementById('sb-search'));
                 </script>
                 <!-- //search-scripts -->
             </div>
