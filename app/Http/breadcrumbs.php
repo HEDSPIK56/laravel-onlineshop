@@ -20,6 +20,12 @@ Breadcrumbs::register('blog', function($breadcrumbs)
     $breadcrumbs->push('Blog', route('blog'));
 });
 
+Breadcrumbs::register('tasks', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Tasks', route('getTask'));
+});
+
 // Home > Blog > [Category]
 Breadcrumbs::register('category', function($breadcrumbs, $category)
 {

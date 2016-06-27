@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Task;
 
 class User extends Authenticatable
 {
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,4 +25,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * relation ship
+     */
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
 }

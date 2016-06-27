@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMailtosTable extends Migration
+class CreateTasksTable extends Migration
 {
 
     /**
@@ -13,10 +13,11 @@ class CreateMailtosTable extends Migration
      */
     public function up()
     {
-        Schema::create('mail_to', function (Blueprint $table)
+        Schema::create('tasks', function (Blueprint $table)
         {
             $table->increments('id');
-            $table->string('full_name');
+            $table->integer('user_id')->index();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,7 +29,7 @@ class CreateMailtosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('mail_to');
+        Schema::drop('tasks');
     }
 
 }
