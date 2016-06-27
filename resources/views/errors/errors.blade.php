@@ -7,5 +7,10 @@
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+        @endif
     </div>
 @endif
