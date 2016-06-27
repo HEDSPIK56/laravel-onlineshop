@@ -52,33 +52,33 @@
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Men's Wear</h6>
-                                                <li><a href="products.html">Clothing</a></li>
-                                                <li><a href="products.html">Wallets</a></li>
-                                                <li><a href="products.html">Shoes</a></li>
-                                                <li><a href="products.html">Watches</a></li>
-                                                <li><a href="products.html">Accessories</a></li>
+                                                <li><a href="#">Clothing</a></li>
+                                                <li><a href="#">Wallets</a></li>
+                                                <li><a href="#">Shoes</a></li>
+                                                <li><a href="#">Watches</a></li>
+                                                <li><a href="#">Accessories</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Women's Wear</h6>
-                                                <li><a href="products.html">Clothing</a></li>
-                                                <li><a href="products.html">Wallets,Bags</a></li>
-                                                <li><a href="products.html">Footwear</a></li>
-                                                <li><a href="products.html">Watches</a></li>
-                                                <li><a href="products.html">Accessories</a></li>
-                                                <li><a href="products.html">Jewellery</a></li>
-                                                <li><a href="products.html">Beauty &amp; Grooming</a></li>
+                                                <li><a href="#">Clothing</a></li>
+                                                <li><a href="#">Wallets,Bags</a></li>
+                                                <li><a href="#">Footwear</a></li>
+                                                <li><a href="#">Watches</a></li>
+                                                <li><a href="#">Accessories</a></li>
+                                                <li><a href="#">Jewellery</a></li>
+                                                <li><a href="#">Beauty &amp; Grooming</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Kid's Wear</h6>
-                                                <li><a href="products.html">Kids Home Fashion</a></li>
-                                                <li><a href="products.html">Boy's Clothing</a></li>
-                                                <li><a href="products.html">Girl's Clothing</a></li>
-                                                <li><a href="products.html">Shoes</a></li>
-                                                <li><a href="products.html">Brand Stores</a></li>
+                                                <li><a href="#">Kids Home Fashion</a></li>
+                                                <li><a href="#">Boy's Clothing</a></li>
+                                                <li><a href="#">Girl's Clothing</a></li>
+                                                <li><a href="#">Shoes</a></li>
+                                                <li><a href="#">Brand Stores</a></li>
                                             </ul>
                                         </div>
                                         <div class="clearfix"></div>
@@ -92,39 +92,40 @@
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Home Collection</h6>
-                                                <li><a href="furniture.html">Cookware</a></li>
-                                                <li><a href="furniture.html">Sofas</a></li>
-                                                <li><a href="furniture.html">Dining Tables</a></li>
-                                                <li><a href="furniture.html">Shoe Racks</a></li>
-                                                <li><a href="furniture.html">Home Decor</a></li>
+                                                <li><a href="#">Cookware</a></li>
+                                                <li><a href="#">Sofas</a></li>
+                                                <li><a href="#">Dining Tables</a></li>
+                                                <li><a href="#">Shoe Racks</a></li>
+                                                <li><a href="#">Home Decor</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Office Collection</h6>
-                                                <li><a href="furniture.html">Carpets</a></li>
-                                                <li><a href="furniture.html">Tables</a></li>
-                                                <li><a href="furniture.html">Sofas</a></li>
-                                                <li><a href="furniture.html">Shoe Racks</a></li>
-                                                <li><a href="furniture.html">Sockets</a></li>
-                                                <li><a href="furniture.html">Electrical Machines</a></li>
+                                                <li><a href="#">Carpets</a></li>
+                                                <li><a href="#">Tables</a></li>
+                                                <li><a href="#">Sofas</a></li>
+                                                <li><a href="#">Shoe Racks</a></li>
+                                                <li><a href="#">Sockets</a></li>
+                                                <li><a href="#">Electrical Machines</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Decorations</h6>
-                                                <li><a href="furniture.html">Toys</a></li>
-                                                <li><a href="furniture.html">Wall Clock</a></li>
-                                                <li><a href="furniture.html">Lighting</a></li>
-                                                <li><a href="furniture.html">Top Brands</a></li>
+                                                <li><a href="#">Toys</a></li>
+                                                <li><a href="#">Wall Clock</a></li>
+                                                <li><a href="#">Lighting</a></li>
+                                                <li><a href="#">Top Brands</a></li>
                                             </ul>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </ul>
                             </li>
-                            <li><a href="short-codes.html">Short Codes</a></li>
-                            <li><a href="mail.html">Mail Us</a></li>
+                            <li><a href="{{ route('getTask')}}">Task list</a></li>
+                            <li><a href="#">Short Codes</a></li>
+                            <li><a href="#">Mail Us</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -149,7 +150,7 @@ new UISearch(document.getElementById('sb-search'));
             </div>
             <div class="header-right">
                 <div class="cart box_1">
-                    <a href="checkout.html">
+                    <a href="#">
                         <h3> <div class="total">
                                 <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)</div>
                             <img src="images/bag.png" alt="">
