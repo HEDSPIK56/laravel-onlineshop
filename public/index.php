@@ -1,20 +1,5 @@
 <?php
 
-function dd($arr)
-{
-    echo '<pre>';
-    print_r($arr);
-    echo '</pre>';
-    die();
-}
-
-function d($arr)
-{
-    echo '<pre>';
-    print_r($arr);
-    echo '</pre>';
-}
-
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

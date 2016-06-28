@@ -6,8 +6,6 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Welcome</div>
-                {!! Notification::success('Success message') !!}
-
                 <div class="panel-body">
                     Your Application's Landing Page.
                     <div class="input-group">
@@ -25,8 +23,8 @@
         </div>
     </div>
 </div>
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-<script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+<script src="vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="vendor/laravel-filemanager/js/lfm.js"></script>
 <script>
     $(document).ready(function () {
         console.log("ready!");

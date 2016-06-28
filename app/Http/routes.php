@@ -57,8 +57,6 @@ Route::group(['middleware' => 'auth'], function ()
 
 Route::get('sendemail', function ()
 {
-//    dd(Config::get("mail"));
-//    die;
     $data = array (
         'name' => "Learning Laravel",
     );

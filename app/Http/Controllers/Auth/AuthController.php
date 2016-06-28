@@ -90,39 +90,39 @@ use AuthenticatesAndRegistersUsers,
                     $request, $validator
             );
         }
-//        DB::beginTransaction();
-//        try
-//        {
-        $user = $this->create($request->all());
-        //$this->activationService->sendActivationMail($user);
-        //DB::commit();
-        return redirect('/login')->with('status', 'We sent you an activation code. Check your email.');
-//        } catch (Exception $exc)
-//        {
-//            DB::rollBack();
-//        } finally
-//        {
-//            abort(404);
-//        }
+        DB::beginTransaction();
+        try
+        {
+            $user = $this->create($request->all());
+            $this->activationService->sendActivationMail($user);
+            DB::commit();
+            return redirect('/login');
+        } catch (Exception $exc)
+        {
+            DB::rollBack();
+            return back();
+        }
     }
 
-//    public function activateUser($token)
-//    {
-//        if ($user = $this->activationService->activateUser($token))
-//        {
-//            auth()->login($user);
-//            return redirect($this->redirectPath());
-//        }
-//        abort(404);
-//    }
-//    public function authenticated(Request $request, $user)
-//    {
-//        if (!$user->activated)
-//        {
-//            $this->activationService->sendActivationMail($user);
-//            auth()->logout();
-//            return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
-//        }
-//        return redirect()->intended($this->redirectPath());
-//    }
+    public function activateUser($token)
+    {
+        if ($user = $this->activationService->activateUser($token))
+        {
+            auth()->login($user);
+            return redirect($this->redirectPath());
+        }
+        abort(404);
+    }
+
+    public function authenticated(Request $request, $user)
+    {
+        if (!$user->activated)
+        {
+            $this->activationService->sendActivationMail($user);
+            auth()->logout();
+            return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
+        }
+        return redirect()->intended($this->redirectPath());
+    }
+
 }
