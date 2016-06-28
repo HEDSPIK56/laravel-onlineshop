@@ -37,5 +37,17 @@ class HomeController extends Controller
         //die;
         return view('pages/home.index');
     }
+    
+    public function read()
+    {
+        //$homepage = file_get_contents('http://ketqua.net/xo-so-mien-nam.php?ngay=27-06-2016');
+        //var_dump($homepage);
+        $url    = "http://ketqua.net/xo-so-mien-nam.php?ngay=27-06-2016";
+        $ch       = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output   = curl_exec($ch);
+        curl_close($ch);
+        echo $output;
+    }
 
 }

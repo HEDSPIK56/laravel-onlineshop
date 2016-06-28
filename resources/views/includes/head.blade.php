@@ -1,11 +1,25 @@
 <head>
     <title>Online Shopping</title>
-    <meta charset="utf-8">
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="Cua hang bach hoa 247, thuc an, buoi sang, phan bon, trai cay, so so kien thiet">
     <meta name="Description" content="Cua hang bach hoa 247">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="author" content="cuahangbachhoa247"/>
+    <meta name="generator" content="cuahangbachhoa247.com"/>
+    <meta name="abstract" content="cuahangbachhoa247.com"/>
+    <!--<meta http-equiv="refresh" content="1800;URL=/xo-so">-->
+    <meta property="og:title" content="Sổ kết quả Truyền Thống 30 ngày trước 28-06-2016"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://cuahangbachhoa247.com/public"/>
+    <meta property="og:image" content="http://cuahangbachhoa247.com/public"/>
+    <meta property="og:image:width" content="200"/>
+    <meta property="og:image:height" content="200"/>
+    <meta property="og:site_name" content="cuahangbachhoa247.com"/>
+    <meta property="og:description" content="Cua hang bach hoa 247"/>
+    <meta property="fb:app_id" content="1212597675425450"/>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
         function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- //for-mobile-apps -->
@@ -16,7 +30,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" media="all">
     <!-- js -->
-    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.x-git.min.js"></script>
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>

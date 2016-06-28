@@ -22,6 +22,9 @@ Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name(
 Route::get('/home', [
     'as' => 'home', 'uses' => 'HomeController@index'
 ]);
+Route::get('/home/read', [
+    'as'   => 'home.read', 'uses' => 'HomeController@read'
+]);
 
 /**
  * Social Auth
