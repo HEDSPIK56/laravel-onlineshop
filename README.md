@@ -6,13 +6,19 @@ http://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html
 # role
 https://github.com/romanbican/roles
 # file manager
-https://github.com/guillermomartinez/filemanager-laravel
-https://github.com/simogeo/Filemanager
-https://github.com/monomichael/FileManager
-https://github.com/zgldh/laravel-upload-manager
+https://github.com/UniSharp/laravel-filemanager
+https://github.com/UniSharp/laravel-ckeditor
+https://www.youtube.com/watch?v=vBzg0Us5MDk
 # laravel admin
 https://github.com/pingpong-labs/admin
 https://github.com/zgldh/laravel-upload-manager
 # demo blog - post
 http://www.findalltogether.com/tutorial/simple-blog-application-in-laravel-5-part-3-controllers/
 https://laravel.com/docs/5.2/quickstart-intermediate
+
+#noti 
+https://github.com/edvinaskrucas/notification
+#cart
+https://github.com/Crinsane/LaravelShoppingcart
+# user email verification
+https://github.com/edvinaskrucas/laravel-user-email-verification

@@ -3930,46 +3930,6 @@
         ]
     },
     {
-        "name": "pqb/filemanager-laravel",
-        "version": "2.0.7",
-        "version_normalized": "2.0.7.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/guillermomartinez/filemanager-laravel.git",
-            "reference": "be2c8ab3aa47198368c825e3ecc1ccbed5c48508"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/guillermomartinez/filemanager-laravel/zipball/be2c8ab3aa47198368c825e3ecc1ccbed5c48508",
-            "reference": "be2c8ab3aa47198368c825e3ecc1ccbed5c48508",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "5.0.*|5.1.*|5.2.*",
-            "intervention/image": "2.*",
-            "php": ">=5.4.0"
-        },
-        "time": "2016-03-31 23:44:22",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Pqb\\FilemanagerLaravel\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Guillermo M.",
-                "email": "guille_55_88@hotmail.com"
-            }
-        ],
-        "description": "Filemanager for Laravel"
-    },
-    {
         "name": "bican/roles",
         "version": "2.1.7",
         "version_normalized": "2.1.7.0",
@@ -4014,6 +3974,170 @@
             "laravel",
             "permissions",
             "roles"
+        ]
+    },
+    {
+        "name": "unisharp/laravel-filemanager",
+        "version": "1.5.2",
+        "version_normalized": "1.5.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/UniSharp/laravel-filemanager.git",
+            "reference": "412f459c6b44895bae9a1439ae3126376c1f6669"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/412f459c6b44895bae9a1439ae3126376c1f6669",
+            "reference": "412f459c6b44895bae9a1439ae3126376c1f6669",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": ">=4.2.0",
+            "intervention/image": "2.*",
+            "php": ">=5.5.0"
+        },
+        "suggest": {
+            "ext-gd": "to use GD library based image processing.",
+            "ext-imagick": "to use Imagick based image processing."
+        },
+        "time": "2016-03-26 13:38:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Unisharp\\Laravelfilemanager\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Trevor Sawler",
+                "email": "trevor.sawler@gmail.com"
+            },
+            {
+                "name": "UniSharp Ltd.",
+                "email": "unisharp-service@unisharp.com"
+            }
+        ],
+        "description": "A file upload/editor intended for use with Laravel 5 and CKEditor / TinyMCE",
+        "keywords": [
+            "CKEditor",
+            "file",
+            "filemanager",
+            "image",
+            "laravel",
+            "manager",
+            "tinymce",
+            "upload"
+        ]
+    },
+    {
+        "name": "unisharp/laravel-ckeditor",
+        "version": "4.5.7",
+        "version_normalized": "4.5.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/UniSharp/laravel-ckeditor.git",
+            "reference": "cc9a5505dc3c3a060944aa8b5ce13515547263ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/UniSharp/laravel-ckeditor/zipball/cc9a5505dc3c3a060944aa8b5ce13515547263ec",
+            "reference": "cc9a5505dc3c3a060944aa8b5ce13515547263ec",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.0"
+        },
+        "time": "2016-02-16 05:56:20",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Unisharp\\Ckeditor\\": "./"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+",
+            "LGPL-2.1+",
+            "MPL-1.1+"
+        ],
+        "authors": [
+            {
+                "name": "CKSource",
+                "homepage": "http://cksource.com"
+            },
+            {
+                "name": "UniSharp Ltd. (Composer Package Maintainer)",
+                "homepage": "http://www.unisharp.com"
+            }
+        ],
+        "description": "JavaScript WYSIWYG web text editor (for laravel).",
+        "homepage": "http://ckeditor.com",
+        "keywords": [
+            "CKEditor",
+            "editor",
+            "fckeditor",
+            "html",
+            "javascript",
+            "laravel",
+            "richtext",
+            "text",
+            "wysiwyg"
+        ]
+    },
+    {
+        "name": "edvinaskrucas/notification",
+        "version": "5.1.1",
+        "version_normalized": "5.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/edvinaskrucas/notification.git",
+            "reference": "04cac9a31f5497633ffd05581210fa1a4d6fe6e9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/edvinaskrucas/notification/zipball/04cac9a31f5497633ffd05581210fa1a4d6fe6e9",
+            "reference": "04cac9a31f5497633ffd05581210fa1a4d6fe6e9",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/session": "^5.1",
+            "illuminate/support": "^5.1",
+            "php": "^5.5|^7.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.7.*"
+        },
+        "time": "2016-01-19 14:26:18",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Krucas\\Notification": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Edvinas Kručas",
+                "email": "edv.krucas@gmail.com"
+            }
+        ],
+        "description": "Package for Laravel for helping to manage flash / instant notifications / messages.",
+        "keywords": [
+            "flash",
+            "instant",
+            "laravel",
+            "messages",
+            "notifications"
         ]
     }
 ]

@@ -8,8 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
-    'Pqb\\FilemanagerLaravel\\' => array($vendorDir . '/pqb/filemanager-laravel/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'Krucas\\Notification' => array($vendorDir . '/edvinaskrucas/notification/src'),
     'JakubOnderka\\PhpConsoleHighlighter' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
     'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),

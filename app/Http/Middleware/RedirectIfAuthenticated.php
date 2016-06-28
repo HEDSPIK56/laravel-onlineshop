@@ -20,8 +20,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check())
         {
-            //return redirect('/');
-            return redirect('/tasks');
+            return redirect('/');
         }
 
         return $next($request);
