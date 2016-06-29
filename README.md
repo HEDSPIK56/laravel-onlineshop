@@ -26,3 +26,6 @@ https://github.com/edvinaskrucas/laravel-user-email-verification
 
 # admin panel
 http://www.tutorials.kode-blog.com/laravel-5-admin-panel
+# bower
+http://laravelcoding.com/blog/laravel-5-beauty-using-bower?tag=L5+Beauty
+http://www.tutorials.kode-blog.com/laravel-5-admin-panel

@@ -11,11 +11,7 @@
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "laravel/socialite": "^2.0",
         "guzzlehttp/guzzle": "~5.3|~6.0",
-        "intervention/image": "2.*",
         "bican/roles": "2.1.*",
-        "unisharp/laravel-filemanager": "^1.5",
-        "unisharp/laravel-ckeditor": "^4.5",
-        "edvinaskrucas/notification": "5.1.*",
         "dflydev/apache-mime-types": "^1.0"
     },
     "require-dev": {

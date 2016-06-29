@@ -124,8 +124,8 @@
                                 </ul>
                             </li>
                             <li><a href="{{ route('getTask')}}">Task list</a></li>
-                            <li><a href="#">Short Codes</a></li>
-                            <li><a href="#">Mail Us</a></li>
+                            <li><a href="{{ route('system.upload.list')}}">Upload file</a></li>
+                            <li><a href="{{ route('home.read')}}">SSKT</a></li>
                         </ul>
                     </div>
                 </nav>

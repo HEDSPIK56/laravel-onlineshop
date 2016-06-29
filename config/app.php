@@ -143,10 +143,6 @@ return [
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        Unisharp\Ckeditor\ServiceProvider::class,
-        Krucas\Notification\NotificationServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
@@ -196,7 +192,5 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Image' => Intervention\Image\Facades\Image::class,
-        'Notification' => Krucas\Notification\Facades\Notification::class,
     ],
 ];
