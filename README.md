@@ -9,6 +9,7 @@ https://github.com/romanbican/roles
 https://github.com/UniSharp/laravel-filemanager
 https://github.com/UniSharp/laravel-ckeditor
 https://www.youtube.com/watch?v=vBzg0Us5MDk
+http://laravelcoding.com/blog/laravel-5-beauty-upload-manager
 # laravel admin
 https://github.com/pingpong-labs/admin
 https://github.com/zgldh/laravel-upload-manager
@@ -22,3 +23,6 @@ https://github.com/edvinaskrucas/notification
 https://github.com/Crinsane/LaravelShoppingcart
 # user email verification
 https://github.com/edvinaskrucas/laravel-user-email-verification
+
+# admin panel
+http://www.tutorials.kode-blog.com/laravel-5-admin-panel

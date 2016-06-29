@@ -23,7 +23,7 @@ Route::get('/home', [
     'as' => 'home', 'uses' => 'HomeController@index'
 ]);
 Route::get('/home/read', [
-    'as'   => 'home.read', 'uses' => 'HomeController@read'
+    'as' => 'home.read', 'uses' => 'HomeController@read'
 ]);
 
 /**
@@ -61,10 +61,42 @@ Route::group(['middleware' => 'auth'], function ()
      */
     Route::group(['prefix' => 'admin'], function ()
     {
-        Route::get('/', function ()
+        //Dashboard Route
+        Route::get('dashboard', function()
         {
-            return "admin view";
+            return view('admin.dashboard');
         });
+
+        /**
+         * System
+         */
+        // Upload
+        Route::get('/system/upload', [
+            'as' => 'system.upload.list',
+            'uses' => 'Admin\EShopSystem\UploadsController@index'
+        ]);
+        Route::post('/system/upload/file', [
+            'as' => 'system.upload.file',
+            'uses' => 'Admin\EShopSystem\UploadsController@uploadFile'
+        ]);
+        Route::delete('/system/upload/file', [
+            'as' => 'system.upload.file.delete',
+            'uses' => 'Admin\EShopSystem\UploadsController@deleteFile'
+        ]);
+        Route::post('/system/upload/folder', [
+            'as' => 'system.upload.folder',
+            'uses' => 'Admin\EShopSystem\UploadsController@uploadFolder'
+        ]);
+        Route::delete('/system/upload/folder', [
+            'as' => 'system.upload.folder.delete',
+            'uses' => 'Admin\EShopSystem\UploadsController@deleteFolder'
+        ]);
+        // End Upload
+        Route::resource('system-users', 'Admin\EShopSystem\UsersController');
+        Route::resource('database-backup', 'Admin\EShopSystem\SystemController@dbbackup');
+        Route::resource('csv-export', 'Admin\EShopSystem\SystemController@csvexport');
+        Route::resource('csv-import', 'Admin\EShopSystem\SystemController@csvimport');
+        //End system
     });
 
     /**
