@@ -125,7 +125,7 @@
                             </li>
                             <li><a href="{{ route('getTask')}}">Task list</a></li>
                             <li><a href="{{ route('system.upload.list')}}">Upload file</a></li>
-                            <li><a href="{{ route('home.read')}}">SSKT</a></li>
+                            <li><a href="{{ route('home.create')}}">SSKT</a></li>
                         </ul>
                     </div>
                 </nav>

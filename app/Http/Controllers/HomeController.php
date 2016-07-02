@@ -35,19 +35,22 @@ class HomeController extends Controller
         //var_dump($cau3);
         //die;
         //die;
-        return view('pages/home.index');
+        return view('pages.home.index');
     }
-    
-    public function read()
+    public function create()
     {
-        //$homepage = file_get_contents('http://ketqua.net/xo-so-mien-nam.php?ngay=27-06-2016');
-        //var_dump($homepage);
-        $url    = "http://ketqua.net/xo-so-mien-nam.php?ngay=27-06-2016";
+       return view("pages.home.create");
+    }
+
+    public function read(Request $request)
+    {
+        $searchDate = $request->get('search_date', date('d-m-yy'));
+        $url        = "http://ketqua.net/xo-so-mien-nam.php?ngay=" . $searchDate . "";
         $ch       = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $output   = curl_exec($ch);
         curl_close($ch);
-        echo $output;
+        return view('pages.home.read', ['data' => $output]);
     }
 
 }

@@ -22,6 +22,9 @@ Route::get('/home', [
 Route::get('/home/read', [
     'as' => 'home.read', 'uses' => 'HomeController@read'
 ]);
+Route::get('/home/create', [
+    'as'   => 'home.create', 'uses' => 'HomeController@create'
+]);
 
 /**
  * Social Auth
@@ -108,7 +111,7 @@ Route::group(['middleware' => 'auth'], function () {
         ]);
         Route::post('/system/upload/folder', [
             'as' => 'system.upload.folder',
-            'uses' => 'Admin\EShopSystem\UploadsController@uploadFolder'
+            'uses' => 'Admin\EShopSystem\UploadsController@createFolder'
         ]);
         Route::delete('/system/upload/folder', [
             'as' => 'system.upload.folder.delete',
