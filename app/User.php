@@ -7,7 +7,8 @@ use App\Task;
 use App\ExampleComment;
 use App\ExamplePost;
 
-class User extends Authenticatable {
+class User extends Authenticatable
+{
 
     /**
      * The attributes that are mass assignable.
@@ -30,31 +31,38 @@ class User extends Authenticatable {
     /**
      * relation ship
      */
-    public function tasks() {
+    public function tasks()
+    {
         return $this->hasMany(Task::class);
     }
 
     // user has many posts
-    public function posts() {
+    public function posts()
+    {
         return $this->hasMany(ExamplePost::class, 'author_id');
     }
 
     // user has many comments
-    public function comments() {
+    public function comments()
+    {
         return $this->hasMany(ExampleComment::class, 'from_user');
     }
 
-    public function can_post() {
+    public function can_post()
+    {
         $role = $this->role;
-        if ($role == 'author' || $role == 'admin') {
+        if ($role == 'author' || $role == 'admin')
+        {
             return true;
         }
         return false;
     }
 
-    public function is_admin() {
+    public function is_admin()
+    {
         $role = $this->role;
-        if ($role == 'admin') {
+        if ($role == 'admin')
+        {
             return true;
         }
         return false;

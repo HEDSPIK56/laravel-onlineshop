@@ -50,6 +50,7 @@
     <link href="css/animate.min.css" rel="stylesheet"> 
     <link href="css/bootstrap-social.css" rel="stylesheet" type="text/css"/>
     <script src="js/wow.min.js"></script>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>
         new WOW().init();
     </script>
