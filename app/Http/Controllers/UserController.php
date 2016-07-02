@@ -15,21 +15,21 @@ class UserController extends Controller
     public function user_posts($id)
     {
         $posts = ExamplePost::where('author_id', $id)->where('active', 1);
-        return view('pages.profile.index')->withPosts($posts);
+        return view('pages.posts.index')->withPosts($posts);
     }
 
     public function user_posts_all(Request $request)
     {
         $user  = $request->user();
         $posts = ExamplePost::where('author_id', $user->id)->orderBy('created_at', 'desc')->paginate(5);
-        return view('pages.profile.index')->withPosts($posts);
+        return view('pages.posts.index')->withPosts($posts);
     }
 
     public function user_posts_draft(Request $request)
     {
         $user  = $request->user();
         $posts = ExamplePost::where('author_id', $user->id)->where('active', 0)->orderBy('created_at', 'desc')->paginate(5);
-        return view('pages.profile.index')->withPosts($posts);
+        return view('pages.posts.index')->withPosts($posts);
     }
 
     public function profile(Request $request, $id)
