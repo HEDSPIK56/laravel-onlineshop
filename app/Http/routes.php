@@ -11,7 +11,7 @@
   |
  */
 
-Route::get('/','PostController@index');
+Route::get('/', 'PostController@index');
 
 Route::auth();
 Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
@@ -32,8 +32,7 @@ Route::get('/callback', 'SocialAuthController@callback');
  * End Social Auth
  */
 // Login before access task
-Route::group(['middleware' => 'auth'], function ()
-{
+Route::group(['middleware' => 'auth'], function () {
     /**
      * Task
      */
@@ -53,44 +52,41 @@ Route::group(['middleware' => 'auth'], function ()
     /**
      * End task
      */
-
     /*
-    * Post
-    */
+     * Post
+     */
     // show new post form
- Route::get('new-post','PostController@create');
- // save new post
- Route::post('new-post','PostController@store');
- // edit post form
- Route::get('edit/{slug}','PostController@edit');
- // update post
- Route::post('update','PostController@update');
- // delete post
- Route::get('delete/{id}','PostController@destroy');
- // display user's all posts
- Route::get('my-all-posts','UserController@user_posts_all');
- // display user's drafts
- Route::get('my-drafts','UserController@user_posts_draft');
- // add comment
- Route::post('comment/add','CommentController@store');
- // delete comment
- Route::post('comment/delete/{id}','CommentController@distroy');
-});
+    Route::get('new-post', 'PostController@create');
+    // save new post
+    Route::post('new-post', 'PostController@store');
+    // edit post form
+    Route::get('edit/{slug}', 'PostController@edit');
+    // update post
+    Route::post('update', 'PostController@update');
+    // delete post
+    Route::get('delete/{id}', 'PostController@destroy');
+    // display user's all posts
+    Route::get('my-all-posts', 'UserController@user_posts_all');
+    // display user's drafts
+    Route::get('my-drafts', 'UserController@user_posts_draft');
+    // add comment
+    Route::post('comment/add', 'CommentController@store');
+    // delete comment
+    Route::post('comment/delete/{id}', 'CommentController@distroy');
+
 //users profile
-Route::get('user/{id}','UserController@profile')->where('id', '[0-9]+');
+    Route::get('user/{id}', 'UserController@profile')->where('id', '[0-9]+');
 // display list of posts
-Route::get('user/{id}/posts','UserController@user_posts')->where('id', '[0-9]+');
+    Route::get('user/{id}/posts', 'UserController@user_posts')->where('id', '[0-9]+');
 // display single post
-Route::get('/{slug}',['as' => 'post', 'uses' => 'PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
+    Route::get('/{slug}', ['as' => 'post', 'uses' => 'PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
     // End post
     /**
      * Admin section
      */
-    Route::group(['prefix' => 'admin'], function ()
-    {
+    Route::group(['prefix' => 'admin'], function () {
         //Dashboard Route
-        Route::get('dashboard', function()
-        {
+        Route::get('dashboard', function() {
             return view('admin.dashboard');
         });
 
