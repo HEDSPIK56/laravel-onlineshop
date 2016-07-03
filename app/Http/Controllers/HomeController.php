@@ -44,13 +44,14 @@ class HomeController extends Controller
 
     public function read(Request $request)
     {
-        $searchDate = $request->get('search_date', date('d-m-yy'));
+        $searchDate = $request->get('search_date', date('d-m-Y'));
         $url        = "http://ketqua.net/xo-so-mien-nam.php?ngay=" . $searchDate . "";
-        $ch       = curl_init($url);
+        $ch         = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $output   = curl_exec($ch);
         curl_close($ch);
-        return view('pages.home.read', ['data' => $output]);
+        return $output;
+        //return view('pages.home.read', ['data' => (string) $output]);
     }
 
 }

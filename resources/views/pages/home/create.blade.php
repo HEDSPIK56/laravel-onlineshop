@@ -1,6 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-{!! Breadcrumbs::render('home') !!}
-@include('includes.new-collections')
+{!! Breadcrumbs::render('tasks') !!}
 @endsection

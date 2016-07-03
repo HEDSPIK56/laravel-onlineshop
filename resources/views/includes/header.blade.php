@@ -46,17 +46,13 @@
                             <li class="active"><a href="{{route('home')}}" class="act">Home</a></li>	
                             <!-- Mega Menu -->
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                                <a href="{{route('blog.new.post')}}" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi-column columns-3">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Men's Wear</h6>
-                                                <li><a href="#">Clothing</a></li>
-                                                <li><a href="#">Wallets</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Watches</a></li>
-                                                <li><a href="#">Accessories</a></li>
+                                                <li><a href="{{route('blog.new.post')}}">Tao Blog</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-4">
@@ -125,7 +121,7 @@
                             </li>
                             <li><a href="{{ route('getTask')}}">Task list</a></li>
                             <li><a href="{{ route('system.upload.list')}}">Upload file</a></li>
-                            <li><a href="{{ route('home.create')}}">SSKT</a></li>
+                            <li><a href="{{ route('home.read')}}">SSKT</a></li>
                         </ul>
                     </div>
                 </nav>

@@ -59,7 +59,10 @@ Route::group(['middleware' => 'auth'], function () {
      * Post
      */
     // show new post form
-    Route::get('new-post', 'PostController@create');
+    Route::get('new-post', [
+        'as'   => 'blog.new.post',
+        'uses' => 'PostController@create'
+    ]);
     // save new post
     Route::post('new-post', 'PostController@store');
     // edit post form

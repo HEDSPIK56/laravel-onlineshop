@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-{!! Breadcrumbs::render('tasks') !!}
+<script type="text/javascript">
+  tinymce.init({
+    selector: "textarea",
+        plugins: ["advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste"],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+    });
+</script>
+{!! Breadcrumbs::render('blog') !!}
 <form method="post" action='{{ url("/update") }}'>
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="post_id" value="{{ $post->id }}{{ old('post_id') }}">

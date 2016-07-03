@@ -17,7 +17,7 @@ Breadcrumbs::register('about', function($breadcrumbs)
 Breadcrumbs::register('blog', function($breadcrumbs)
 {
     $breadcrumbs->parent('home');
-    $breadcrumbs->push('Blog', route('blog'));
+    $breadcrumbs->push('Blog', route('blog.new.post'));
 });
 
 Breadcrumbs::register('tasks', function($breadcrumbs)

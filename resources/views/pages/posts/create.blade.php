@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-{!! Breadcrumbs::render('tasks') !!}
+{!! Breadcrumbs::render('blog') !!}
 <script type="text/javascript">
   tinymce.init({
     selector : "textarea",

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-{!! Breadcrumbs::render('tasks') !!}
+{!! Breadcrumbs::render('blog') !!}
 @if($post)
 <div>
     {!! $post->body !!}
