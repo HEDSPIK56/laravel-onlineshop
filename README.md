@@ -21,6 +21,7 @@ https://laravel.com/docs/5.2/quickstart-intermediate
 https://github.com/edvinaskrucas/notification
 #cart
 https://github.com/Crinsane/LaravelShoppingcart
+https://github.com/Crinsane/LaravelShoppingcart
 # user email verification
 https://github.com/edvinaskrucas/laravel-user-email-verification
 
