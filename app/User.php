@@ -48,6 +48,11 @@ class User extends Authenticatable
         return $this->hasMany(ExampleComment::class, 'from_user');
     }
 
+    public function likedPosts()
+    {
+        return $this->morphedByMany(ExamplePost::class, 'likeable')->whereDeletedAt(null);
+    }
+
     public function can_post()
     {
         $role = $this->role;
