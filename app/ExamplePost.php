@@ -5,8 +5,11 @@ namespace App;
 use App\ExampleComment;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use App\ExampleLike;
+use Illuminate\Support\Facades\Auth;
 
-class ExamplePost extends Model {
+class ExamplePost extends Model
+{
 
     //restricts columns from modifying
     protected $guarded = [];
@@ -14,14 +17,27 @@ class ExamplePost extends Model {
 
     // posts has many comments
     // returns all comments on that post
-    public function comments() {
+    public function comments()
+    {
         return $this->hasMany(ExampleComment::class, 'on_post');
     }
-    
+
     public function author()
     {
-      return $this->belongsTo(User::class,'author_id');
+        return $this->belongsTo(User::class, 'author_id');
     }
+
+    public function likes()
+    {
+        return $this->morphToMany(User::class, 'likeable')->whereDeletedAt(null);
+    }
+
+    public function getIsLikeAttribute()
+    {
+        $like = $this->likes()->whereUserId(Auth::id())->first();
+        return (!is_null($like)) ? true : false;
+    }
+
 }
 
 //http://www.findalltogether.com/tutorial/simple-blog-application-in-laravel-5-part-2-routes-and-models/

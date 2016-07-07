@@ -5,6 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateLikeExampleTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -12,10 +13,12 @@ class CreateLikeExampleTable extends Migration
      */
     public function up()
     {
-        Schema::create('example_likes', function (Blueprint $table) {
+        Schema::create('example_likes', function (Blueprint $table)
+        {
             $table->increments('id');
-            $table->integer('post_id');
             $table->integer('user_id');
+            $table->integer('likeable_id');
+            $table->string('likeable_type');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,4 +33,5 @@ class CreateLikeExampleTable extends Migration
     {
         Schema::drop('example_likes');
     }
+
 }
