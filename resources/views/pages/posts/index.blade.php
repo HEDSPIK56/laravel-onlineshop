@@ -19,6 +19,11 @@ There is no post till now. Login and write a new post now!!!
                 @endif
             </h3>
             <p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a></p>
+            @if($post->isLiked)
+            <a href="{{ route('post.like', $post->id) }}">Unlike this shit</a>
+            @else
+            <a href="{{ route('post.like', $post->id) }}">Like this awesome product!</a>
+            @endif
         </div>
         <div class="list-group-item">
             <article>

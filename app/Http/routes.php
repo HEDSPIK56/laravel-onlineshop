@@ -23,7 +23,7 @@ Route::get('/home/read', [
     'as' => 'home.read', 'uses' => 'HomeController@read'
 ]);
 Route::get('/home/create', [
-    'as'   => 'home.create', 'uses' => 'HomeController@create'
+    'as' => 'home.create', 'uses' => 'HomeController@create'
 ]);
 
 /**
@@ -35,7 +35,8 @@ Route::get('/callback', 'SocialAuthController@callback');
  * End Social Auth
  */
 // Login before access task
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function ()
+{
     /**
      * Task
      */
@@ -60,7 +61,7 @@ Route::group(['middleware' => 'auth'], function () {
      */
     // show new post form
     Route::get('new-post', [
-        'as'   => 'blog.new.post',
+        'as' => 'blog.new.post',
         'uses' => 'PostController@create'
     ]);
     // save new post
@@ -87,12 +88,18 @@ Route::group(['middleware' => 'auth'], function () {
 // display single post
     Route::get('/{slug}', ['as' => 'post', 'uses' => 'PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
     // End post
+    // Like
+    Route::get('product/like/{id}', ['as' => 'product.like', 'uses' => 'LikeController@likeProduct']);
+    Route::get('post/like/{id}', ['as' => 'post.like', 'uses' => 'LikeController@likePost']);
+    // End like
     /**
      * Admin section
      */
-    Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'admin'], function ()
+    {
         //Dashboard Route
-        Route::get('dashboard', function() {
+        Route::get('dashboard', function()
+        {
             return view('admin.dashboard');
         });
 

@@ -13,7 +13,7 @@ class ExampleLike extends Model
     // Use a Softdelete
     use SoftDeletes;
 
-    protected $table = 'example_likes';
+    protected $table = 'likeables';
     protected $fillable = [
         'user_id',
         'likeable_id',
