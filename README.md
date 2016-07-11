@@ -76,3 +76,38 @@ $subHtmlContent =  $scraper->getValueByTagName($pageHtmlContent, '&lt;div class=
 5. If grid data needed, split the content with a needle Ex: explode()
 6. Then loop it whole and get the content by getValueByTagName again to make the filnal array of grid data.
 7. Thats' all
+
+
+public function rules()
+{
+    $user = User::find($this->users);
+
+    switch($this->method())
+    {
+        case 'GET':
+        case 'DELETE':
+        {
+            return [];
+        }
+        case 'POST':
+        {
+            return [
+                'user.name.first' => 'required',
+                'user.name.last'  => 'required',
+                'user.email'      => 'required|email|unique:users,email',
+                'user.password'   => 'required|confirmed',
+            ];
+        }
+        case 'PUT':
+        case 'PATCH':
+        {
+            return [
+                'user.name.first' => 'required',
+                'user.name.last'  => 'required',
+                'user.email'      => 'required|email|unique:users,email,'.$user->id,
+                'user.password'   => 'required|confirmed',
+            ];
+        }
+        default:break;
+    }
+}

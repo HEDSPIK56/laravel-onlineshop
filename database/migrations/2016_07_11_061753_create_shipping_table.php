@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHinhanhTable extends Migration
+class CreateShippingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateHinhanhTable extends Migration
      */
     public function up()
     {
-        Schema::create('hinhanh', function (Blueprint $table) {
+        Schema::create('shipping', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ class CreateHinhanhTable extends Migration
      */
     public function down()
     {
-        Schema::drop('hinhanh');
+        Schema::drop('shipping');
     }
 }

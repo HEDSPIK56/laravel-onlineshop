@@ -90,7 +90,10 @@ Route::group(['middleware' => 'auth'], function ()
     // End post
     // Like
     Route::get('product/like/{id}', ['as' => 'product.like', 'uses' => 'LikeController@likeProduct']);
-    Route::get('post/like/{id}', ['as' => 'post.like', 'uses' => 'LikeController@likePost']);
+    Route::get('post/like/{id}', [
+        'as' => 'post.like',
+        'uses' => 'LikeController@likePost'
+    ]);
     // End like
     /**
      * Admin section
@@ -103,6 +106,29 @@ Route::group(['middleware' => 'auth'], function ()
             return view('admin.dashboard');
         });
 
+        /**
+         * Category
+         */
+//        Route::get('/data/category', [
+//            'as' => 'data.category.list',
+//            'uses' => 'Admin\EShopDataEntry\CategoriesController@index'
+//        ]);
+//        Route::get('/data/category/add', [
+//            'as' => 'data.category.create',
+//            'uses' => 'Admin\EShopDataEntry\CategoriesController@create'
+//        ]);
+//        Route::post('/data/category/add', [
+//            'as' => 'data.category.create',
+//            'uses' => 'Admin\EShopDataEntry\CategoriesController@store'
+//        ]);
+//        Route::get('/data/category/{id}', [
+//            'as' => 'data.category.show',
+//            'uses' => 'Admin\EShopDataEntry\CategoriesController@show'
+//        ]);
+        Route::resource('/data/category', 'Admin\EShopDataEntry\CategoriesController');
+        /**
+         * End category
+         */
         /**
          * System
          */

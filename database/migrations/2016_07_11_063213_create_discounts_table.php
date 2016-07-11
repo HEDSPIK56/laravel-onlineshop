@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLoaisanphamTable extends Migration
+class CreateDiscountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,8 @@ class CreateLoaisanphamTable extends Migration
      */
     public function up()
     {
-        Schema::create('loaisanpham', function (Blueprint $table) {
+        Schema::create('discounts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ma_loai', 10)->unique();
-            $table->string('ten_loai')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ class CreateLoaisanphamTable extends Migration
      */
     public function down()
     {
-        Schema::drop('loaisanpham');
+        Schema::drop('discounts');
     }
 }
