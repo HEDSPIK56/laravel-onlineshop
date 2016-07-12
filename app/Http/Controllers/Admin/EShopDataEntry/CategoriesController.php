@@ -19,7 +19,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(2);
+        $categories = Category::orderBy('created_at')->paginate(10);
         return view('admin.eshopdata.categories.index', compact('categories'));
     }
 

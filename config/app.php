@@ -143,6 +143,9 @@ return [
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
+        Illuminate\Auth\AuthServiceProvider::class,
+        Bican\Roles\RolesServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------

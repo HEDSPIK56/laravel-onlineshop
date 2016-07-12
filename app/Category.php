@@ -5,9 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Product;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
+
+    use SoftDeletes;
 
     protected $table = "categories";
     protected $fillable = [
@@ -23,9 +26,24 @@ class Category extends Model
         'load_more'
     ];
 
+    /**
+     * The attributes that should be mutated to dates.
+     * @var type 
+     */
+    protected $dates = ['deleted_at'];
+
     public function products()
     {
         $this->hasMany(Product::class, 'category_id', 'id');
+    }
+
+    /**
+     * @todo Get all category in page
+     * @return type
+     */
+    public static function getAllCategory()
+    {
+        return self::where('visible', 'Y')->get();
     }
 
     public function getNameAttribute($value)
@@ -49,7 +67,22 @@ class Category extends Model
         $result = "";
         switch ($temp)
         {
-            
+            case 0:
+                {
+                    $result = "Center";
+                    break;
+                }
+            case 1:
+                {
+                    $result = "Right";
+                    break;
+                }
+            default:
+                {
+                    $result = "Left";
+                    break;
+                    ;
+                }
         }
         return $result;
     }

@@ -109,23 +109,14 @@ Route::group(['middleware' => 'auth'], function ()
         /**
          * Category
          */
-//        Route::get('/data/category', [
-//            'as' => 'data.category.list',
-//            'uses' => 'Admin\EShopDataEntry\CategoriesController@index'
-//        ]);
-//        Route::get('/data/category/add', [
-//            'as' => 'data.category.create',
-//            'uses' => 'Admin\EShopDataEntry\CategoriesController@create'
-//        ]);
-//        Route::post('/data/category/add', [
-//            'as' => 'data.category.create',
-//            'uses' => 'Admin\EShopDataEntry\CategoriesController@store'
-//        ]);
-//        Route::get('/data/category/{id}', [
-//            'as' => 'data.category.show',
-//            'uses' => 'Admin\EShopDataEntry\CategoriesController@show'
-//        ]);
         Route::resource('/data/category', 'Admin\EShopDataEntry\CategoriesController');
+        /**
+         * End category
+         */
+        /**
+         * Category
+         */
+        Route::resource('/data/product', 'Admin\EShopDataEntry\ProductsController');
         /**
          * End category
          */

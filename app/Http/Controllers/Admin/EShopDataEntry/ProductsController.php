@@ -3,20 +3,32 @@
 namespace App\Http\Controllers\Admin\EShopDataEntry;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Repository\AdminProductRepository;
+use App\Condition\AdminProductSearchCondition;
+use App\Category;
 
 class ProductsController extends Controller
 {
+
+    protected $products;
+
+    public function __construct(AdminProductRepository $rep)
+    {
+        $this->products = $rep;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $condition = new AdminProductSearchCondition();
+        $condition->setAttributes($request->all());
+        return view();
     }
 
     /**
@@ -26,7 +38,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::getAllCategory();
+        return view('admin.eshopdata.products.create', compact('categories'));
     }
 
     /**
@@ -84,4 +97,5 @@ class ProductsController extends Controller
     {
         //
     }
+
 }

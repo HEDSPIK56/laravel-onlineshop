@@ -111,3 +111,9 @@ public function rules()
         default:break;
     }
 }
+
+
+# Nhap va tinh tien lai
+SP A con 1 sp, yeu cau nhap hang.
+Nhap hang thi co ngay nhap va gia ban cho tung san pham.
+Khi tinh tien lai trong khoang thoi gian abc thi tinh ntn?

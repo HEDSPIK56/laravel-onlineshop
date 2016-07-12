@@ -51,17 +51,18 @@
                         <tr>
                             <td>STT</td>
                             <td>{{ $category->name }}</td>
-                            <td>Standard info</td>
-                            <td>Visible</td>
-                            <td>Use Search</td>
+                            <td>{{ $category->standard_info }}</td>
+                            <td>{{ $category->visible }}</td>
+                            <td>{{ $category->use_search }}</td>
                             <td>{{ $category->view_type_name}}</td>
                             <td>{{ $category->align_view_name}}</td>
-                            <td>Load More</td>
+                            <td>{{ $category->load_more }}</td>
                             <td>{{ $category->item_per_page }}</td>
-                            <td>{{ $category->item_per_page }}</td>
+                            <td>{{ $category->item_per_line }}</td>
                             <td>
                                 <button class="btn btn-default">Edit</button>
                                 <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-primary">Copy</button>
                             </td>
                         </tr>
                         @endforeach
