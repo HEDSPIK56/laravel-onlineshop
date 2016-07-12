@@ -55,22 +55,24 @@ class User extends Authenticatable
 
     public function can_post()
     {
-        $role = $this->role;
-        if ($role == 'author' || $role == 'admin')
-        {
-            return true;
-        }
-        return false;
+//        $role = $this->role;
+//        if ($role == 'author' || $role == 'admin')
+//        {
+//            return true;
+//        }
+//        return false;
+        return true;
     }
 
     public function is_admin()
     {
-        $role = $this->role;
-        if ($role == 'admin')
-        {
-            return true;
-        }
-        return false;
+//        $role = $this->role;
+//        if ($role == 'admin')
+//        {
+//            return true;
+//        }
+//        return false;
+        return true;
     }
 
 }
