@@ -19,8 +19,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $data = array ();
-        return view('admin.eshopdata.categories.index', $data);
+        $categories = Category::paginate(2);
+        return view('admin.eshopdata.categories.index', compact('categories'));
     }
 
     /**

@@ -33,4 +33,25 @@ class Category extends Model
         return ucfirst($value);
     }
 
+    public function getViewTypeNameAttribute($value)
+    {
+        $temp = $this->getAttribute('view_type');
+        if ($temp == '0')
+        {
+            return "Grid View";
+        }
+        return "List View";
+    }
+
+    public function getAlignViewNameAttribute($value)
+    {
+        $temp = $this->getAttribute('align_type');
+        $result = "";
+        switch ($temp)
+        {
+            
+        }
+        return $result;
+    }
+
 }
