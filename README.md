@@ -4,7 +4,7 @@ http://blog.damirmiladinov.com/laravel/laravel-5.2-email-verification-with-activ
 # login fb
 http://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html#.V2yPlfmLTcs
 # role
-https://github.com/romanbican/roles
+https://github.com/Zizaco/entrust
 # file manager
 https://github.com/UniSharp/laravel-filemanager
 https://github.com/UniSharp/laravel-ckeditor

@@ -6,10 +6,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Task;
 use App\ExampleComment;
 use App\ExamplePost;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends Authenticatable
 {
 
+    use EntrustUserTrait; // add this trait to your user model
     /**
      * The attributes that are mass assignable.
      *
