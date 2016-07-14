@@ -7,6 +7,7 @@
  */
 
 namespace App\Repository;
+use App\Role;
 
 /**
  * Description of AdminRoleRepository
@@ -25,7 +26,7 @@ class AdminRoleRepository
      */
     public function getListRole($condition)
     {
-        return "todo code";
+        return Role::all();
     }
 
 }

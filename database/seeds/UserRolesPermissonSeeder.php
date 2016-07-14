@@ -32,26 +32,25 @@ class UserRolesPermissonSeeder extends Seeder
         $admin->description = 'User is allowed to manage and edit other users'; // optional
         $admin->save();
 
+        $root               = new Role();
+        $root->name         = "root";
+        $root->display_name = "Root";
+        $root->description  = "Use this account with extreme caution. When using this account it is possible to cause irreversible damage to the system.";
+        $root->save();
+
         Role::create([
-            'name' => 'root',
-            'display_name' => 'Root',
-            'description' => 'Use this account with extreme caution. When using this account it is possible to cause irreversible damage to the system.'
-        ]);
-        Role::create([
-            'name' => 'administrator',
-            'display_name' => 'Administrator',
-            'description' => 'Full access to create, edit, and update companies, and orders.'
-        ]);
-        Role::create([
-            'name' => 'Manager',
+            'name'         => 'manager',
+            'display_name' => 'Manager',
             'description' => 'Ability to create new companies and orders, or edit and update any existing ones.'
         ]);
         Role::create([
-            'name' => 'Company Manager',
+            'name'         => 'company manager',
+            'display_name' => 'Company Manager',
             'description' => 'Able to manage the company that the user belongs to, including adding sites, creating new users and assigning licences.'
         ]);
         Role::create([
-            'name' => 'User',
+            'name'         => 'user',
+            'display_name' => 'User',
             'description' => 'A standard user that can have a licence assigned to them. No administrative features.'
         ]);
         //delete users table records
@@ -64,7 +63,7 @@ class UserRolesPermissonSeeder extends Seeder
         ]);
 
         $user = User::where('email', 'taihanh0310@gmail.com')->first();
-        $user->roles()->attach($admin->id); // id only
+        $user->roles()->attach($root->id); // id only
 
         $editUser = new Permission();
         $editUser->name = 'edit-user';

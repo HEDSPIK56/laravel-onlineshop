@@ -22,7 +22,8 @@ class RolesController extends Controller
     public function index(Request $request)
     {
         $condition = new AdminRoleSearchCondition();
-        $data = $this->roles->getListRole($condition);
+        $data      = $this->roles->getListRole($condition);
+        dd($data);
     }
 
 }

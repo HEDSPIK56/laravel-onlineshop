@@ -125,3 +125,5 @@ Khi tinh tien lai trong khoang thoi gian abc thi tinh ntn?
 # Example permisson
 https://docs.mulesoft.com/mule-management-console/v/3.2/setting-up-users
 https://www.drupal.org/node/120614
+http://blog.orbitone.com/post/Minimum-Dynamics-CRM-Permissions
+http://shivtr.com/blog/107-permissions-update-live
