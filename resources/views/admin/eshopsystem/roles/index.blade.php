@@ -58,5 +58,12 @@
             </div>
         </div>
     </div>
+    <!-- pagination -->
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            {{ $roles->links() }}
+        </div>
+    </div>
+    <!-- end pagination -->
 </div>
 @endsection

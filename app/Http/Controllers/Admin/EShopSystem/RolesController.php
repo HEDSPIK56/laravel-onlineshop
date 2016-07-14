@@ -26,4 +26,14 @@ class RolesController extends Controller
         return view('admin.eshopsystem.roles.index', compact('roles'));
     }
 
+    public function create()
+    {
+        return view('admin.eshopsystem.roles.create');
+    }
+
+    public function store(Request $request)
+    {
+        return redirect()->back();
+    }
+
 }

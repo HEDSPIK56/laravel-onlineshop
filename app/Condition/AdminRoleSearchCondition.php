@@ -21,12 +21,29 @@ class AdminRoleSearchCondition extends BaseAbstractBean
     public $keyword;
     public $limit;
     public $sortType;
+    public $name;
+    public $display_name;
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getDisplayName()
+    {
+        return $this->display_name;
+    }
+
+    public function getSortType()
+    {
+        return "DESC";
+    }
 
     public function getLimit()
     {
         if (!$this->limit)
         {
-            return 10;
+            return 1;
         }
         return (int) $this->limit;
     }
