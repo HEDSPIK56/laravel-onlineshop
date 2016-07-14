@@ -127,3 +127,9 @@ https://docs.mulesoft.com/mule-management-console/v/3.2/setting-up-users
 https://www.drupal.org/node/120614
 http://blog.orbitone.com/post/Minimum-Dynamics-CRM-Permissions
 http://shivtr.com/blog/107-permissions-update-live
+
+#realtime
+http://www.volkomenjuist.nl/blog/2013/10/20/laravel-4-and-nodejsredis-pubsub-realtime-notifications/
+http://www.kodeinfo.com/post/realtime-app-using-laravel-nodejs-angularjs-redis
+http://stackoverflow.com/questions/18396603/laravel-and-angularjs-form-validation
+https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages
