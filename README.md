@@ -117,3 +117,11 @@ public function rules()
 SP A con 1 sp, yeu cau nhap hang.
 Nhap hang thi co ngay nhap va gia ban cho tung san pham.
 Khi tinh tien lai trong khoang thoi gian abc thi tinh ntn?
+
+# Get noi dung tu web site khac
+- Hien nay beatvn dang la trang web co rat nhieu ng xem
+- 15p, request mot lan toi /hot nhat cua website do de gan vao du lieu web minh
+
+# Example permisson
+https://docs.mulesoft.com/mule-management-console/v/3.2/setting-up-users
+https://www.drupal.org/node/120614

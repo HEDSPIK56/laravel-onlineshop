@@ -145,10 +145,15 @@ Route::group(['middleware' => 'auth'], function ()
             'uses' => 'Admin\EShopSystem\UploadsController@deleteFolder'
         ]);
         // End Upload
-        Route::resource('system-users', 'Admin\EShopSystem\UsersController');
+
+        Route::resource('/system/user', 'Admin\EShopSystem\UsersController');
         Route::resource('database-backup', 'Admin\EShopSystem\SystemController@dbbackup');
         Route::resource('csv-export', 'Admin\EShopSystem\SystemController@csvexport');
         Route::resource('csv-import', 'Admin\EShopSystem\SystemController@csvimport');
+
+        Route::resource('/system/role', 'Admin\EShopSystem\RolesController');
+        Route::resource('/system/permission', 'Admin\EShopSystem\PermissionsController');
+
         //End system
     });
 });
