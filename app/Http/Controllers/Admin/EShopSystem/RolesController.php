@@ -22,8 +22,8 @@ class RolesController extends Controller
     public function index(Request $request)
     {
         $condition = new AdminRoleSearchCondition();
-        $data      = $this->roles->getListRole($condition);
-        dd($data);
+        $roles     = $this->roles->getListRole($condition);
+        return view('admin.eshopsystem.roles.index', compact('roles'));
     }
 
 }
