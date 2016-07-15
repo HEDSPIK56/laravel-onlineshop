@@ -28,7 +28,6 @@ class CategoryRequest extends Request
     {
         return [
             'name' => 'required|unique:categories|max:255',
-            'name' => array ('Regex:/^[A-Za-z0-9 ]+$/'),
             'standard_info' => 'required',
         ];
     }

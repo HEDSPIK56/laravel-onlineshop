@@ -15,3 +15,4 @@ var setupAdminCommon = {
         this.setup();
     }
 };
+//# sourceMappingURL=admin.common.js.map

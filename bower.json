@@ -1,0 +1,17 @@
+{
+  "name": "taihanh0310",
+  "description": "cuahangbachhoa247.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor/bower_dl",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.6",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}

@@ -46,15 +46,9 @@ class CategoriesController extends Controller
             $request = \Request::instance();
         }
         $category = new Category();
-        if ($category->create($request->all()))
-        {
-            return redirect()->route('admin.data.category.index');
-        } else
-        {
-            return redirect()->back()
-                            ->withErrors($category->getErrors())
-                            ->withInput();
-        }
+        $category->fill($request->all());
+        $category->save();
+        return redirect()->route('admin.data.category.index');
     }
 
     /**
@@ -65,7 +59,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+//
     }
 
     /**
@@ -76,7 +70,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+//
     }
 
     /**
@@ -88,7 +82,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//
     }
 
     /**
@@ -99,7 +93,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+//
     }
 
 }

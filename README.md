@@ -133,3 +133,4 @@ http://www.volkomenjuist.nl/blog/2013/10/20/laravel-4-and-nodejsredis-pubsub-rea
 http://www.kodeinfo.com/post/realtime-app-using-laravel-nodejs-angularjs-redis
 http://stackoverflow.com/questions/18396603/laravel-and-angularjs-form-validation
 https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages
+https://github.com/blueimp/jQuery-File-Upload/wiki
