@@ -5,7 +5,6 @@
     <div class="row">
         <div class="col-sm-12">
             @include('admin.partials.errors')
-            @include('admin.partials.success')
             <form method="POST" action="{{route('admin.data.category.store')}}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
@@ -56,7 +55,23 @@
                         <option value="N" @if ('N' == old('use_search')) selected="selected" @endif >Don't use search</option>
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label>View Type</label>
+                    <select class="form-control" name="view_type">
+                        <option value="Y" @if ('Y' == old('view_type')) selected="selected" @endif >Grid view</option>
+                        <option value="N" @if ('N' == old('view_type')) selected="selected" @endif >List view</option>
+                    </select>
+                </div>
                 <!--end use search -->
+                <div class="form-group">
+                    <label>Item per page</label>
+                    <input type="text" name="item_per_page" class="form-control" placeholder="Item per page (a/b/c)" value="{{ old('item_per_page')}}">
+                </div>
+                <div class="form-group">
+                    <label>Item per line</label>
+                    <input type="text" name="item_per_line" class="form-control" placeholder="Item per line (a/b/c)" value="{{ old('item_per_line')}}">
+                </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
         </div>

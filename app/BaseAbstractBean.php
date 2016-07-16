@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class BaseAbstractBean extends Model
+class BaseAbstractBean
 {
 
     public function setAttributes($data)
@@ -22,19 +21,9 @@ class BaseAbstractBean extends Model
         {
             if (property_exists($this, $key))
             {
-                $this->setAttribute($key, $value);
+                $this->$key = $value;
             }
         }
-    }
-
-    public function getAttributes()
-    {
-        return parent::getAttributes();
-    }
-
-    public function getClassName()
-    {
-        return get_class();
     }
 
 }

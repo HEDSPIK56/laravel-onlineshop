@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Role;
 use App\Repository\AdminRoleRepository;
 use App\Condition\AdminRoleSearchCondition;
+use App\Http\Requests\Admin\System\RoleRequest;
 
 class RolesController extends Controller
 {
@@ -22,8 +23,9 @@ class RolesController extends Controller
     public function index(Request $request)
     {
         $condition = new AdminRoleSearchCondition();
+        $condition->setAttributes($request->all());
         $roles     = $this->roles->getListRole($condition);
-        return view('admin.eshopsystem.roles.index', compact('roles'));
+        return view('admin.eshopsystem.roles.index', compact('roles', 'condition'));
     }
 
     public function create()
@@ -31,9 +33,19 @@ class RolesController extends Controller
         return view('admin.eshopsystem.roles.create');
     }
 
-    public function store(Request $request)
+    public function store(RoleRequest $request)
     {
-        return redirect()->back();
+        if (is_null($request))
+        {
+            $request = \Request::instance();
+        }
+        $result = $this->roles->createRole($request->all());
+        if ($result)
+        {
+            //success
+            return redirect()->route('admin.system.role.index');
+        }
+        return redirect()->back()->withErrors(['errors' => 'Cannot save role']);
     }
 
 }

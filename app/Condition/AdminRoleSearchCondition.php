@@ -43,9 +43,14 @@ class AdminRoleSearchCondition extends BaseAbstractBean
     {
         if (!$this->limit)
         {
-            return 1;
+            return 15;
         }
         return (int) $this->limit;
+    }
+
+    public function getKeyWord()
+    {
+        return $this->keyword;
     }
 
 }

@@ -26,7 +26,7 @@ class AdminRoleRepository
      */
     public function getListRole($condition)
     {
-        return Role::orderBy('created_at', $condition->getSortType())->paginate($condition->getLimit());
+        return Role::like($condition)->orderBy('created_at', $condition->getSortType())->paginate($condition->getLimit());
     }
 
     public function createRole($data = array())

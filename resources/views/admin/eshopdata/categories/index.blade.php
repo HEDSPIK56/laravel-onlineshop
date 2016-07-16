@@ -7,7 +7,7 @@
             <a href="{{route('admin.data.category.create')}}" class="btn btn-primary btn-block">Add new category</a>
         </div>
         <div class="col-sm-8 text-right">
-            <form class="form-inline">
+            <form class="form-inline" action="admin.data.category.index">
                 <div class="form-group">
                     <input type="text" name="search-category" id="search_category" class="form-control" placeholder="search category"/>
                 </div>
@@ -21,7 +21,7 @@
                         <option value="160">120</option>
                     </select>
                 </div>
-                <button class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">Search</button>
             </form>
         </div>
     </div>

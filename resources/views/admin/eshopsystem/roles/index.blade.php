@@ -7,9 +7,9 @@
             <a href="{{route('admin.system.role.create')}}" class="btn btn-primary btn-block">Add new role</a>
         </div>
         <div class="col-sm-8 text-right">
-            <form class="form-inline">
+            <form class="form-inline" action="{{route('admin.system.role.index')}}" method="get">
                 <div class="form-group">
-                    <input type="text" name="search-category" id="search_category" class="form-control" placeholder="search category"/>
+                    <input type="text" name="keyword" id="keyword" class="form-control" placeholder="search role name" value="{{ $condition->getKeyWord() }}"/>
                 </div>
                 <div class="form-group">
                     <label>Show</label>
@@ -21,7 +21,7 @@
                         <option value="160">120</option>
                     </select>
                 </div>
-                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-primary" type="submit">Search</button>
             </form>
         </div>
     </div>
