@@ -19,40 +19,40 @@
             <div class="col-md-3 footer-grid animated wow slideInLeft animated" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: slideInLeft;">
                 <h3>Flickr Posts</h3>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/13.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/14.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/16.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/17.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/18.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/14.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/14.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/14.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/14.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/14.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/14.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive"></a>
+                    <a href="single.html"><img src="{{ URL::asset('images/14.jpg') }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -60,7 +60,7 @@
                 <h3>Blog Posts</h3>
                 <div class="footer-grid-sub-grids">
                     <div class="footer-grid-sub-grid-left">
-                        <a href="single.html"><img src="images/9.jpg" alt=" " class="img-responsive"></a>
+                        <a href="single.html"><img src="{{ URL::asset('images/9.jpg') }}" alt=" " class="img-responsive"></a>
                     </div>
                     <div class="footer-grid-sub-grid-right">
                         <h4><a href="single.html">culpa qui officia deserunt</a></h4>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="footer-grid-sub-grids">
                     <div class="footer-grid-sub-grid-left">
-                        <a href="single.html"><img src="images/10.jpg" alt=" " class="img-responsive"></a>
+                        <a href="single.html"><img src="{{ URL::asset('images/10.jpg') }}" alt=" " class="img-responsive"></a>
                     </div>
                     <div class="footer-grid-sub-grid-right">
                         <h4><a href="single.html">Quis autem vel eum iure</a></h4>

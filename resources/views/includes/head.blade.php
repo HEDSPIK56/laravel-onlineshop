@@ -13,8 +13,8 @@
     <!--<meta http-equiv="refresh" content="1800;URL=/xo-so">-->
     <meta property="og:title" content="Cua hang bach hoa 247"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="http://cuahangbachhoa247.com/public"/>
-    <meta property="og:image" content="http://cuahangbachhoa247.com/public"/>
+    <meta property="og:url" content="http://cuahangbachhoa247.com"/>
+    <meta property="og:image" content="http://cuahangbachhoa247.com"/>
     <meta property="og:image:width" content="200"/>
     <meta property="og:image:height" content="200"/>
     <meta property="og:site_name" content="cuahangbachhoa247.com"/>
@@ -23,7 +23,7 @@
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
         function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- //for-mobile-apps -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{{URL::asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" media="all">
 
@@ -35,7 +35,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <!-- //js -->
     <!-- cart -->
-    <script src="js/simpleCart.min.js"></script>
+    <script src="{{ URL::asset('js/simpleCart.min.js') }}"></script>
     <!-- cart -->
     <!-- for bootstrap working -->
     <!-- Latest compiled and minified JavaScript -->
@@ -43,12 +43,12 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
     <!-- timer -->
-    <link rel="stylesheet" href="css/jquery.countdown.css">
+    <link rel="stylesheet" href="{{ URL::asset('css/jquery.countdown.css') }}">
     <!-- //timer -->
     <!-- animation-effect -->
-    <link href="css/animate.min.css" rel="stylesheet"> 
-    <link href="css/bootstrap-social.css" rel="stylesheet" type="text/css"/>
-    <script src="js/wow.min.js"></script>
+    <link href="{{ URL::asset('css/animate.min.css') }}" rel="stylesheet"> 
+    <link href="{{ URL::asset('css/bootstrap-social.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="{{ URL::asset('js/wow.min.js') }}"></script>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>
         new WOW().init();

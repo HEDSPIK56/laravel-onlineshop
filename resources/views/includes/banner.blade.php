@@ -28,8 +28,8 @@
                     </article>
                 </div>
                 <ul class="wmuSliderPagination"><li><a href="#" class="">0</a></li><li><a href="#" class="">1</a></li><li><a href="#" class="wmuActive">2</a></li></ul></div>
-            <script src="js/jquery.wmuSlider.js"></script> 
-            <script>
+                <script src="{{URL::asset('js/jquery.wmuSlider.js')}}"></script> 
+                <script>
                 $('.example1').wmuSlider();
             </script> 
         </div>

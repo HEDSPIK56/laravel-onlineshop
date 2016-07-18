@@ -137,8 +137,8 @@
                     </div>
                 </div>
                 <!-- search-scripts -->
-                <script src="js/classie.js"></script>
-                <script src="js/uisearch.js"></script>
+                <script src="{{URL::asset('js/classie.js')}}"></script>
+                <script src="{{URL::asset('js/uisearch.js')}}"></script>
                 <script>
 new UISearch(document.getElementById('sb-search'));
                 </script>
@@ -149,7 +149,7 @@ new UISearch(document.getElementById('sb-search'));
                     <a href="#">
                         <h3> <div class="total">
                                 <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)</div>
-                            <img src="images/bag.png" alt="">
+                                <img src="{{URL::asset('images/bag.png')}}" alt="">
                         </h3>
                     </a>
                     <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>

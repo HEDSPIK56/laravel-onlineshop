@@ -4,7 +4,7 @@
             <div class="banner-bottom-grid-left animated wow slideInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInLeft;">
                 <div class="grid">
                     <figure class="effect-julia">
-                        <img src="images/4.jpg" alt=" " class="img-responsive">
+                        <img src="{{ URL::asset('images/4.jpg') }}" alt=" " class="img-responsive">
                         <figcaption>
                             <h3>Best <span>Store</span><i> in online shopping</i></h3>
                             <div>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="banner-bottom-grid-left-grid left1-grid grid-left-grid1">
                     <div class="banner-bottom-grid-left-grid1">
-                        <img src="images/2.jpg" alt=" " class="img-responsive">
+                        <img src="{{ URL::asset('images/2.jpg') }}" alt=" " class="img-responsive">
                     </div>
                     <div class="banner-bottom-grid-left1-position">
                         <div class="banner-bottom-grid-left1-pos1">
@@ -39,7 +39,7 @@
             <div class="banner-bottom-grid-right animated wow slideInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInRight;">
                 <div class="banner-bottom-grid-left-grid grid-left-grid1">
                     <div class="banner-bottom-grid-left-grid1">
-                        <img src="images/3.jpg" alt=" " class="img-responsive">
+                        <img src="{{ URL::asset('images/3.jpg') }}" alt=" " class="img-responsive">
                     </div>
                     <div class="grid-left-grid1-pos">
                         <p>top and classic designs <span>2016 Collection</span></p>

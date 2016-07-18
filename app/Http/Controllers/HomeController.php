@@ -46,13 +46,22 @@ class HomeController extends Controller
 
     public function read(Request $request)
     {
-        $searchDate = $request->get('search_date', date('d-m-Y'));
-        $url = "http://ketqua.net/xo-so-mien-nam.php?ngay=" . $searchDate . "";
-        $scraper = new Scraper();
+        $searchDate      = $request->get('search_date', date('d-m-Y'));
+        $url             = "http://ketqua.net/xo-so-mien-nam.php?ngay=" . $searchDate . "";
+        $scraper         = new Scraper();
         $pageHtmlContent = $scraper->curl($url);
-        $subHtmlContent =  $scraper->getValueByTagName($pageHtmlContent, '<div class="kqbackground vien">', '</div>');
-        $data = trim($subHtmlContent);
-        return view('pages.home.read', compact('data'));
+        $subHtmlContent  = $scraper->getValueByTagName($pageHtmlContent, '<table class="table table-condensed table-bordered table-kq-hover kqcenter kqbackground table-kq-bold-border" style="text-align:center;" id="region_table">', '</table>');
+        $data            = trim($subHtmlContent); //htmlentities(trim($subHtmlContent));
+        if ($request->ajax())
+        {
+            echo $data;
+            die;
+        }
+        else
+        {
+            return view("pages.home.read")->with('data');
+            ;
+        }
     }
 
 }
