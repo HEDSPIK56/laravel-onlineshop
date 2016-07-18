@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\LoaiSanPham;
 use App\SanPham;
+use App\Services\Scraper;
 
 class HomeController extends Controller
 {
@@ -37,21 +38,21 @@ class HomeController extends Controller
         //die;
         return view('pages.home.index');
     }
+
     public function create()
     {
-       return view("pages.home.create");
+        return view("pages.home.create");
     }
 
     public function read(Request $request)
     {
         $searchDate = $request->get('search_date', date('d-m-Y'));
-        $url        = "http://ketqua.net/xo-so-mien-nam.php?ngay=" . $searchDate . "";
-        $ch         = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $output   = curl_exec($ch);
-        curl_close($ch);
-        return $output;
-        //return view('pages.home.read', ['data' => (string) $output]);
+        $url = "http://ketqua.net/xo-so-mien-nam.php?ngay=" . $searchDate . "";
+        $scraper = new Scraper();
+        $pageHtmlContent = $scraper->curl($url);
+        $subHtmlContent =  $scraper->getValueByTagName($pageHtmlContent, '<div class="kqbackground vien">', '</div>');
+        $data = trim($subHtmlContent);
+        return view('pages.home.read', compact('data'));
     }
 
 }

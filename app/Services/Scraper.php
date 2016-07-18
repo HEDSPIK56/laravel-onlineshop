@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace app\Helper;
+namespace App\Services;
 
 /**
  * Description of scraper

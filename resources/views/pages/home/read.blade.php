@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <div id="kq_content">
                         <div id="kq_result">
-                            {{data}}
+                            {{ $data}}
                         </div>
                     </div>
                 </div>
