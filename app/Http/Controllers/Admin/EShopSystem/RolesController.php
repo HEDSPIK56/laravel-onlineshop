@@ -14,6 +14,8 @@ class RolesController extends Controller
 {
 
     protected $roles;
+    private $role;
+    private $permission;
 
     public function __construct(AdminRoleRepository $roles)
     {

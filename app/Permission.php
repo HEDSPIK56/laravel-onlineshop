@@ -24,4 +24,14 @@ class Permission extends EntrustPermission
     /**
      * End Query scope
      */
+    public function hasRole($roleName)
+    {
+        foreach ($this->roles as $role) {
+            if ($role->name == $roleName)
+            {
+                return true;
+            }
+        }
+    }
+
 }
