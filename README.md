@@ -45,6 +45,77 @@ Giảm tối thiểu thời gian quản lý, báo cáo rõ ràng nhanh chóng m�
 - Phần mềm bán hàng đảm bảo chỉ nhưng người có quyền mới thực hiện được các chức năng tương ứng trong hệ thống.
 - 
 
+# Hướng dẫn sự dụng git command
+- What ?
+
+- Why ?
+- How ?
+
++ Cai dat git tren windows ()
+        - https://www.sourcetreeapp.com/download/ (GUI)
+        - https://git-scm.com/download/win (Command line)
++ Linux
+
++ Tao moi mot repository
+        - Create new directory, open it and perform a [git init] to create a new git repository.
+
++ checkout a repository
+        - create a working copy of local repository and running the command [git clone https://taihanh0310@bitbucket.org/stoneitteam/henbacsi.git]
+
++ Workflow
+        - Refer: https://www.atlassian.com/git/tutorials/comparing-workflows/
+
++ add & commit
+        - show current branch
+                * [git branch]
+        - show file changes
+                * [git status]
+        - add all file
+                * [git add * ]
+        - add file
+                * [git add <file name>]
+        - commit: 
+                * [git commit -m "commit message"]
+                * The file is commited to the HEAD, but NOT in your REMOTE repository.			
+
++ pushing chanes
+        - show current branch
+                * [git branch]
+        - Send source to remote
+                * [git push origin <branch name>]
+
++ branching
+        - The 'master' branch is the 'default' branch when create a repository. Use other branches for development and merge them back to the master branch upon completion.
+        - create new branch
+                * [git branch <branch name>]
+        - create new branch named "task#x" and switch to it using
+                * [git checkout -b task#]
+        - switch back to master
+                * [git checkout master]
+        - delete the branch again
+                * [git branch -d task#x]
+
++ update & merge
+        - to update your local repository to the newest commit, execute 
+                * [git pull <branch name>]
+        - in your working directory to fetch and merge remote changes.to merge another branch into your active branch (e.g. master), use
+                * [git megre <branch name>]
+        - Unfortunately, this is not always possible and results in conflicts. You are responsible to merge those conflicts manually by editing the files shown by git. After changing, you need to mark them as merged with
+                * [git add <file name>]
+        - before merging changes, preview them by using
+                * [git diff <source_branch> <target_branch>]
++ log
+        - see only the commits of a certain author:
+                * [git log --author=taihanh0310 ]
+        - se only which files have changed
+                * [git log --name-status]	
+			
++ Ví dụ: 
+- Kiểm tra brand hiện tại: git brand
+- Chuyển sang brand khác: git checkout brandname
+- Kiểm tra tình trạng file: git status
+- Push file lên host: git status, git add --a, git commit -m "comment", git pull origin "brandname", git push origin "brandname"
+
 # send email
 http://blog.damirmiladinov.com/laravel/laravel-5.2-email-verification-with-activation-code.html#.V2yOlPmLTcs
 # login fb
