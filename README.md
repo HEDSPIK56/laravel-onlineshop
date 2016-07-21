@@ -12,12 +12,38 @@
 - Nhấn vào login: đăng nhập: taihanh0310/1234qwer để đăng nhập với quyền hạn cao nhất.
  
 # Tài liệu
+- Khái hiệm đa hình: (http://freetuts.net/tinh-da-hinh-trong-lap-trinh-huong-doi-tuong-php-34.html)
+- Khái niệm abstract: (http://freetuts.net/lop-truu-tuong-abstract-trong-php-oop-37.html)
 - Mô hình MVC (http://freetuts.net/mvc-php-mo-hinh-mvc-la-gi-354.html)
 - Đọc Eloquent ORM (https://laravel.com/docs/5.2/eloquent)
 - Route (https://laravel.com/docs/5.2/routing)
 - Controller (https://laravel.com/docs/5.2/controllers)
 - Request (https://laravel.com/docs/5.2/requests)
 - View (https://laravel.com/docs/5.2/views)
+
+# Mục đích và phạm vi của dự án
+<pre>
+Hiện nay công nghệ thông tin ngày càng phát triển và cho thấy việc ứng dụng công nghệ thông tin trong công tác quản lý thông tin của doanh nghiệp đặc biệt là thông tin khách hàng, bán hàng. Nếu trang có đầy đủ thông tin sẽ đưa ra được nhưng chính sách kinh doanh, khuyến mãi hợp lý để thu hút khách hàng: thẻ thành viên, quà tặng, tích lũy điểm (loyalty), …
+</pre>
+<pre>
+Tiết kiệm tối đa sức lao động của con người, không còn cảm thấy số lượng công việc quá lớn đè lên đôi vai.
+</pre>
+<pre>
+Giảm tối thiểu thời gian quản lý, báo cáo rõ ràng nhanh chóng mọi lúc.
+</pre>
+
+- Trang quản trị: 
+- Quản lý thẻ thành viên khách hàng và các chương trình khuyến mãi: giảm giá, tích lũy điểm,…
+- Quản lý các nhiều loại chính sách khuyến mãi trên mặt hàng
+- Phân tích doanh số bán hàng theo từng ngày, từng giờ
+- Phân tích doanh số, lợi nhận theo thời gian, mặt hàng
+- Quản lý các thông tin liên quan đến mặt hàng.
+- In mã vạch (barcode) của mặt hàng theo tiêu chuẩn quốc tế, Việt Nam
+- Báo cáo dự báo các mặt hàng không đủ tồn kho.
+- Quản lý thông tin nhập hàng, trả hàng, bán sĩ, bán lẻ, nhập hàng trả lại, hàng hư, hàng bị mất, tồn kho.
+- Phần mềm bán hàng hỗ trợ phân quyền người dùng theo nhóm chức năng. 
+- Phần mềm bán hàng đảm bảo chỉ nhưng người có quyền mới thực hiện được các chức năng tương ứng trong hệ thống.
+- 
 
 # send email
 http://blog.damirmiladinov.com/laravel/laravel-5.2-email-verification-with-activation-code.html#.V2yOlPmLTcs
