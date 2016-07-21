@@ -50,4 +50,10 @@ class RolesController extends Controller
         return redirect()->back()->withErrors(['errors' => 'Cannot save role']);
     }
 
+    public function show($id)
+    {
+        $result = $this->roles->readRole($id);
+        dd($result->perms());
+    }
+
 }

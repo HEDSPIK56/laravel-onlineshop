@@ -43,7 +43,7 @@
                         @foreach($roles as $role)
                         <tr>
                             <td>STT</td>
-                            <td>{{ $role->name }}</td>
+                            <td><a href="{{route('admin.system.role.show', ['id' => $role->id])}}">{{ $role->name }}</a></td>
                             <td>{{ $role->display_name }}</td>
                             <td>{{ $role->description }}</td>
                             <td>
