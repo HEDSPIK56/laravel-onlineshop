@@ -13,7 +13,9 @@
         "guzzlehttp/guzzle": "~5.3|~6.0",
         "zizaco/entrust": "5.2.x-dev",
         "dflydev/apache-mime-types": "^1.0",
-        "gloudemans/shoppingcart": "^2.1"
+        "gloudemans/shoppingcart": "^2.1",
+        "maddhatter/laravel-fullcalendar": "~1.0",
+        "maatwebsite/excel": "~2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

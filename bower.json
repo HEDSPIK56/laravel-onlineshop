@@ -1,6 +1,9 @@
 {
-  "name": "taihanh0310",
+  "name": "cuahangbachhoa247",
   "description": "cuahangbachhoa247.com",
+  "authors": [
+    "Hanh Nguyen Tai <taihanh0310@gmail.com>"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
@@ -12,6 +15,7 @@
     "jquery": "^3.1.0",
     "bootstrap": "^3.3.6",
     "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "fullcalendar": "~2.5.0",
     "font-awesome": "fontawesome#^4.6.3"
   }
 }
