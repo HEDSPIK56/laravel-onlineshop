@@ -1,4 +1,3 @@
-# laravel-onlineshop
 # Hướng dẫn cài đặt
 - Cài đặt xampp
 - Cài đặt Composer (https://getcomposer.org/download/)
@@ -11,7 +10,7 @@
 - Gõ: php artisan db:seed
 - Mở browser gõ: localhost/laravel-onlineshop/public ko thấy lỗi là thành công
 - Nhấn vào login: đăng nhập: taihanh0310/1234qwer để đăng nhập với quyền hạn cao nhất.
-- 
+ 
 # Tài liệu
 - Mô hình MVC (http://freetuts.net/mvc-php-mo-hinh-mvc-la-gi-354.html)
 - Đọc Eloquent ORM (https://laravel.com/docs/5.2/eloquent)
@@ -19,6 +18,7 @@
 - Controller (https://laravel.com/docs/5.2/controllers)
 - Request (https://laravel.com/docs/5.2/requests)
 - View (https://laravel.com/docs/5.2/views)
+
 # send email
 http://blog.damirmiladinov.com/laravel/laravel-5.2-email-verification-with-activation-code.html#.V2yOlPmLTcs
 # login fb
