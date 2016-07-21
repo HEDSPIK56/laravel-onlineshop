@@ -53,7 +53,7 @@ class RolesController extends Controller
     public function show($id)
     {
         $result = $this->roles->readRole($id);
-        dd($result->perms());
+        dd($result->perms()->lists('id'));
     }
 
 }
