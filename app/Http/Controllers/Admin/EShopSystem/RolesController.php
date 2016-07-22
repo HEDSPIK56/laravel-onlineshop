@@ -9,17 +9,17 @@ use App\Role;
 use App\Repository\AdminRoleRepository;
 use App\Condition\AdminRoleSearchCondition;
 use App\Http\Requests\Admin\System\RoleRequest;
-
+use App\Repository\AdminPermissionRepository;
 class RolesController extends Controller
 {
 
     protected $roles;
-    private $role;
     private $permission;
 
-    public function __construct(AdminRoleRepository $roles)
+    public function __construct(AdminRoleRepository $roles, AdminPermissionRepository $permission)
     {
         $this->roles = $roles;
+        $this->permission = $permission;
     }
 
     public function index(Request $request)
@@ -52,8 +52,11 @@ class RolesController extends Controller
 
     public function show($id)
     {
-        $result = $this->roles->readRole($id);
-        dd($result->perms()->lists('id'));
+        $role = $this->roles->readRole($id);
+        $roles_permisson = $role->perms();
+        $permissions = $this->permission->getListPermission();
+        $checked = [1,2,3];
+        return view('admin.eshopsystem.roles.show', compact('role', 'roles_permisson','permissions','checked'));
     }
 
 }
