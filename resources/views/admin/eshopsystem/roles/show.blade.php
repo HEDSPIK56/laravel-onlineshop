@@ -1,8 +1,20 @@
-<?php
+@extends('layouts.admin')
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="form-group">
+            <label for="">Permissions</label>
+            @foreach($permissions as $permission)
+                
+                ?>
+                    <div class="checkbox">
+                        <label>
+                            {!! Form::checkbox('perms[]', $permission->id, $checked) !!} {{ $permission->display_name }}
+                        </label>
+                    </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+@endsection
