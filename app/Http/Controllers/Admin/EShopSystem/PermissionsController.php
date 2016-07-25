@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Repository\AdminPermissionRepository;
+use App\Repository\AdminRoleRepository;
 
 class PermissionsController extends Controller
 {
     private $role;
     private $permission;
 
-    public function __construct(Permission $permission, Role $role)
+    public function __construct(AdminPermissionRepository $permission, AdminRoleRepository $role)
     {
         $this->permission = $permission;
         $this->role       = $role;

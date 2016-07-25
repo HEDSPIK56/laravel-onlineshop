@@ -24,9 +24,12 @@ class AdminRoleRepository
      * @param AdminRoleSearchCondition $condition
      * @return string
      */
-    public function getListRole($condition)
+    public function getListRole($condition = null)
     {
-        return Role::like($condition)->orderBy('created_at', $condition->getSortType())->paginate($condition->getLimit());
+        if(!$condition){
+            return Role::like($condition)->orderBy('created_at', $condition->getSortType())->paginate($condition->getLimit());
+        }
+        return Role::all();
     }
     
     /**

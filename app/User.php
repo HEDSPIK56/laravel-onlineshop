@@ -7,6 +7,7 @@ use App\Task;
 use App\ExampleComment;
 use App\ExamplePost;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+use App\Profile;
 
 class User extends Authenticatable
 {
@@ -75,6 +76,11 @@ class User extends Authenticatable
 //        }
 //        return false;
         return true;
+    }
+    
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
     }
 
 }

@@ -6,11 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Repository\AdminUserRepository;
+use App\Repository\AdminRoleRepository;
 
 class UsersController extends Controller
 {
 
-    public function __construct(User $user, Role $role)
+    protected $userRes;
+    protected $roleRes;
+    
+    public function __construct(AdminUserRepository $user, AdminRoleRepository $role)
     {
         $this->user = $user;
         $this->role = $role;
@@ -34,7 +39,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $roles = $this->role->all();
+        $roles = $this->roleRes->getListRole();
+        dd($roles);
         return view('users.create', compact('roles'));
     }
 
