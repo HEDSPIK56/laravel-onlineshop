@@ -28,6 +28,20 @@ class AdminRoleRepository
     {
         return Role::like($condition)->orderBy('created_at', $condition->getSortType())->paginate($condition->getLimit());
     }
+    
+    /**
+     * @todo Get list ids permisson is apply with role
+     * @author NTHanh
+     * @param type $roleId
+     */
+    public function getIdsRolePermisson($roleId)
+    {
+        $role = $this->readRole($roleId);
+        if($role){
+            return $role->lists('id')->toArray();
+        }
+        return array();
+    }
 
     public function createRole($data = array())
     {

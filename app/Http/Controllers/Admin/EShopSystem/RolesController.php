@@ -53,8 +53,8 @@ class RolesController extends Controller
     public function show($id)
     {
         $role = $this->roles->readRole($id);
-        $roles_permisson = $role->perms();
-        $ids = $role->perms()->lists('id')->toArray();
+        $roles_permisson = "";//$role->perms();
+        $ids = $this->roles->getIdsRolePermisson($id);
         $permissions = $this->permission->getListPermission();
         return view('admin.eshopsystem.roles.show', compact('role', 'roles_permisson','permissions','ids'));
     }
