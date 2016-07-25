@@ -17,8 +17,8 @@ class UsersController extends Controller
     
     public function __construct(AdminUserRepository $user, AdminRoleRepository $role)
     {
-        $this->user = $user;
-        $this->role = $role;
+        $this->userRes = $user;
+        $this->roleRes = $role;
     }
 
     /**
@@ -26,6 +26,7 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //http://demo.laraship.com/admin/users
     public function index()
     {
         $users = $this->user->pushCriteria(new UsersWithRoles())->paginate(10);
@@ -39,7 +40,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $roles = $this->roleRes->getListRole();
+        $roles = $this->roleRes->getListRoleNoCondition();
         dd($roles);
         return view('users.create', compact('roles'));
     }
