@@ -36,6 +36,7 @@
                             <th>Name</th>
                             <th>Display name</th>
                             <th>Description</th>
+                            <th>Level</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -46,10 +47,12 @@
                             <td><a href="{{route('admin.system.role.show', ['id' => $role->id])}}">{{ $role->name }}</a></td>
                             <td>{{ $role->display_name }}</td>
                             <td>{{ $role->description }}</td>
+                            <td>{{ $role->level }}</td>
                             <td>
-                                <button class="btn btn-default">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
-                                <button class="btn btn-primary">Copy</button>
+                                <a class="btn btn-primary" href="{{ URL::route('admin.system.role.edit', $role->id) }}">Edit</a>
+                                {!! Form::open(['route' => ['admin.system.role.destroy', $role->id], 'method' => 'DELETE']) !!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?");']) !!}
+                                {!!  Form::close() !!}
                             </td>
                         </tr>
                         @endforeach

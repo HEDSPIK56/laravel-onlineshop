@@ -54,9 +54,9 @@ class RolesController extends Controller
     {
         $role = $this->roles->readRole($id);
         $roles_permisson = $role->perms();
+        $ids = $role->perms()->lists('id')->toArray();
         $permissions = $this->permission->getListPermission();
-        $checked = [1,2,3];
-        return view('admin.eshopsystem.roles.show', compact('role', 'roles_permisson','permissions','checked'));
+        return view('admin.eshopsystem.roles.show', compact('role', 'roles_permisson','permissions','ids'));
     }
 
 }
