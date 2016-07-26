@@ -15,5 +15,13 @@ namespace App\Repository;
  */
 class AdminUserRepository
 {
-    //put your code here
+    public function getListUser($condition)
+    {
+        
+    }
+    
+    public function createUser($data)
+    {
+        
+    }
 }

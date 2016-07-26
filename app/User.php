@@ -82,5 +82,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
-
+    
+    public function getAvatar()
+    {
+        $imgUrl = asset('images/user/1/admin.png');
+        return $imgUrl;
+    }
 }

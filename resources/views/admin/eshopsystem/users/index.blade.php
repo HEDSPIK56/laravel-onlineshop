@@ -1,35 +1,40 @@
 @extends('app')
 
 @section('content')
-
-    <table class="table">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th colspan="2"><a href="{{ URL::route('users.create') }}" class="btn btn-primary btn-block">Create</a></th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($users as $user)
-            <tr>
-                <td>{{ $user->id }}</td>
-                <td>{{ $user->email }}</td>
-                <td>
-                    @foreach($user->roles as $role)
-                        <span class="label label-info">{{ $role->name }}</span>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Created at</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($users as $user)
+                    <tr>
+                        <td>
+                            <img src="{{ $user->getAvatar() }}" class="img-thumbnail">
+                        </td>
+                        <td>
+                            {{ $user->name }}
+                        </td>
+                        <td>
+                            {{ $user->email }}
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                     @endforeach
-                </td>
-                <td width="80"><a class="btn btn-primary" href="{{ URL::route('users.edit', $user->id) }}">Edit</a></td>
-                <td width="80">{!! Form::open(['route' => ['users.update', $user->id], 'method' => 'DELETE']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?");']) !!}
-                    {!!  Form::close() !!}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-
-    {!! $users->render() !!}
-
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 @stop
