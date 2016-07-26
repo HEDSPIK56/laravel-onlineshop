@@ -85,7 +85,7 @@ class User extends Authenticatable
     
     public function getAvatar()
     {
-        $imgUrl = asset('images/user/1/admin.png');
+        $imgUrl = asset('/images/users/1/admin.png');
         return $imgUrl;
     }
 }

@@ -1,9 +1,10 @@
-@extends('app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
+            <a class="btn btn-primary" href="{{ route('admin.system.user.create')}}">Add user</a>
             <table class="table table-responsive">
                 <thead>
                     <tr>
@@ -27,7 +28,11 @@
                         <td>
                             {{ $user->email }}
                         </td>
-                        <td></td>
+                        <td>
+                            @foreach($user->roles as $role)
+                                {{ $role->display_name }}
+                            @endforeach
+                        </td>
                         <td></td>
                         <td></td>
                     </tr>

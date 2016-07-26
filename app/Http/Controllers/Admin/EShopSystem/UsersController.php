@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Repository\AdminUserRepository;
 use App\Repository\AdminRoleRepository;
+use App\Http\Requests\Admin\System\CreateUserRequest;
 
 class UsersController extends Controller
 {
@@ -29,8 +30,8 @@ class UsersController extends Controller
     //http://demo.laraship.com/admin/users
     public function index()
     {
-        $users = $this->user->pushCriteria(new UsersWithRoles())->paginate(10);
-        return view('users.index', compact('users'));
+        $users = $this->userRes->getListUser();
+        return view('admin.eshopsystem.users.index', compact('users'));
     }
 
     /**
@@ -41,8 +42,7 @@ class UsersController extends Controller
     public function create()
     {
         $roles = $this->roleRes->getListRoleNoCondition();
-        dd($roles);
-        return view('users.create', compact('roles'));
+        return view('admin.eshopsystem.users.create', compact('roles'));
     }
 
     /**
@@ -53,6 +53,7 @@ class UsersController extends Controller
      */
     public function store(CreateUserRequest $request)
     {
+        dd($request->all());
         $user = $this->user->create($request->all());
 
         if ($request->get('role'))

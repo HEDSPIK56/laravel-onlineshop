@@ -7,7 +7,7 @@
  */
 
 namespace App\Repository;
-
+use App\User;
 /**
  * Description of AdminUserRepository
  *
@@ -15,9 +15,9 @@ namespace App\Repository;
  */
 class AdminUserRepository
 {
-    public function getListUser($condition)
+    public function getListUser($condition = null)
     {
-        
+        return User::all();
     }
     
     public function createUser($data)
