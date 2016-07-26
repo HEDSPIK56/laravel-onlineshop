@@ -148,6 +148,9 @@ http://www.tutorials.kode-blog.com/laravel-5-admin-panel
 http://laravelcoding.com/blog/laravel-5-beauty-using-bower?tag=L5+Beauty
 http://www.tutorials.kode-blog.com/laravel-5-admin-panel
 
+# payment
+https://github.com/anouarabdsslm/laravel-paypalpayment
+
 ## PHP Web Scraping Class
 
 1. A PHP web scraper class that utilizes the cURL library to scrape web page content. Scrape web pages using GET or POST methods. Also scrape web page content from asp.net based websites using form POST methods.
