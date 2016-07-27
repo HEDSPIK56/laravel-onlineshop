@@ -6,7 +6,7 @@
         <div class="col-sm-12">
             @include('admin.partials.errors')
             @include('admin.partials.success')
-            {!! Form::open(['route' => 'admin.system.user.store']) !!}
+            {!! Form::open(['route' => 'admin.system.user.store','files' => true]) !!}
 
             <fieldset>
                 <legend>Account Details</legend>

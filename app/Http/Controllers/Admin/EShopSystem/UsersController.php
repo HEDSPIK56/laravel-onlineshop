@@ -53,6 +53,7 @@ class UsersController extends Controller
      */
     public function store(CreateUserRequest $request)
     {
+           $this->userRes->processUploadAvatar($request,2);
         dd($request->all());
         $user = $this->user->create($request->all());
 

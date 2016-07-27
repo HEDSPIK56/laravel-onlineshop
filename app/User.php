@@ -18,6 +18,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -77,15 +78,33 @@ class User extends Authenticatable
 //        return false;
         return true;
     }
-    
+
     public function profile()
     {
         return $this->hasOne(Profile::class);
     }
-    
+
+    public function getAvatarName()
+    {
+        return $this->getAttribute('avatar');
+    }
+
+    /**
+     * @todo Create url get avatar image
+     * @return type
+     */
     public function getAvatar()
     {
-        $imgUrl = asset('/images/users/1/admin.png');
+        $imgUrl = "";
+        if(empty($this->getAvatarName()))
+        {
+            $imgUrl = asset('/images/users/1/admin.png');
+        }
+        else
+        {
+            $imgUrl = asset('/images/users/' . $this->id . '/' . $this->getAvatarName() . '');
+        }
         return $imgUrl;
     }
+
 }
