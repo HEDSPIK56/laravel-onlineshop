@@ -53,22 +53,11 @@ class UsersController extends Controller
      */
     public function store(CreateUserRequest $request)
     {
-           $this->userRes->processUploadAvatar($request,2);
-        dd($request->all());
-        $user = $this->user->create($request->all());
-
-        if ($request->get('role'))
-        {
-            $user->roles()->sync($request->get('role'));
-        }
-        else
-        {
-            $user->roles()->sync([]);
-        }
-
+        $user = $this->userRes->createUser($request->all());
+        $this->userRes->processUploadAvatar($request,$user->id);
         Flash::success('User successfully created');
 
-        return redirect('/users');
+        return redirect()->route('admin.system.user.index');
     }
 
     /**

@@ -25,31 +25,47 @@ class AdminUserRepository
 
     public function createUser($data)
     {
-        
+        //unset avatar
+        unset($data['avatar']);
+        $user = new User();
+        $user->fill($data);
+        if($user->save())
+        {
+            if(!empty($data['role']))
+            {
+                $user->roles()->sync($data['role']);
+            }
+            else
+            {
+                $user->roles()->sync([]);
+            }
+            return $user;
+        }
+        return false;
     }
 
     public function processUploadAvatar($request, $id)
     {
         $file = $request->file('avatar');
-   
-      //Display File Name
-      echo 'File Name: '.$file->getClientOriginalName();
-      echo '<br>';
-   
-      //Display File Extension
-      echo 'File Extension: '.$file->getClientOriginalExtension();
-      echo '<br>';
-   
-      //Display File Real Path
-      echo 'File Real Path: '.$file->getRealPath();
-      echo '<br>';
-   
-      //Display File Size
-      echo 'File Size: '.$file->getSize();
-      echo '<br>';   
-      //Move Uploaded File
-      $destinationPath = 'images/users/'.$id.'';
-      $file->move($destinationPath,$file->getClientOriginalName());
+
+        //Display File Name
+        echo 'File Name: ' . $file->getClientOriginalName();
+        echo '<br>';
+
+        //Display File Extension
+        echo 'File Extension: ' . $file->getClientOriginalExtension();
+        echo '<br>';
+
+        //Display File Real Path
+        echo 'File Real Path: ' . $file->getRealPath();
+        echo '<br>';
+
+        //Display File Size
+        echo 'File Size: ' . $file->getSize();
+        echo '<br>';
+        //Move Uploaded File
+        $destinationPath = 'images/users/' . $id . '';
+        $file->move($destinationPath, $file->getClientOriginalName());
     }
 
 }
