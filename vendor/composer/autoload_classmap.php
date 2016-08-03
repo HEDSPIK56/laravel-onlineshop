@@ -51,6 +51,7 @@ return array(
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\Requests\\Admin\\Data\\CategoryRequest' => $baseDir . '/app/Http/Requests/Admin/Data/CategoryRequest.php',
+    'App\\Http\\Requests\\Admin\\System\\CreateUserRequest' => $baseDir . '/app/Http/Requests/Admin/System/CreateUserRequest.php',
     'App\\Http\\Requests\\Admin\\System\\RoleRequest' => $baseDir . '/app/Http/Requests/Admin/System/RoleRequest.php',
     'App\\Http\\Requests\\PostFormRequest' => $baseDir . '/app/Http/Requests/PostFormRequest.php',
     'App\\Http\\Requests\\Request' => $baseDir . '/app/Http/Requests/Request.php',

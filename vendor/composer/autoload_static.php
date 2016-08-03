@@ -430,6 +430,7 @@ class ComposerStaticInit5a7016322eb35b1f3000143c09a7c4f2
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\Admin\\Data\\CategoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/Data/CategoryRequest.php',
+        'App\\Http\\Requests\\Admin\\System\\CreateUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/System/CreateUserRequest.php',
         'App\\Http\\Requests\\Admin\\System\\RoleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/System/RoleRequest.php',
         'App\\Http\\Requests\\PostFormRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostFormRequest.php',
         'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
