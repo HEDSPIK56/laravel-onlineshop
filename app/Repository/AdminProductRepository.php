@@ -53,7 +53,7 @@ class AdminProductRepository
      */
     public function getListProduct($condition)
     {
-        return false;
+        return Product::all();
     }
 
     /**

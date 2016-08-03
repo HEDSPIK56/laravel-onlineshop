@@ -28,7 +28,9 @@ class ProductsController extends Controller
     {
         $condition = new AdminProductSearchCondition();
         $condition->setAttributes($request->all());
-        return view();
+        $products = $this->products->getListProduct($condition);
+        dd($products);
+        return view('admin.eshopdata.products.index', compact('products'));
     }
 
     /**
