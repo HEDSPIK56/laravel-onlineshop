@@ -98,7 +98,7 @@ Route::group(['middleware' => 'auth'], function ()
     /**
      * Admin section
      */
-    Route::group(['prefix' => 'admin'], function ()
+    Route::group(['prefix' => 'admin', 'middleware' => ['role:root|admin|manager']], function ()
     {
         //Dashboard Route
         Route::get('dashboard', function()
@@ -156,6 +156,7 @@ Route::group(['middleware' => 'auth'], function ()
 
         //End system
     });
+    
 });
 
 //Route::get('sendemail', function ()

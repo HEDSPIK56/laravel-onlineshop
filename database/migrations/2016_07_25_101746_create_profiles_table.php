@@ -18,6 +18,7 @@ class CreateProfilesTable extends Migration
             $table->string('phone_number');
             $table->string('address');
             $table->date('date_of_birth');
+            $table->enum('sex', ['M', 'F'])->default('M');
             $table->timestamps();
         });
     }
