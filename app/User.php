@@ -8,6 +8,7 @@ use App\ExampleComment;
 use App\ExamplePost;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 use App\Profile;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -20,7 +21,7 @@ class User extends Authenticatable
      */
 
     protected $fillable = [
-        'name', 'email', 'password','avatar'
+        'name', 'email', 'password', 'avatar'
     ];
 
     /**
@@ -105,6 +106,20 @@ class User extends Authenticatable
             $imgUrl = asset('/images/users/' . $this->id . '/' . $this->getAvatarName() . '');
         }
         return $imgUrl;
+    }
+
+    public function hasAvatar()
+    {
+        if(!is_null($this->getAttribute('avatar')))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function setPasswordAttribute($pass)
+    {
+        $this->attributes['password'] = Hash::make($pass);
     }
 
 }

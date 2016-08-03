@@ -9,6 +9,7 @@
 namespace App\Repository;
 
 use App\User;
+use Illuminate\Support\Facades\File;
 
 /**
  * Description of AdminUserRepository
@@ -34,7 +35,7 @@ class AdminUserRepository
         {
             if(!empty($data['role']))
             {
-                $user->roles()->sync((array)$data['role']);
+                $user->roles()->sync((array) $data['role']);
             }
             else
             {
@@ -44,10 +45,50 @@ class AdminUserRepository
         }
         return false;
     }
-    
+
+    /**
+     * @todo Send email after create user
+     * @param type $condition
+     * @return string
+     */
     public function sendEmail($condition)
     {
         return "send email";
+    }
+
+    public function readUserById($id)
+    {
+        return User::find($id);
+    }
+
+    /**
+     * - detete role
+     * - Delete user
+     * - delete avatar
+     * @param type $id
+     * @return boolean
+     */
+    public function deleteUser($id)
+    {
+        // read user
+        $user = $this->readUserById($id);
+
+        // has user
+        if($user)
+        {
+            // delete role relationship
+            $user->roles()->sync([]);
+
+            if($user->hasAvatar())
+            {
+                // delete image
+                $this->processDeleteAvatar($user);
+            }
+
+            // delete user
+            $user->delete();
+        }
+        return false;
     }
 
     public function processUploadAvatar($request, $id)
@@ -73,6 +114,11 @@ class AdminUserRepository
         $destinationPath = 'images/users/' . $id . '';
         $file->move($destinationPath, $file->getClientOriginalName());
         return $file->getClientOriginalName();
+    }
+
+    public function processDeleteAvatar($user)
+    {
+        return File::deleteDirectory('images/users/' . $user->id);
     }
 
 }

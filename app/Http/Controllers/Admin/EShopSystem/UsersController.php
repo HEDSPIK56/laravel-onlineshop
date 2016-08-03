@@ -128,10 +128,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $this->user->delete($id);
-
-        Flash::success('User successfully deleted');
-
-        return redirect('/users');
+        $this->userRes->deleteUser($id);
+        
+        return redirect()->route('admin.system.user.index');
     }
 }

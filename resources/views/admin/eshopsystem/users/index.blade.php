@@ -30,11 +30,15 @@
                         </td>
                         <td>
                             @foreach($user->roles as $role)
-                                {{ $role->display_name }}
+                            {{ $role->display_name }}
                             @endforeach
                         </td>
                         <td></td>
-                        <td></td>
+                        <td>
+                            {!! Form::open(['route' => ['admin.system.user.destroy', $user->id], 'method' => 'DELETE']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?");']) !!}
+                            {!!  Form::close() !!}
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
