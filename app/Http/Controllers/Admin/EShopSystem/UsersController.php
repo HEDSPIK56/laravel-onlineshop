@@ -54,8 +54,11 @@ class UsersController extends Controller
     public function store(CreateUserRequest $request)
     {
         $user = $this->userRes->createUser($request->all());
-        $this->userRes->processUploadAvatar($request,$user->id);
-        Flash::success('User successfully created');
+        if($request->file('avatar')){
+            $user->avatar = $this->userRes->processUploadAvatar($request,$user->id);
+            $user->save();
+        }
+        $request->session()->flash('status', 'User successfully created');
 
         return redirect()->route('admin.system.user.index');
     }
