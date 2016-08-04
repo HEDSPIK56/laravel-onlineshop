@@ -13,6 +13,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <input type="hidden" name="created_by" value="{{ $user->email }}">
+                            <input type="hidden" name="updated_by" value="{{ $user->email }}">
                             <label for="name" class="control-label col-md-3">Name *</label>
                             <div class="col-md-9">
                                 <div class="input-group">

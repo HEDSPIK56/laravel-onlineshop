@@ -42,7 +42,8 @@ class UsersController extends Controller
     public function create()
     {
         $roles = $this->roleRes->getListRoleNoCondition();
-        return view('admin.eshopsystem.users.create', compact('roles'));
+        $user = \Illuminate\Support\Facades\Auth::user();
+        return view('admin.eshopsystem.users.create', compact('roles','user'));
     }
 
     /**

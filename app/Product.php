@@ -46,5 +46,32 @@ class Product extends Model
     {
         $this->attributes['updated_by'] = Auth::user()->email;
     }
+    
+    public function getImages($size = null){
+        if($this->attributes['images']){
+            $images = $this->attributes['images'];
+            $id = $this->attributes['id'];
+            $path = "images/products/" . $id;
+            
+            $images = explode("|", $images);
+            $images = array_map(function ($image) use ($path)
+            {
+                return "$path/$image";
+            }, $images);
+            return array_filter($images);    
+        }
+        return array();
+    }
+    
+    public function getImage(){
+        $images = $this->getImages();
+        if(!empty($images))
+        {
+            return reset($images);
+        }
+        return 'http://vignette3.wikia.nocookie.net/galaxylife/images/7/7c/Noimage.png/revision/latest?cb=20120622041841';
+    }
+    
+    
 
 }

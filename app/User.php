@@ -17,16 +17,17 @@ class User extends Authenticatable
 {
 
     use EntrustUserTrait; // add this trait to your user model
-    
+
     protected $table = "users";
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-
     protected $fillable = [
-        'name', 'email', 'password', 'avatar'
+        'name', 'email', 'password', 'avatar', 'created_by',
+        'updated_by', 'deleted_by'
     ];
 
     /**
@@ -132,15 +133,15 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($pass);
     }
-    
+
     public function setCreatedByAttribute($email)
     {
-        $this->attributes['created_by'] = $this->attributes['email'];
+        $this->attributes['created_by'] = strtolower($email);
     }
-    
+
     public function setUpdatedByAttribute($email)
     {
-        $this->attributes['updated_by'] = $this->attributes['email'];
+        $this->attributes['updated_by'] = strtolower($email);
     }
 
 }
