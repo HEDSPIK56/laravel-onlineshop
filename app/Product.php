@@ -16,6 +16,7 @@ class Product extends Model
         'tags',
         'keywords',
         'price',
+        'name',
         'market_price',
         'status',
         'desciption',
@@ -34,36 +35,39 @@ class Product extends Model
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->hasOne(Category::class, 'id', 'category_id');
     }
-    
+
     public function setCreatedByAttribute($email)
     {
         $this->attributes['created_by'] = Auth::user()->email;
     }
-    
+
     public function setUpdatedByAttribute($email)
     {
         $this->attributes['updated_by'] = Auth::user()->email;
     }
-    
-    public function getImages($size = null){
-        if($this->attributes['images']){
+
+    public function getImages($size = null)
+    {
+        if($this->attributes['images'])
+        {
             $images = $this->attributes['images'];
             $id = $this->attributes['id'];
             $path = "images/products/" . $id;
-            
+
             $images = explode("|", $images);
             $images = array_map(function ($image) use ($path)
             {
                 return "$path/$image";
             }, $images);
-            return array_filter($images);    
+            return array_filter($images);
         }
         return array();
     }
-    
-    public function getImage(){
+
+    public function getImage()
+    {
         $images = $this->getImages();
         if(!empty($images))
         {
@@ -71,7 +75,5 @@ class Product extends Model
         }
         return 'http://vignette3.wikia.nocookie.net/galaxylife/images/7/7c/Noimage.png/revision/latest?cb=20120622041841';
     }
-    
-    
 
 }

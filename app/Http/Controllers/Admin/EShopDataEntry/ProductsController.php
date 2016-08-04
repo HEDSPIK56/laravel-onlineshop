@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Repository\AdminProductRepository;
 use App\Condition\AdminProductSearchCondition;
 use App\Category;
+use App\Http\Requests\Admin\Data\AdminProductRequest;
 
 class ProductsController extends Controller
 {
@@ -26,11 +27,20 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
+        //dd(\App\Product::find(1)->category->name);
         $condition = new AdminProductSearchCondition();
         $condition->setAttributes($request->all());
         $products = $this->products->getListProduct($condition);
-        dd($products);
         return view('admin.eshopdata.products.index', compact('products'));
+    }
+    
+    public function copy(AdminProductRequest $request)
+    {
+        $id = $request->input('product_id');
+        if($this->products->copyProduct($id)){
+            return redirect()->route('admin.data.product.index');
+        }
+        return "sai r";
     }
 
     /**
@@ -50,9 +60,12 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminProductRequest $request)
     {
-        //
+        $data = $request->all();
+        unset($data['images']);
+        $this->products->addProduct($data);
+        return redirect()->route('admin.data.product.index');
     }
 
     /**

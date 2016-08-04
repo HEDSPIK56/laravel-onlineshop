@@ -117,6 +117,10 @@ Route::group(['middleware' => 'auth'], function ()
          * Category
          */
         Route::resource('/data/product', 'Admin\EShopDataEntry\ProductsController');
+        Route::post('data/product/copy', [
+            'as' => 'admin.data.product.copy',
+            'uses' => 'Admin\EShopDataEntry\ProductsController@copy'
+        ]);
         /**
          * End category
          */
@@ -156,7 +160,6 @@ Route::group(['middleware' => 'auth'], function ()
 
         //End system
     });
-    
 });
 
 //Route::get('sendemail', function ()
