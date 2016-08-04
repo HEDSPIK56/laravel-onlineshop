@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Product;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Category extends Model
 {
@@ -86,5 +87,14 @@ class Category extends Model
         }
         return $result;
     }
-
+    
+    public function setCreatedByAttribute($email)
+    {
+        $this->attributes['created_by'] = Auth::user()->email;
+    }
+    
+    public function setUpdatedByAttribute($email)
+    {
+        $this->attributes['updated_by'] = Auth::user()->email;
+    }
 }

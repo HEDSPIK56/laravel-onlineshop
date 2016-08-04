@@ -10,10 +10,15 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
 use App\Profile;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * 
+ */
 class User extends Authenticatable
 {
 
     use EntrustUserTrait; // add this trait to your user model
+    
+    protected $table = "users";
     /**
      * The attributes that are mass assignable.
      *
@@ -117,9 +122,25 @@ class User extends Authenticatable
         return false;
     }
 
+    /**
+     * @todo
+     * - Set password before fill data
+     * @author NTHanh
+     * @param type $pass
+     */
     public function setPasswordAttribute($pass)
     {
         $this->attributes['password'] = Hash::make($pass);
+    }
+    
+    public function setCreatedByAttribute($email)
+    {
+        $this->attributes['created_by'] = $this->attributes['email'];
+    }
+    
+    public function setUpdatedByAttribute($email)
+    {
+        $this->attributes['updated_by'] = $this->attributes['email'];
     }
 
 }

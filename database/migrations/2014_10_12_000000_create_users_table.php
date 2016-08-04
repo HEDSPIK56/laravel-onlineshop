@@ -21,8 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->boolean('activated')->default(false);
             $table->string('avatar')->nullale();
-            // add this one line
-            //$table->enum('role',['admin','author','subscriber'])->default('author');
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('deleted_by')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

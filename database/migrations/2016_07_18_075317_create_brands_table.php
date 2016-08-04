@@ -25,6 +25,9 @@ class CreateBrandsTable extends Migration
             $table->string('twitter_link')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('linkedin_link')->nullable();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('deleted_by')->nullable();
             $table->timestamps();
         });
     }

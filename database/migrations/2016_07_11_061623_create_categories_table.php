@@ -27,6 +27,9 @@ class CreateCategoriesTable extends Migration
             $table->string('item_per_page')->default('4/3/2');
             $table->string('item_per_line')->default('8/6/4');
             $table->boolean('load_more')->default(false);
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('deleted_by')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
