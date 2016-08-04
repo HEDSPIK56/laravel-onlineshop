@@ -254,3 +254,11 @@ http://www.kodeinfo.com/post/realtime-app-using-laravel-nodejs-angularjs-redis
 http://stackoverflow.com/questions/18396603/laravel-and-angularjs-form-validation
 https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages
 https://github.com/blueimp/jQuery-File-Upload/wiki
+
+#example
+http://preview.codecanyon.net/item/laravel-user-manager-create-l5-project-with-ease/full_screen_preview/13760351?_ga=1.25104442.1638636412.1470274928 [admin/123456]
+https://codecanyon.net/item/eshop-ecommerce-cms/12279150
+http://104.236.63.156/administrator/clients
+Administrator
+Email : admin@mail.com
+Password : admin
