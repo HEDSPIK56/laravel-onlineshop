@@ -27,6 +27,16 @@ Route::get('/home/create', [
 ]);
 
 /**
+ * Front end
+ */
+// Product
+Route::get('/product', [
+    'as' => 'product.index', 'uses' => 'ProductsController@index'
+]);
+/**
+ * End front end
+ */
+/**
  * Social Auth
  */
 Route::get('/redirect', 'SocialAuthController@redirect');
@@ -35,8 +45,7 @@ Route::get('/callback', 'SocialAuthController@callback');
  * End Social Auth
  */
 // Login before access task
-Route::group(['middleware' => 'auth'], function ()
-{
+Route::group(['middleware' => 'auth'], function (){
     /**
      * Task
      */
