@@ -49,7 +49,10 @@ class AdminProductRepository
     public function copyProduct($id)
     {
         $product = $this->readProduct($id);
-        if($product){
+        if ($product)
+        {
+            // set new name for product copy
+            $product->setNewNameProductCopy();
             $product = $product->toArray();
             unset($product['id']);
             $newProduct = $this->addProduct($product);

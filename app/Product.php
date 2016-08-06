@@ -76,4 +76,16 @@ class Product extends Model
         return 'http://vignette3.wikia.nocookie.net/galaxylife/images/7/7c/Noimage.png/revision/latest?cb=20120622041841';
     }
 
+    public function setNewNameProductCopy()
+    {
+        $name = $this->attributes['name'] . " copy ";
+        $this->setAttribute('name', $name);
+    }
+
+    public function updateNumberView()
+    {
+        $currentView = (int) $this->attributes['number_view'] + 1;
+        $this->setAttribute('number_view', $currentView);
+    }
+
 }

@@ -194,6 +194,7 @@
             </div>
             <div class="products-right-grids-bottom">
                 <div class="col-md-4 products-right-grids-bottom-grid">
+                    @foreach($products as $product)
                     <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
                         <div class="new-collections-grid1-image">
                             <a href="single.html" class="product-image"><img src="images/19.jpg" alt=" " class="img-responsive"></a>
@@ -227,6 +228,7 @@
                             <p><i>$325</i> <span class="item_price">$250</span><a class="item_add" href="#">add to cart </a></p>
                         </div>
                     </div>
+                    @endforeach
                     <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
                         <div class="new-collections-grid1-image">
                             <a href="single.html" class="product-image"><img src="images/21.jpg" alt=" " class="img-responsive"></a>

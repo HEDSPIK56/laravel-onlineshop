@@ -10,6 +10,7 @@ namespace App\Repository;
 
 use App\Product;
 use App\Condition\ProductSearchCondition;
+
 /**
  * Description of ProductRepository
  *
@@ -26,38 +27,52 @@ class ProductRepository
     {
         return Product::all();
     }
-    
-    public function getNewsProduct($condition){
+
+    public function getNewsProduct($condition)
+    {
         // to do
     }
-    
-    public function getProductByCategory($condition){
+
+    public function getProductByCategory($condition)
+    {
         // todo
     }
-    
-    public function readProduct($condition){
+
+    public function readProduct($condition)
+    {
         // todo
     }
-    
-    public function relatedProducts($condition){
+
+    public function relatedProducts($condition)
+    {
         // todo
     }
-    
-    public function updateNumberLike($condition){
+
+    public function updateNumberLike($condition)
+    {
         // todo
     }
-    public function updateNumberView($condition){
+
+    public function updateNumberView($condition)
+    {
+        $product = $this->readProduct($condition);
+        $product->updateNumberView();
+        $product->save();
+    }
+
+    public function updateNumberBookmark($condition)
+    {
         // todo
     }
-    public function updateNumberBookmark($condition){
-        // todo
-    }
-    
-    public function updateNumberShare($condition){
+
+    public function updateNumberShare($condition)
+    {
         
     }
-    
-    public function getHistoryProductView($condition){
+
+    public function getHistoryProductView($condition)
+    {
         
     }
+
 }
