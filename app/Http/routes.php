@@ -33,6 +33,10 @@ Route::get('/home/create', [
 Route::get('/product', [
     'as' => 'product.index', 'uses' => 'ProductsController@index'
 ]);
+
+Route::get('/product/{id}', [
+    'as' => 'product.show', 'uses' => 'ProductsController@show'
+])->where('id', '[0-9]+');
 /**
  * End front end
  */

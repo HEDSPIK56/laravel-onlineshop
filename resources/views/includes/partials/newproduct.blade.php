@@ -4,10 +4,10 @@
         @foreach($newProducts as $newProduct)
         <div class="new-products-grid">
             <div class="new-products-grid-left">
-                <a href="single.html"><img src="{{ $newProduct->getImage()}}" alt="{{ $newProduct->name }}" class="img-responsive" /></a>
+                <a href="{{route('product.show',['id' => $newProduct->id])}}"><img src="{{ $newProduct->getImage()}}" alt="{{ $newProduct->name }}" class="img-responsive" /></a>
             </div>
             <div class="new-products-grid-right">
-                <h4><a href="single.html">{{ $newProduct->getSortDesciprtion($newProduct->desciption)}}</a></h4>
+                <h4><a href="{{route('product.show',['id' => $newProduct->id])}}">{{ $newProduct->getSortDesciprtion($newProduct->desciption)}}</a></h4>
                 <div class="rating">
                     <div class="rating-left">
                         <img src="images/2.png" alt=" " class="img-responsive">
