@@ -20,8 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('password');
             $table->boolean('activated')->default(false);
-            // add this one line
-            //$table->enum('role',['admin','author','subscriber'])->default('author');
+            $table->string('avatar')->nullale();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('deleted_by')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

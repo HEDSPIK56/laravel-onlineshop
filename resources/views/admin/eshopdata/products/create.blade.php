@@ -6,7 +6,7 @@
         <div class="col-sm-12">
             @include('admin.partials.errors')
             @include('admin.partials.success')
-            <form method="POST" action="{{route('admin.data.product.store')}}">
+            <form method="POST" action="{{route('admin.data.product.store')}}" enctype="multipart/form-data">
                 @include('admin.eshopdata.products._form')
             </form>
         </div>

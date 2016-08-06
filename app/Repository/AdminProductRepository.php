@@ -41,9 +41,25 @@ class AdminProductRepository
      * @param AdminProductSearchCondition $condition
      * @return boolean
      */
-    public function readProduct($condition)
+    public function readProduct($id)
     {
-        return false;
+        return Product::find($id);
+    }
+    
+    public function copyProduct($id)
+    {
+        $product = $this->readProduct($id);
+        if ($product)
+        {
+            // set new name for product copy
+            $product->setNewNameProductCopy();
+            $product = $product->toArray();
+            unset($product['id']);
+            $newProduct = $this->addProduct($product);
+            // copy image
+            return $newProduct;
+        }
+        return array();
     }
 
     /**
@@ -53,7 +69,7 @@ class AdminProductRepository
      */
     public function getListProduct($condition)
     {
-        return false;
+        return Product::all();
     }
 
     /**

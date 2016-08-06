@@ -27,6 +27,16 @@ Route::get('/home/create', [
 ]);
 
 /**
+ * Front end
+ */
+// Product
+Route::get('/product', [
+    'as' => 'product.index', 'uses' => 'ProductsController@index'
+]);
+/**
+ * End front end
+ */
+/**
  * Social Auth
  */
 Route::get('/redirect', 'SocialAuthController@redirect');
@@ -35,8 +45,7 @@ Route::get('/callback', 'SocialAuthController@callback');
  * End Social Auth
  */
 // Login before access task
-Route::group(['middleware' => 'auth'], function ()
-{
+Route::group(['middleware' => 'auth'], function (){
     /**
      * Task
      */
@@ -98,7 +107,7 @@ Route::group(['middleware' => 'auth'], function ()
     /**
      * Admin section
      */
-    Route::group(['prefix' => 'admin'], function ()
+    Route::group(['prefix' => 'admin', 'middleware' => ['role:root|admin|manager']], function ()
     {
         //Dashboard Route
         Route::get('dashboard', function()
@@ -117,6 +126,10 @@ Route::group(['middleware' => 'auth'], function ()
          * Category
          */
         Route::resource('/data/product', 'Admin\EShopDataEntry\ProductsController');
+        Route::post('data/product/copy', [
+            'as' => 'admin.data.product.copy',
+            'uses' => 'Admin\EShopDataEntry\ProductsController@copy'
+        ]);
         /**
          * End category
          */

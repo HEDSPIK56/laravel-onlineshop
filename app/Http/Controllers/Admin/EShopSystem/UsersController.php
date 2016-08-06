@@ -6,14 +6,20 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Repository\AdminUserRepository;
+use App\Repository\AdminRoleRepository;
+use App\Http\Requests\Admin\System\CreateUserRequest;
 
 class UsersController extends Controller
 {
 
-    public function __construct(User $user, Role $role)
+    protected $userRes;
+    protected $roleRes;
+    
+    public function __construct(AdminUserRepository $user, AdminRoleRepository $role)
     {
-        $this->user = $user;
-        $this->role = $role;
+        $this->userRes = $user;
+        $this->roleRes = $role;
     }
 
     /**
@@ -21,10 +27,11 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //http://demo.laraship.com/admin/users
     public function index()
     {
-        $users = $this->user->pushCriteria(new UsersWithRoles())->paginate(10);
-        return view('users.index', compact('users'));
+        $users = $this->userRes->getListUser();
+        return view('admin.eshopsystem.users.index', compact('users'));
     }
 
     /**
@@ -34,8 +41,9 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $roles = $this->role->all();
-        return view('users.create', compact('roles'));
+        $roles = $this->roleRes->getListRoleNoCondition();
+        $user = \Illuminate\Support\Facades\Auth::user();
+        return view('admin.eshopsystem.users.create', compact('roles','user'));
     }
 
     /**
@@ -46,20 +54,14 @@ class UsersController extends Controller
      */
     public function store(CreateUserRequest $request)
     {
-        $user = $this->user->create($request->all());
-
-        if ($request->get('role'))
-        {
-            $user->roles()->sync($request->get('role'));
+        $user = $this->userRes->createUser($request->all());
+        if($request->file('avatar')){
+            $user->avatar = $this->userRes->processUploadAvatar($request,$user->id);
+            $user->save();
         }
-        else
-        {
-            $user->roles()->sync([]);
-        }
+        $request->session()->flash('status', 'User successfully created');
 
-        Flash::success('User successfully created');
-
-        return redirect('/users');
+        return redirect()->route('admin.system.user.index');
     }
 
     /**
@@ -127,10 +129,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $this->user->delete($id);
-
-        Flash::success('User successfully deleted');
-
-        return redirect('/users');
+        $this->userRes->deleteUser($id);
+        
+        return redirect()->route('admin.system.user.index');
     }
 }

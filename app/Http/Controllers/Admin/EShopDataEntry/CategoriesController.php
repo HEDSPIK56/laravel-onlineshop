@@ -51,6 +51,11 @@ class CategoriesController extends Controller
         return redirect()->route('admin.data.category.index');
     }
 
+    public function copy(Request $request)
+    {
+        
+    }
+
     /**
      * Display the specified resource.
      *

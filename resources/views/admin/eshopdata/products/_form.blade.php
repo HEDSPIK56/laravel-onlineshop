@@ -20,8 +20,16 @@
     <input type="text" class="form-control" name="keywords" id="productKeywords" placeholder="input keywords product"/>
 </div>
 <div class="form-group">
+    <label for="productPrice">Product Price</label>
+    <input type="number" class="form-control" name="price" id="productPrice" placeholder="input price product"/>
+</div>
+<div class="form-group">
+    <label>Product Maket price</label>
+    <input type="number" class="form-control" name="market_price" placeholder="input maket price product"/>
+</div>
+<div class="form-group">
     <label for="standarInfor">Standar info</label>
-    <textarea name="standard_info" class="form-control" rows="3" id="standarInfor" placeholder="Standar info"></textarea>
+    <textarea name="desciption" class="form-control" rows="3" id="standarInfor" placeholder="Standar info"></textarea>
 </div>
 <div class="radio">
     <label>
@@ -34,5 +42,9 @@
         <input type="radio" name="visible" id="visibleRadio2" value="N">
         Disable Product
     </label>
+</div>
+<div class="form-group">
+    <label for="images">Hinh Anh</label>
+    {!! Form::file('images[]', array('multiple'=>true)) !!}
 </div>
 <button type="submit" class="btn btn-default">Submit</button>

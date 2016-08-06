@@ -15,6 +15,18 @@
                             </table>
                         </div>
                     </div>
+                    <div class="fb-comments" data-href="http://cuahangbachhoa247.com/home/read" data-numposts="10"></div>
+                    <!-- Your like button code -->
+                    <div class="fb-like" 
+                            data-href="http://cuahangbachhoa247.com/home/read" 
+                            data-layout="standard" 
+                            data-action="like" 
+                            data-show-faces="true">
+                    </div>
+                    <div class="fb-share-button" 
+                        data-href="http://cuahangbachhoa247.com/home/read" 
+                        data-layout="button_count">
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,7 +34,7 @@
 </div>
 <script>
     $(document).ready(function () {
-        var url = "http://localhost:8888/laravel-onlineshop/public/home/read";
+        var url = "{{ route('home.read') }}";
         $("#get_data").click(function(e){
             $.ajax({
                 type: "GET",

@@ -20,7 +20,11 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check())
         {
-            return redirect('/');
+            // nthanh added more line
+            if(Auth::user()->role->name != 'user'){
+                return redirect()->route('admin.system.user.index');
+            }
+            return redirect('/home');
         }
 
         return $next($request);

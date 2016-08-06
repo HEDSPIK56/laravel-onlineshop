@@ -144,6 +144,9 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
     ],
     /*
       |--------------------------------------------------------------------------
@@ -187,6 +190,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        
         /**
          * Extenal App added
          */
@@ -194,5 +198,9 @@ return [
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
+        'Cart' => \Gloudemans\Shoppingcart\Facades\Cart::class,
     ],
 ];

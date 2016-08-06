@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Product;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Category extends Model
 {
@@ -32,9 +33,23 @@ class Category extends Model
      */
     protected $dates = ['deleted_at'];
 
+    /**
+     * relation product table
+     * @return type
+     */
     public function products()
     {
-        $this->hasMany(Product::class, 'category_id', 'id');
+        return $this->hasMany(Product::class, 'category_id', 'id');
+    }
+
+    /**
+     * @author NTHanh
+     * @todo Get product list by active
+     * @return type
+     */
+    public function getProductActive()
+    {
+        return $this->products()->active();
     }
 
     /**
@@ -46,6 +61,21 @@ class Category extends Model
         return self::where('visible', 'Y')->get();
     }
 
+    /**
+     * Query scope
+     * @param type $value
+     * @return type
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('visible', '=', 'Y');
+    }
+
+    /**
+     * End query scope
+     * @param type $value
+     * @return type
+     */
     public function getNameAttribute($value)
     {
         return ucfirst($value);
@@ -86,5 +116,14 @@ class Category extends Model
         }
         return $result;
     }
-
+    
+    public function setCreatedByAttribute($email)
+    {
+        $this->attributes['created_by'] = Auth::user()->email;
+    }
+    
+    public function setUpdatedByAttribute($email)
+    {
+        $this->attributes['updated_by'] = Auth::user()->email;
+    }
 }

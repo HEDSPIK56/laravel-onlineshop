@@ -16,9 +16,12 @@ use App\Permission;
  */
 class AdminPermissionRepository
 {
-    public function getListPermission($condition)
+    public function getListPermission($condition = null)
     {
-        return Permission::like($condition)->orderBy('created_at', $condition->getSortType())->paginate($condition->getLimit());
+        if(isset($condition)){
+            return Permission::like($condition)->orderBy('created_at', $condition->getSortType())->paginate($condition->getLimit());
+        }
+        return Permission::all();
     }
 
     public function createPermisson($data = array())

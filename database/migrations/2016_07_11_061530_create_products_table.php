@@ -36,6 +36,9 @@ class CreateProductsTable extends Migration
             $table->integer('number_bookmark')->default(0);
             $table->integer('number_share')->default(0);
             $table->integer('number_item')->default(0);
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('deleted_by')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -7,18 +7,27 @@ use App\Task;
 use App\ExampleComment;
 use App\ExamplePost;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+use App\Profile;
+use Illuminate\Support\Facades\Hash;
 
+/**
+ * 
+ */
 class User extends Authenticatable
 {
 
     use EntrustUserTrait; // add this trait to your user model
+
+    protected $table = "users";
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatar', 'created_by',
+        'updated_by', 'deleted_by'
     ];
 
     /**
@@ -75,6 +84,64 @@ class User extends Authenticatable
 //        }
 //        return false;
         return true;
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    public function getAvatarName()
+    {
+        return $this->getAttribute('avatar');
+    }
+
+    /**
+     * @todo Create url get avatar image
+     * @return type
+     */
+    public function getAvatar()
+    {
+        $imgUrl = "";
+        if(empty($this->getAvatarName()))
+        {
+            $imgUrl = asset('/images/users/1/admin.png');
+        }
+        else
+        {
+            $imgUrl = asset('/images/users/' . $this->id . '/' . $this->getAvatarName() . '');
+        }
+        return $imgUrl;
+    }
+
+    public function hasAvatar()
+    {
+        if(!is_null($this->getAttribute('avatar')))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @todo
+     * - Set password before fill data
+     * @author NTHanh
+     * @param type $pass
+     */
+    public function setPasswordAttribute($pass)
+    {
+        $this->attributes['password'] = Hash::make($pass);
+    }
+
+    public function setCreatedByAttribute($email)
+    {
+        $this->attributes['created_by'] = strtolower($email);
+    }
+
+    public function setUpdatedByAttribute($email)
+    {
+        $this->attributes['updated_by'] = strtolower($email);
     }
 
 }
