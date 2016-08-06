@@ -25,12 +25,13 @@ class ProductRepository
      */
     public function getAllProduct($condition)
     {
-        return Product::active()->get();
+        return Product::active()->paginate(9);
     }
 
     public function getNewsProduct($condition)
     {
         // to do
+        return Product::active()->newproductcreate()->take(2)->get();
     }
 
     public function getProductByCategory($condition)

@@ -46,6 +46,11 @@ class Product extends Model
         return $query->where('visible', '=', 'Y');
     }
 
+    public function scopeNewProductCreate($query)
+    {
+        return $query->orderBy('created_at', 'asc');
+    }
+
     /**
      * End query scope
      */
@@ -85,6 +90,40 @@ class Product extends Model
             return reset($images);
         }
         return 'http://vignette3.wikia.nocookie.net/galaxylife/images/7/7c/Noimage.png/revision/latest?cb=20120622041841';
+    }
+
+    function getSortDesciprtion($input, $length = 15, $ellipses = true,
+            $strip_html = true)
+    {
+        //strip tags, if desired
+        if ($strip_html)
+        {
+            $input = strip_tags($input);
+        }
+
+        //no need to trim, already shorter than trim length
+        if (strlen($input) <= $length)
+        {
+            return $input;
+        }
+
+        //find last space within length
+        $last_space = strrpos(substr($input, 0, $length), ' ');
+        if ($last_space !== false)
+        {
+            $trimmed_text = substr($input, 0, $last_space);
+        }
+        else
+        {
+            $trimmed_text = substr($input, 0, $length);
+        }
+        //add ellipses (...)
+        if ($ellipses)
+        {
+            $trimmed_text .= '...';
+        }
+
+        return $trimmed_text;
     }
 
     public function setNewNameProductCopy()

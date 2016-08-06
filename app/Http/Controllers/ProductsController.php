@@ -30,8 +30,9 @@ class ProductsController extends Controller
         $condition = new ProductSearchCondition();
         $condition->setAttributes($request->all());
         $products = $this->productRes->getAllProduct($condition);
+        $newProducts = $this->productRes->getNewsProduct($condition);
         $categories = $this->categoryRes->getListCategory();
-        return view('pages.products.index', compact('products', 'categories'));
+        return view('pages.products.index', compact('products', 'categories', 'newProducts'));
     }
 
     /**

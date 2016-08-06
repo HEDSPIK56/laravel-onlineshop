@@ -145,7 +145,8 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Anouar\Paypalpayment\PaypalpaymentServiceProvider::class
+        Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
     ],
     /*
       |--------------------------------------------------------------------------
@@ -199,6 +200,7 @@ return [
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Paypalpayment'   => Anouar\Paypalpayment\Facades\PaypalPayment::class,
+        'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
+        'Cart' => \Gloudemans\Shoppingcart\Facades\Cart::class,
     ],
 ];

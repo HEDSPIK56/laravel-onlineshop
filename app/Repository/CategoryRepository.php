@@ -18,9 +18,10 @@ class CategoryRepository
 {
     public function getListCategory()
     {
-        $categories = Category::with('products')->get()->sortByDesc(function($category) {
-            return $category->products()->active()->count();
-        });
+//        $categories = Category::with('products')->get()->sortByDesc(function($category) {
+//            return $category->products()->active()->count();
+//        });
+        $categories = Category::active()->get();
         return $categories;
     }
 

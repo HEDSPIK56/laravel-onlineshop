@@ -262,3 +262,6 @@ http://104.236.63.156/administrator/clients
 Administrator
 Email : admin@mail.com
 Password : admin
+
+http://demopavothemes.com/pav_food_store/admin/index.php?route=common/login
+[demo/demo]
