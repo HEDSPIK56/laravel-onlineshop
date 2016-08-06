@@ -7,14 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Repository\ProductRepository;
 use App\Condition\ProductSearchCondition;
+use App\Repository\CategoryRepository;
 
 class ProductsController extends Controller
 {
     protected $productRes;
-    
-    public function __construct(ProductRepository $res)
+    protected $categoryRes;
+
+    public function __construct(ProductRepository $res, CategoryRepository $cat)
     {
         $this->productRes = $res;
+        $this->categoryRes = $cat;
     }
 
     /**
@@ -27,7 +30,8 @@ class ProductsController extends Controller
         $condition = new ProductSearchCondition();
         $condition->setAttributes($request->all());
         $products = $this->productRes->getAllProduct($condition);
-        return view('pages.products.index',  compact('products'));
+        $categories = $this->categoryRes->getListCategory();
+        return view('pages.products.index', compact('products', 'categories'));
     }
 
     /**

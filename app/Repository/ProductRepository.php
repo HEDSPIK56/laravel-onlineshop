@@ -25,7 +25,7 @@ class ProductRepository
      */
     public function getAllProduct($condition)
     {
-        return Product::all();
+        return Product::active()->get();
     }
 
     public function getNewsProduct($condition)

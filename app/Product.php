@@ -38,6 +38,17 @@ class Product extends Model
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
 
+    /**
+     * Query scope
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('visible', '=', 'Y');
+    }
+
+    /**
+     * End query scope
+     */
     public function setCreatedByAttribute($email)
     {
         $this->attributes['created_by'] = Auth::user()->email;

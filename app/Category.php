@@ -33,9 +33,23 @@ class Category extends Model
      */
     protected $dates = ['deleted_at'];
 
+    /**
+     * relation product table
+     * @return type
+     */
     public function products()
     {
-        $this->hasMany(Product::class, 'category_id', 'id');
+        return $this->hasMany(Product::class, 'category_id', 'id');
+    }
+
+    /**
+     * @author NTHanh
+     * @todo Get product list by active
+     * @return type
+     */
+    public function getProductActive()
+    {
+        return $this->products()->active();
     }
 
     /**
@@ -47,6 +61,21 @@ class Category extends Model
         return self::where('visible', 'Y')->get();
     }
 
+    /**
+     * Query scope
+     * @param type $value
+     * @return type
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('visible', '=', 'Y');
+    }
+
+    /**
+     * End query scope
+     * @param type $value
+     * @return type
+     */
     public function getNameAttribute($value)
     {
         return ucfirst($value);
