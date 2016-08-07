@@ -41,12 +41,12 @@ class ProductRepository
 
     public function readProduct($condition)
     {
-        // todo
+        return Product::find($condition->getId());
     }
 
     public function relatedProducts($condition)
     {
-        // todo
+        return Product::active()->newproductcreate()->take(4)->get();
     }
 
     public function updateNumberLike($condition)

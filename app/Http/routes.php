@@ -11,7 +11,7 @@
   |
  */
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'ProductsController@index');
 
 Route::auth();
 Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');

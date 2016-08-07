@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
     <!-- js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script src="{{ URL::asset('js/jquery-ui.min.js') }}"></script>
     <!-- //js -->
     <!-- cart -->
     <script src="{{ URL::asset('js/simpleCart.min.js') }}"></script>
@@ -49,6 +50,8 @@
     <link href="{{ URL::asset('css/animate.min.css') }}" rel="stylesheet"> 
     <link href="{{ URL::asset('css/bootstrap-social.css') }}" rel="stylesheet" type="text/css"/>
     <script src="{{ URL::asset('js/wow.min.js') }}"></script>
+    <script src="{{ URL::asset('js/imagezoom.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.flexslider.js') }}"></script>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>
         new WOW().init();

@@ -64,7 +64,12 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $condition = new ProductSearchCondition();
+        $condition->setAttributes(['id' => $id]);
+        $product = $this->productRes->readProduct($condition);
+        $categories = $this->categoryRes->getListCategory();
+        $relatedProducts = $this->productRes->relatedProducts($condition);
+        return view('pages.products.show', compact('product', 'categories', 'relatedProducts'));
     }
 
     /**

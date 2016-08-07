@@ -18,9 +18,15 @@ use App\BaseAbstractBean;
 class ProductSearchCondition extends BaseAbstractBean
 {
 
+    public $id;
     public $productName;
     public $sortType;
     public $itemPerPage;
+
+    public function getId()
+    {
+        return (int) $this->id;
+    }
 
     public function getProductName()
     {
