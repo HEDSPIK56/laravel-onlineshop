@@ -37,6 +37,11 @@ Route::get('/product', [
 Route::get('/product/{id}', [
     'as' => 'product.show', 'uses' => 'ProductsController@show'
 ])->where('id', '[0-9]+');
+
+Route::post('/product/addToCart',[
+    'as' => 'product.add_to_cart',
+    'uses' => 'ProductsController@addToCart'
+]);
 /**
  * End front end
  */

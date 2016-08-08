@@ -10,6 +10,7 @@ namespace App\Repository;
 
 use App\Product;
 use App\Condition\ProductSearchCondition;
+use Gloudemans\Shoppingcart\Cart;
 
 /**
  * Description of ProductRepository
@@ -74,6 +75,19 @@ class ProductRepository
     public function getHistoryProductView($condition)
     {
         
+    }
+    
+    public function addToCart($product_id)
+    {
+        $condition = new ProductSearchCondition();
+        $condition->setAttributes(['id' => $product_id]);
+        $product = $this->readProduct($condition);
+        Cart::add(array(
+            'id' => $product_id,
+            'name' => $product->name,
+            'qty' => 1,
+            'price' =>$product->price
+        ));
     }
 
 }

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Repository\ProductRepository;
 use App\Condition\ProductSearchCondition;
 use App\Repository\CategoryRepository;
+use Gloudemans\Shoppingcart\Cart;
 
 class ProductsController extends Controller
 {
@@ -104,5 +105,15 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function addToCart(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $product_id = $request->input('product_id');
+            $this->productRes->addToCart($product_id);
+        }
+        $cart = Cart::content();
+        dd($cart);
     }
 }

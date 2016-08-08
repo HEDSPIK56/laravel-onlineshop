@@ -78,8 +78,9 @@
                     </div>
                 </div>
             </div>
+            @foreach($products->chunk(3) as $item)
             <div class="products-right-grids-bottom">
-                @foreach($products as $product)
+                @foreach($item as $product)
                 <div class="col-md-4 products-right-grids-bottom-grid">
                     <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
                         <div class="new-collections-grid1-image">
@@ -111,13 +112,24 @@
                         <h4><a href="{{route('product.show',['id' => $product->id])}}">{{ $product->name }}</a></h4>
                         <p>{{ $product->getSortDesciprtion($product->desciption)}}</p>
                         <div class="simpleCart_shelfItem products-right-grid1-add-cart">
-                            <p><i>$325</i> <span class="item_price">$250</span><a class="item_add" href="#">add to cart </a></p>
+                            <p><i>$325</i> <span class="item_price">$250</span>
+                                <!--<a class="item_add" href="#">add to cart </a>-->
+                            <form method="POST" action="{{route('product.add_to_cart')}}">
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-fefault add-to-cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Add to cart
+                                </button>
+                            </form>
+                            </p>
                         </div>
                     </div>
                 </div>
                 @endforeach
                 <div class="clearfix"> </div>
             </div>
+            @endforeach
             <!-- paginal-->
             <nav class="numbering animated wow slideInRight" data-wow-delay=".5s">
                 {!! $products->render() !!}
