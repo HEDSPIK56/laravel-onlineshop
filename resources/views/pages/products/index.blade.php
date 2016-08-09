@@ -112,7 +112,13 @@
                         <h4><a href="{{route('product.show',['id' => $product->id])}}">{{ $product->name }}</a></h4>
                         <p>{{ $product->getSortDesciprtion($product->desciption)}}</p>
                         <div class="simpleCart_shelfItem products-right-grid1-add-cart">
-                            <p><i>$325</i> <span class="item_price">$250</span>
+                            <p>
+                                @if($product->isApplyDiscount())
+                                <i>{{ formatnumber($product->getPrice()) }}</i> 
+                                <span class="item_price">{{ formatnumber($product->getPriceDiscount()) }}</span>
+                                @else
+                                <span class="item_price">{{ formatnumber($product->getPrice()) }}</span>
+                                @endif
                                 <!--<a class="item_add" href="#">add to cart </a>-->
                             <form method="POST" action="{{route('product.add_to_cart')}}">
                                 <input type="hidden" name="product_id" value="{{$product->id}}">

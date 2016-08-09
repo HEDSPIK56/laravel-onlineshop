@@ -105,3 +105,13 @@ function countDate($from, $to)
     $diff = $date2->diff($date1)->format("%a");
     return $diff;
 }
+
+function floorPrice($price)
+{
+    return floor($price / 10) * 10;
+}
+
+function formatnumber($number)
+{
+    return number_format($number);
+}

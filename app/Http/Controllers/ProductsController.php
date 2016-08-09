@@ -65,11 +65,14 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
+        /** @var ProductSearchCondition $condition */
         $condition = new ProductSearchCondition();
         $condition->setAttributes(['id' => $id]);
         $product = $this->productRes->readProduct($condition);
         $categories = $this->categoryRes->getListCategory();
         $relatedProducts = $this->productRes->relatedProducts($condition);
+        // update number view
+        $this->productRes->updateNumberView($product);
         return view('pages.products.show', compact('product', 'categories', 'relatedProducts'));
     }
 

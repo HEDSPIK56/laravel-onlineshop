@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
+use App\Discount;
 use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
@@ -33,9 +34,21 @@ class Product extends Model
         'number_item'
     ];
 
+    /**
+     * @description: Relation product vs category
+     * @return type
+     */
     public function category()
     {
         return $this->hasOne(Category::class, 'id', 'category_id');
+    }
+
+    /**
+     * @desciption: Relation product vs discount
+     */
+    public function discount()
+    {
+        return $this->hasOne(Discount::class, 'id', 'discount_id');
     }
 
     /**
@@ -132,10 +145,40 @@ class Product extends Model
         $this->setAttribute('name', $name);
     }
 
+    /**
+     * @author: NTHanh
+     * @todo update number view when click to detail page
+     */
     public function updateNumberView()
     {
         $currentView = (int) $this->attributes['number_view'] + 1;
         $this->setAttribute('number_view', $currentView);
+    }
+    
+    /**
+     * 
+     * @param integer $time
+     * @return boolean
+     */
+    public function isApplyDiscount($time = null)
+    {
+        return (boolean) $this->getPriceDiscount();
+    }
+
+    /**
+     * @description: get price discount
+     * @return int price
+     */
+    public function getPriceDiscount($time = null)
+    {
+        $price = $this->attributes['price'];
+        $discount = ($price * 10 / 100);
+        return (int) floorPrice(($price - $discount));
+    }
+
+    public function getPrice()
+    {
+        return (int) $this->attributes['price'];
     }
 
 }

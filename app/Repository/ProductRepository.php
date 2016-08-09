@@ -55,9 +55,8 @@ class ProductRepository
         // todo
     }
 
-    public function updateNumberView($condition)
+    public function updateNumberView($product)
     {
-        $product = $this->readProduct($condition);
         $product->updateNumberView();
         $product->save();
     }
