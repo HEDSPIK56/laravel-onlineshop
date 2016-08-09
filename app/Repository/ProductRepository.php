@@ -10,7 +10,7 @@ namespace App\Repository;
 
 use App\Product;
 use App\Condition\ProductSearchCondition;
-use Gloudemans\Shoppingcart\Cart;
+use Cart;
 
 /**
  * Description of ProductRepository

@@ -45,6 +45,16 @@ Route::post('/product/addToCart',[
 /**
  * End front end
  */
+
+/**
+ * Cart
+ */
+Route::get('/cart', [
+    'as' => 'cart.index', 'uses' => 'CartController@index'
+]);
+/**
+ * End cart
+ */
 /**
  * Social Auth
  */

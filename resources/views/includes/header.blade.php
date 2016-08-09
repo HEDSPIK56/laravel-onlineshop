@@ -146,9 +146,9 @@ new UISearch(document.getElementById('sb-search'));
             </div>
             <div class="header-right">
                 <div class="cart box_1">
-                    <a href="#">
+                    <a href="{{route('cart.index')}}">
                         <h3> <div class="total">
-                                <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)</div>
+                                <span class="cart_total">{{ Cart::total() }}</span> (<span id="cart_quantity" class="cart_quantity">{{ Cart::content()->count() }}</span> items)</div>
                                 <img src="{{URL::asset('images/bag.png')}}" alt="">
                         </h3>
                     </a>

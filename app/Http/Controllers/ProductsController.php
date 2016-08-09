@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Repository\ProductRepository;
 use App\Condition\ProductSearchCondition;
 use App\Repository\CategoryRepository;
-use Gloudemans\Shoppingcart\Cart;
+use Cart;
 
 class ProductsController extends Controller
 {
@@ -113,7 +113,6 @@ class ProductsController extends Controller
             $product_id = $request->input('product_id');
             $this->productRes->addToCart($product_id);
         }
-        $cart = Cart::content();
-        dd($cart);
+        return redirect()->route('cart.index');
     }
 }
