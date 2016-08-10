@@ -269,3 +269,5 @@ http://demopavothemes.com/pav_food_store/admin/index.php?route=common/login
 #Working with Repositories in Laravel
 https://www.youtube.com/watch?v=D7nAGC4DN08
 +https://github.com/amitavroy/learningl5/blob/master/app/Repositories/TodoInterface.php
+# sendmail
+https://scotch.io/tutorials/ultimate-guide-on-sending-email-in-laravel
