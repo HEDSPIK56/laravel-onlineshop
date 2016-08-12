@@ -22,6 +22,12 @@ class ProductSearchCondition extends BaseAbstractBean
     public $productName;
     public $sortType;
     public $itemPerPage;
+    public $keyword;
+
+    public function getKeyWord()
+    {
+        return $this->keyword;
+    }
 
     public function getId()
     {

@@ -15,17 +15,17 @@
                             </table>
                         </div>
                     </div>
-                    <div class="fb-comments" data-href="http://cuahangbachhoa247.com/home/read" data-numposts="10"></div>
+                    <div class="fb-comments" data-href="http://wwww.cuahangbachhoa247.com/home/read" data-numposts="10"></div>
                     <!-- Your like button code -->
                     <div class="fb-like" 
-                            data-href="http://cuahangbachhoa247.com/home/read" 
-                            data-layout="standard" 
+                         data-href="http://www.cuahangbachhoa247.com/home/read" 
+                         data-layout="standard" 
                             data-action="like" 
                             data-show-faces="true">
                     </div>
                     <div class="fb-share-button" 
-                        data-href="http://cuahangbachhoa247.com/home/read" 
-                        data-layout="button_count">
+                         data-href="http://www.cuahangbachhoa247.com/home/read" 
+                         data-layout="button_count">
                     </div>
                 </div>
             </div>

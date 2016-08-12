@@ -37,7 +37,7 @@ return [
     'facebook' => [
         'client_id' => '1212597675425450',
         'client_secret' => '17b9a15d03236486d1835959ca2a7ed2',
-        'redirect' => 'http://cuahangbachhoa247.com/callback'
+        'redirect' => 'http://www.cuahangbachhoa247.com/callback'
     ],
 ];
 //http://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html#.V2yPlfmLTcs

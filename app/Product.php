@@ -64,6 +64,21 @@ class Product extends Model
         return $query->orderBy('created_at', 'asc');
     }
 
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword != '')
+        {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("name", "LIKE", "%$keyword%")
+                        ->orWhere("tags", "LIKE", "%$keyword%")
+                        ->orWhere("keywords", "LIKE", "%$keyword%")
+                        ->orWhere("desciption", "LIKE", "%$keyword%")
+                        ->orWhere("price", "LIKE", "%$keyword%");
+            });
+        }
+        return $query;
+    }
+
     /**
      * End query scope
      */

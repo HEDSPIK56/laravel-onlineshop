@@ -138,7 +138,7 @@
             @endforeach
             <!-- paginal-->
             <nav class="numbering animated wow slideInRight" data-wow-delay=".5s">
-                {!! $products->render() !!}
+                {!! $products->appends(Request::all())->links() !!}
             </nav>
             <!-- end paginator -->
         </div>

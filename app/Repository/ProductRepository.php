@@ -26,7 +26,7 @@ class ProductRepository
      */
     public function getAllProduct($condition)
     {
-        return Product::active()->paginate(9);
+        return Product::active()->searchbykeyword($condition->getKeyWord())->paginate(9);
     }
 
     public function getNewsProduct($condition)
