@@ -269,3 +269,10 @@ http://demopavothemes.com/pav_food_store/admin/index.php?route=common/login
 #Working with Repositories in Laravel
 https://www.youtube.com/watch?v=D7nAGC4DN08
 +https://github.com/amitavroy/learningl5/blob/master/app/Repositories/TodoInterface.php
+# sendmail
+https://scotch.io/tutorials/ultimate-guide-on-sending-email-in-laravel
++ https://dotdev.co/use-laravel-validator-while-filtering-collections-e4e753d40b99#.h8r5qwcg4
++ https://dotdev.co/easily-handle-shipping-in-laravel-with-shippo-12055c903704#.qm0ypsiuu
++ https://dotdev.co/design-pattern-service-layer-with-laravel-5-740ff0a7b65f#.gt5hupmv9
++ https://dotdev.co/creating-unique-title-slugs-with-laravel-7f67badd98f9#.cywwdk5se
++ https://dotdev.co/how-to-setup-and-use-the-google-calendar-api-e6426688771f#.mnn8tcf7w
