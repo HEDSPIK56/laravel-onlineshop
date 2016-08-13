@@ -79,6 +79,29 @@ class Product extends Model
         return $query;
     }
 
+    public function scopeSortKeyCondition($query, $keyword)
+    {
+        if ($keyword != '')
+        {
+            switch ($keyword)
+            {
+                case 'popular':
+                    $query->orderBy('number_bookmark', 'desc');
+                    break;
+                case 'view':
+                    $query->orderBy('number_view', 'desc');
+                    break;
+                case 'price':
+                    $query->orderBy('price', 'desc');
+                    break;
+                default:
+                    $query->orderBy('created_at', 'desc');
+                    //sort create date
+                    break;
+            }
+        }
+    }
+
     /**
      * End query scope
      */
@@ -94,15 +117,14 @@ class Product extends Model
 
     public function getImages($size = null)
     {
-        if($this->attributes['images'])
+        if ($this->attributes['images'])
         {
             $images = $this->attributes['images'];
             $id = $this->attributes['id'];
             $path = "images/products/" . $id;
 
             $images = explode("|", $images);
-            $images = array_map(function ($image) use ($path)
-            {
+            $images = array_map(function ($image) use ($path) {
                 return "$path/$image";
             }, $images);
             return array_filter($images);
@@ -113,7 +135,7 @@ class Product extends Model
     public function getImage()
     {
         $images = $this->getImages();
-        if(!empty($images))
+        if (!empty($images))
         {
             return reset($images);
         }
@@ -169,7 +191,7 @@ class Product extends Model
         $currentView = (int) $this->attributes['number_view'] + 1;
         $this->setAttribute('number_view', $currentView);
     }
-    
+
     /**
      * 
      * @param integer $time

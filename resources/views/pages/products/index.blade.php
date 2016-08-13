@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 {!! Breadcrumbs::render('home') !!}
 
@@ -16,13 +15,13 @@
                         </a></li>	
                 </ul>
                 <script type='text/javascript'>//<![CDATA[ 
-                    $(window).load(function() {
+                    $(window).load(function () {
                         $("#slider-range").slider({
                             range: true,
                             min: 0,
                             max: 100000,
                             values: [20000, 80000],
-                            slide: function(event, ui) {
+                            slide: function (event, ui) {
                                 $("#amount").val("$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ]);
                             }
                         });
@@ -50,22 +49,20 @@
         <div class="col-md-8 products-right">
             <div class="products-right-grid">
                 <div class="products-right-grids animated wow slideInRight" data-wow-delay=".5s">
-                    <div class="sorting">
-                        <select id="country" onchange="change_country(this.value)" class="frm-field required sect">
-                            <option value="null">Default sorting</option>
-                            <option value="null">Sort by popularity</option> 
-                            <option value="null">Sort by average rating</option>					
-                            <option value="null">Sort by price</option>								
-                        </select>
-                    </div>
-                    <div class="sorting-left">
-                        <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-                            <option value="null">Item on page 9</option>
-                            <option value="null">Item on page 18</option> 
-                            <option value="null">Item on page 32</option>					
-                            <option value="null">All</option>								
-                        </select>
-                    </div>
+                    <form action="{{ route('product.index')}}" id="form_search_product">
+                        <div class="sorting">
+                            <select id="sort_style" class="frm-field required sect" name="sortType">
+                                <option value="">Default sorting</option>
+                                <option value="popular">Sort by popularity</option> 
+                                <option value="view">Sort by average rating</option>					
+                                <option value="price">Sort by price</option>								
+                            </select>
+                        </div>
+                        <div class="sorting-left">
+                            <label>Item per page</label>
+                            {{ Form::selectRange('itemPerPage', 6,24,$rangePerPage, ['class' => 'frm-field required sect', 'id' => 'per_page']) }}
+                        </div>
+                    </form>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="products-right-grids-position animated wow slideInRight" data-wow-delay=".5s">
@@ -147,3 +144,9 @@
 </div>
 <!-- end product -->
 @endsection
+
+@section('javascript')
+<!-- include js file -->
+<script type="text/javascript" src="{{ URL::asset('js/product.js') }}"></script>
+<!-- end include js file -->
+@stop

@@ -33,7 +33,11 @@ class ProductsController extends Controller
         $products = $this->productRes->getAllProduct($condition);
         $newProducts = $this->productRes->getNewsProduct($condition);
         $categories = $this->categoryRes->getListCategory();
-        return view('pages.products.index', compact('products', 'categories', 'newProducts'));
+        $rangePerPage = $condition->getItemPerPage();
+        $temp = range(6, 100, 3);
+        return view('pages.products.index', compact(
+                        'products', 'categories', 'newProducts', 'rangePerPage', 'temp'
+        ));
     }
 
     /**

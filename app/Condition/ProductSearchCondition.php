@@ -41,6 +41,10 @@ class ProductSearchCondition extends BaseAbstractBean
 
     public function getItemPerPage()
     {
+        if (empty($this->itemPerPage))
+        {
+            return 6;
+        }
         return (int) $this->itemPerPage;
     }
 
