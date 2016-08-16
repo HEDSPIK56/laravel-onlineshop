@@ -276,3 +276,6 @@ https://scotch.io/tutorials/ultimate-guide-on-sending-email-in-laravel
 + https://dotdev.co/design-pattern-service-layer-with-laravel-5-740ff0a7b65f#.gt5hupmv9
 + https://dotdev.co/creating-unique-title-slugs-with-laravel-7f67badd98f9#.cywwdk5se
 + https://dotdev.co/how-to-setup-and-use-the-google-calendar-api-e6426688771f#.mnn8tcf7w
+
+https://github.com/mrakodol/Laravel-5-Bootstrap-3-Starter-Site
+http://tutsnare.com/upload-multiple-files-in-laravel/
