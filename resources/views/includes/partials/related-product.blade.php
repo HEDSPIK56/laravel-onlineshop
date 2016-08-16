@@ -16,19 +16,19 @@
                         <div class="new-collections-grid1-right">
                             <div class="rating">
                                 <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive">
+                                    <img src="{{URL::asset('images/2.png')}}" alt=" " class="img-responsive">
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive">
+                                    <img src="{{URL::asset('images/2.png')}}" alt=" " class="img-responsive">
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive">
+                                    <img src="{{URL::asset('images/1.png')}}" alt=" " class="img-responsive">
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive">
+                                    <img src="{{URL::asset('images/1.png')}}" alt=" " class="img-responsive">
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive">
+                                    <img src="{{URL::asset('images/1.png')}}" alt=" " class="img-responsive">
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>

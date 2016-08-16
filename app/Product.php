@@ -121,7 +121,7 @@ class Product extends Model
         {
             $images = $this->attributes['images'];
             $id = $this->attributes['id'];
-            $path = "images/products/" . $id;
+            $path = "/images/products/" . $id;
 
             $images = explode("|", $images);
             $images = array_map(function ($image) use ($path) {

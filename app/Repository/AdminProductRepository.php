@@ -92,4 +92,25 @@ class AdminProductRepository
         return false;
     }
 
+    public function uploadImage($request, $id)
+    {
+        $imageName = array();
+        if ($request->hasFile('images'))
+        {
+            $files = $request->file('images');
+            $uploadCount = 0;
+            foreach ($files as $file)
+            {
+                $filename = $file->getClientOriginalName();
+                $extension = $file->getClientOriginalExtension();
+                $name = sha1($filename . time()) . '.' . $extension;
+
+                $destinationPath = 'images/products/' . $id . '/';
+                $file->move($destinationPath, $name);
+                $imageName[] = $name;
+            }
+        }
+        return implode("|", $imageName);
+    }
+
 }

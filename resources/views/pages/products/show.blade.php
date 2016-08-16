@@ -30,12 +30,11 @@
 
                     });//]]>
                 </script>
-                <script type="text/javascript" src="js/jquery-ui.min.js"></script>
                 <!---->
             </div>
             @include('includes.partials.listcategories', ['categories' => $categories])
             <div class="men-position animated wow slideInUp" data-wow-delay=".5s">
-                <a href="single.html"><img src="images/29.jpg" alt=" " class="img-responsive" /></a>
+                <a href="single.html"><img src="{{ URL::asset('images/29.jpg') }}" alt=" " class="img-responsive" /></a>
                 <div class="men-position-pos">
                     <h4>Summer collection</h4>
                     <h5><span>55%</span> Flat Discount</h5>
@@ -46,20 +45,14 @@
             <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li data-thumb="{{ $product->getImage() }}">
-                            <div class="thumb-image"> <img src="{{ $product->getImage() }}" data-imagezoom="true" class="img-responsive"> </div>
+                        @foreach($product->getImages() as $image)
+                        <li data-thumb="{{ $image }}">
+                            <div class="thumb-image"> <img src="{{ $image }}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li data-thumb="{{ $product->getImage() }}">
-                            <div class="thumb-image"> <img src="{{ $product->getImage() }}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li data-thumb="{{ $product->getImage() }}">
-                            <div class="thumb-image"> <img src="{{ $product->getImage() }}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li> 
+                        @endforeach
                     </ul>
                 </div>
                 <!-- flixslider -->
-                <script defer src="js/jquery.flexslider.js"></script>
-                <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
                 <script>
                     // Can also be used with $(document).ready()
                     $(window).load(function () {
@@ -183,7 +176,7 @@
                                 </div>
                                 <div class="bootstrap-tab-text-grid">
                                     <div class="bootstrap-tab-text-grid-left">
-                                        <img src="images/5.png" alt=" " class="img-responsive" />
+                                        <img src="{{ URL::asset('images/5.png') }}" alt=" " class="img-responsive" />
                                     </div>
                                     <div class="bootstrap-tab-text-grid-right">
                                         <ul>

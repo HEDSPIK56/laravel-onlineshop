@@ -62,9 +62,15 @@ class ProductsController extends Controller
      */
     public function store(AdminProductRequest $request)
     {
-        $data = $request->all();
-        unset($data['images']);
-        $this->products->addProduct($data);
+        $data = $request->except('images');
+        $product = $this->products->addProduct($data);
+        if ($product)
+        {
+            // process upload image
+            $imageName = $this->products->uploadImage($request, $product->id);
+            $product->images = $imageName;
+            $product->save();
+        }
         return redirect()->route('admin.data.product.index');
     }
 
