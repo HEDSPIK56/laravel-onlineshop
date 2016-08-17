@@ -56,6 +56,7 @@
     <script src="{{ URL::asset('js/imagezoom.js') }}"></script>
     <script src="{{ URL::asset('js/jquery.flexslider.js') }}"></script>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="{{ URL::asset('js/app.js') }}"></script>
     <script>
         new WOW().init();
     </script>

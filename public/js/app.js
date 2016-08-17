@@ -38,9 +38,20 @@ var setupCommonApp = {
         });
     },
     
+    addToCart: function(){
+      $(".btn.btn-fefault.add-to-cart").on('click', function(e){
+          e.preventDefault();
+          var that = $(this);
+          var form = that.parents('form');
+          return false;
+          console.log(form);
+      });  
+    },
+    
     setup: function () {
         this.uploadFile();
         this.setupTinyMCE();
+        this.addToCart();
     },
     run: function () {
         this.setup();

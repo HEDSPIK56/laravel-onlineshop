@@ -116,9 +116,13 @@ class ProductsController extends Controller
     
     public function addToCart(Request $request)
     {
-        if ($request->isMethod('post')) {
-            $product_id = $request->input('product_id');
-            $this->productRes->addToCart($product_id);
+        if ($request->ajax())
+        {
+            if ($request->isMethod('post'))
+            {
+                $product_id = $request->input('product_id');
+                $this->productRes->addToCart($product_id);
+            }
         }
         return redirect()->route('cart.index');
     }
