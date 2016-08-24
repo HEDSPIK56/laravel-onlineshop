@@ -81,12 +81,7 @@ class ProductRepository
         $condition = new ProductSearchCondition();
         $condition->setAttributes(['id' => $product_id]);
         $product = $this->readProduct($condition);
-        Cart::add(array(
-            'id' => $product_id,
-            'name' => $product->name,
-            'qty' => 1,
-            'price' =>$product->price
-        ));
+        Cart::add($product);
     }
 
 }
