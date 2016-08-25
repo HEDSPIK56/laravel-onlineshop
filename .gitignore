@@ -4,4 +4,5 @@
 .env
 /nbproject/private/
 /node_modules/
+/resources/vendor/
 .idea
