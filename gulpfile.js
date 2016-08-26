@@ -7,6 +7,7 @@ gulp.task('bower', function () {
 });
 
 var vendors = '../../vendor/';
+var use_template = '../../assets';
 
 var paths = {
     'jquery': vendors + '/jquery/dist',
@@ -22,7 +23,12 @@ var paths = {
     'summernote': vendors + '/summernote/dist',
     'select2': vendors + '/select2/dist',
     'jqueryui': vendors + '/jquery-ui',
-    'justifiedGallery': vendors + '/Justified-Gallery/dist/'
+    'justifiedGallery': vendors + '/Justified-Gallery/dist/',
+    'slick' : use_template + '/js/slick.js',
+    'sequence-theme' : use_template + '/js/sequence-theme.modern-slide-in.js',
+    'sequence' : use_template + '/js/sequence.js',
+    'smartmenus' : use_template + '/js/sequence.js',
+    'nouislider' : use_template + '/js/sequence.js',
 };
 
 elixir.config.sourcemaps = false;
