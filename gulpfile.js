@@ -23,12 +23,7 @@ var paths = {
     'summernote': vendors + '/summernote/dist',
     'select2': vendors + '/select2/dist',
     'jqueryui': vendors + '/jquery-ui',
-    'justifiedGallery': vendors + '/Justified-Gallery/dist/',
-    'slick' : use_template + '/js/slick.js',
-    'sequence-theme' : use_template + '/js/sequence-theme.modern-slide-in.js',
-    'sequence' : use_template + '/js/sequence.js',
-    'smartmenus' : use_template + '/js/sequence.js',
-    'nouislider' : use_template + '/js/sequence.js',
+    'justifiedGallery': vendors + '/Justified-Gallery/dist/'
 };
 
 elixir.config.sourcemaps = false;
@@ -59,7 +54,8 @@ elixir(function (mix) {
         paths.fontawesome + '/css/font-awesome.css',
         paths.bootswatch + '/bootstrap.css',
         paths.colorbox + '/example3/colorbox.css',
-        paths.justifiedGallery + '/css/justifiedGallery.css'
+        paths.justifiedGallery + '/css/justifiedGallery.css',
+        
     ], 'public/css/site.css');
 
     // Merge Site scripts.
@@ -67,10 +63,32 @@ elixir(function (mix) {
         paths.jquery + '/jquery.js',
         paths.bootstrap + '/js/bootstrap.js',
         paths.colorbox + '/jquery.colorbox.js',
-        paths.justifiedGallery + '/js/jquery.justifiedGallery.js'
+        paths.justifiedGallery + '/js/jquery.justifiedGallery.js',
     ], 'public/js/site.js');
+    
+    // Template js
+    mix.scripts([
+        use_template + '/js/slick.js',
+    use_template + '/js/sequence-theme.modern-slide-in.js',
+    use_template + '/js/sequence.js',
+    use_template + '/js/jquery.smartmenus.js',
+    use_template + '/js/nouislider.js',
+    use_template + '/js/jquery.smartmenus.bootstrap.js',
+    use_template + '/js/jquery.simpleLens.js',
+    use_template + '/js/jquery.simpleGallery.js',
+    use_template + '/js/custom.js'
+    ], 'public/js/template.js');
 
     // Merge Admin CSSs.
+    mix.styles([
+        use_template + '/css/style.css',
+        use_template + '/css/slick.css',
+        use_template + '/css/sequence-theme.modern-slide-in.css',
+        use_template + '/css/nouislider.css',
+        use_template + '/jquery.smartmenus.bootstrap.css',
+        use_template + '/css/jquery.simpleLens.css',
+    ], 'public/css/template.css');
+    
     mix.styles([
         paths.bootstrap + '/css/bootstrap.css',
         paths.bootstrap + '/css/bootstrap-theme.css',
