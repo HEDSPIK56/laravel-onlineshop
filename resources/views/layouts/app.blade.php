@@ -27,8 +27,10 @@
         <meta property="og:description" content="Cửa hàng thực phẩm, bánh, trái cây, dụng cụ học sinh, kem, xôi, thực phẩm đóng hộp"/>
         <meta property="fb:app_id" content="1212597675425450"/>       
 
-        <link href="{{URL::asset('css/site.css')}}" rel="stylesheet">
-        <script src="{{ URL::asset('js/site.js') }}"></script>
+        <link href="{{ URL::asset('css/common/site.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('css/common/common.css') }}" rel="stylesheet">
+        <script src="{{ URL::asset('js/common/site.js') }}"></script>
+        <script src="{{ URL::asset('js/common/common.js') }}"></script>
 
         @yield('styles')
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

@@ -11,7 +11,14 @@
   |
  */
 
-Route::get('/', 'ProductsController@index');
+Route::get('/', function () {
+    //return 'Hello World';
+    $heading = "av";
+    $body = "body";
+    return view('welcome', compact('heading','body'));
+});
+
+//Route::get('/', 'ProductsController@index');
 
 Route::auth();
 Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');

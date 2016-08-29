@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var bower = require('gulp-bower');
 var elixir = require('laravel-elixir');
+//var browserSync = require('browser-sync').create();
 
 gulp.task('bower', function () {
     return bower();
@@ -56,7 +57,7 @@ elixir(function (mix) {
         paths.colorbox + '/example3/colorbox.css',
         paths.justifiedGallery + '/css/justifiedGallery.css',
         
-    ], 'public/css/site.css');
+    ], 'public/css/common/site.css');
 
     // Merge Site scripts.
     mix.scripts([
@@ -64,31 +65,9 @@ elixir(function (mix) {
         paths.bootstrap + '/js/bootstrap.js',
         paths.colorbox + '/jquery.colorbox.js',
         paths.justifiedGallery + '/js/jquery.justifiedGallery.js',
-    ], 'public/js/site.js');
-    
-    // Template js
-    mix.scripts([
-        use_template + '/js/slick.js',
-    use_template + '/js/sequence-theme.modern-slide-in.js',
-    use_template + '/js/sequence.js',
-    use_template + '/js/jquery.smartmenus.js',
-    use_template + '/js/nouislider.js',
-    use_template + '/js/jquery.smartmenus.bootstrap.js',
-    use_template + '/js/jquery.simpleLens.js',
-    use_template + '/js/jquery.simpleGallery.js',
-    use_template + '/js/custom.js'
-    ], 'public/js/template.js');
-
+    ], 'public/js/common/site.js');
+        
     // Merge Admin CSSs.
-    mix.styles([
-        use_template + '/css/style.css',
-        use_template + '/css/slick.css',
-        use_template + '/css/sequence-theme.modern-slide-in.css',
-        use_template + '/css/nouislider.css',
-        use_template + '/jquery.smartmenus.bootstrap.css',
-        use_template + '/css/jquery.simpleLens.css',
-    ], 'public/css/template.css');
-    
     mix.styles([
         paths.bootstrap + '/css/bootstrap.css',
         paths.bootstrap + '/css/bootstrap-theme.css',
@@ -102,7 +81,7 @@ elixir(function (mix) {
         paths.select2 + '/css/select2.css',
         paths.jqueryui + '/themes/base/minified/jquery-ui.min.css',
         'sb-admin-2.css',
-    ], 'public/css/admin.css');
+    ], 'public/css/common/admin.css');
 
     // Merge Admin scripts.
     mix.scripts([
@@ -121,6 +100,22 @@ elixir(function (mix) {
         'dataTables.bootstrap.js',
         'datatables.fnReloadAjax.js',
         'sb-admin-2.js',
-    ], 'public/js/admin.js');
+    ], 'public/js/common/admin.js');
+    
 
+    // Template js
+    mix.scripts([
+    use_template + '/js/common.js'
+    ], 'public/js/common/common.js');
+
+    // template css
+    mix.sass([
+        use_template + '/scss/common.scss'
+    ], 'public/css/common/css');
+
+    // automatically refreshes web browser after you make changes to your assets
+
+    // mix.browserSync({
+    //     proxy: 'project.dev'
+    // });
 });
