@@ -22,12 +22,13 @@
     @yield('styles')
 </head>
 <body>
-<div id="wrapper">
-    @include('admin.partials.nav')
-    <div id="page-wrapper">
-        @yield('main')
+    <div id="wrapper">
+            @include('admin.partials.nav')
+            <div id="page-wrapper">
+                @yield('main')
+            </div>
+        </div>
     </div>
-</div>
 
 <script type="text/javascript">
     @if(isset($type))
