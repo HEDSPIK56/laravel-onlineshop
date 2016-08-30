@@ -9,5 +9,8 @@
         <div class="page-header">
             <h2>About Page</h2>
         </div>
+        <form method="post">
+    <textarea id="mytextarea">Hello, World!</textarea>
+  </form>
     </div>
 @endsection

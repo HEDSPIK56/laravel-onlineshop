@@ -31,6 +31,7 @@
         <link href="{{ URL::asset('css/common/common.css') }}" rel="stylesheet">
         <script src="{{ URL::asset('js/common/site.js') }}"></script>
         <script src="{{ URL::asset('js/common/common.js') }}"></script>
+        <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
 
         @yield('styles')
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

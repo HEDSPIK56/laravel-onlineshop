@@ -197,16 +197,16 @@ Route::group(['middleware' => 'auth'], function (){
     });
 });
 
-//Route::get('sendemail', function ()
-//{
-//    $data = array (
-//        'name' => "Learning Laravel",
-//    );
-//
-//    Mail::send('emails.welcome', $data, function ($message)
-//    {
-//        $message->to('taihanh0310@gmail.com')->subject('Learning Laravel test email');
-//    });
-//
-//    return "Your email has been sent successfully";
-//});
+Route::get('/sendemail', function ()
+{
+   $data = array (
+       'name' => "Learning Laravel",
+   );
+
+   Mail::send('emails.welcome', $data, function ($message)
+   {
+       $message->to('taihanh0310@gmail.com')->subject('Learning Laravel test email');
+   });
+
+   return "Your email has been sent successfully";
+});

@@ -20,7 +20,12 @@ var setupCommonApp = {
 	    selector: "textarea",
 	    resize: "both",
 	    relative_urls: false,
-	    plugins: ["autoresize", "image", "code", "lists", "code","example", "link"],
+	    //plugins: ["autoresize", "image", "code", "lists", "code","example", "link"],
+        plugins: [
+          'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+          'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+          'save table contextmenu directionality emoticons template paste textcolor'
+        ],
 	    indentation : '20pt',
 	    file_browser_callback: function(field_name, url, type, win) {
 	        if (type == 'image') $('#my_form input').click();
