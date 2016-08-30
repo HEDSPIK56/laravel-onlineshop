@@ -14,8 +14,11 @@
         <meta name="description"
               content="Lorem ipsum dolor sit amet, nihil fabulas et sea, nam posse menandri scripserit no, mei."/>
     @show
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/admin.js') }}"></script>
+    <link href="{{ URL::asset('css/common/admin.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/common/common.css') }}" rel="stylesheet">
+    <script src="{{ URL::asset('js/common/admin.js') }}"></script>
+    <script src="{{ URL::asset('js/common/common.js') }}"></script>
+    <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
     @yield('styles')
 </head>
 <body>

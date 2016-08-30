@@ -136,10 +136,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::group(['prefix' => 'admin', 'middleware' => ['role:root|admin|manager']], function ()
     {
         //Dashboard Route
-        Route::get('dashboard', function()
-        {
-            return view('admin.dashboard');
-        });
+        Route::resource('/dashboard', 'Admin\DashboardController');
 
         /**
          * Category
