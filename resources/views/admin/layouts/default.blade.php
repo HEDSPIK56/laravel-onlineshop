@@ -19,15 +19,17 @@
     <script src="{{ URL::asset('js/common/admin.js') }}"></script>
     <script src="{{ URL::asset('js/common/common.js') }}"></script>
     <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
     @yield('styles')
 </head>
 <body>
-<div id="wrapper">
-    @include('admin.partials.nav')
-    <div id="page-wrapper">
-        @yield('main')
+    <div id="wrapper">
+            @include('admin.partials.nav')
+            <div id="page-wrapper">
+                @yield('main')
+            </div>
+        </div>
     </div>
-</div>
 
 <script type="text/javascript">
     @if(isset($type))

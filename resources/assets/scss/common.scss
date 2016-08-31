@@ -1,0 +1,11 @@
+@import 'base/_variables.scss';
+@import 'base/_mixins.scss';
+
+.form-custom{
+    .font-bold{
+        font-weight: bold;
+    }
+    .color-black{
+        color: black;
+    }
+}

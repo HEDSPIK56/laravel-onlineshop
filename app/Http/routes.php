@@ -136,7 +136,10 @@ Route::group(['middleware' => 'auth'], function (){
     Route::group(['prefix' => 'admin', 'middleware' => ['role:root|admin|manager']], function ()
     {
         //Dashboard Route
-        Route::resource('/dashboard', 'Admin\DashboardController');
+        Route::get('/dashboard', [
+            'as' => 'dashboard.index',
+            'uses' => 'Admin\DashboardController@index'
+        ]);
 
         /**
          * Category
@@ -189,6 +192,31 @@ Route::group(['middleware' => 'auth'], function (){
 
         Route::resource('/system/role', 'Admin\EShopSystem\RolesController');
         Route::resource('/system/permission', 'Admin\EShopSystem\PermissionsController');
+
+        // system setting
+        Route::get('/system/system-setting', [
+            'as' => 'admin.system.system-setting.index',
+            'uses' => 'Admin\EShopSystem\SystemSettingController@index'
+        ]);
+
+        Route::get('/system/system-setting/create', [
+            'as' => 'admin.system.system-setting.create',
+            'uses' => 'Admin\EShopSystem\SystemSettingController@create'
+        ]);
+
+        Route::get('/system/system-setting/{id}/edit', [
+            'as' => 'admin.system.system-setting.edit',
+            'uses' => 'Admin\EShopSystem\SystemSettingController@edit'
+        ]);
+
+        Route::post('/system/system-setting', [
+            'as' => 'admin.system.system-setting.store',
+            'uses' => 'Admin\EShopSystem\SystemSettingController@store'
+        ]);
+        Route::post('/system/system-setting/{id}', [
+            'as' => 'admin.system.system-setting.update',
+            'uses' => 'Admin\EShopSystem\SystemSettingController@update'
+        ]);
 
         //End system
     });
