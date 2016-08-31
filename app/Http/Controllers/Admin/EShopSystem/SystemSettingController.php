@@ -20,7 +20,8 @@ class SystemSettingController extends AdminController
 
     public function index()
     {
-        return view('admin.eshopsystem.system-setting.index');
+        $data = $this->systemSettingResp->getSystemSetting();
+        return view('admin.eshopsystem.system-setting.index', compact('data'));
     }
 
     public function create()
@@ -30,7 +31,8 @@ class SystemSettingController extends AdminController
 
     public function store(Request $request)
     {
-        
+        $this->systemSettingResp->createSystemSetting($request->all());
+        return redirect()->route('admin.system.system-setting.index');
     }
 
     public function edit($id)

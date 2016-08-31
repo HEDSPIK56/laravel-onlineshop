@@ -24,8 +24,8 @@ class CreateSystemSettingTable extends Migration
             $table->string('shop_facebook_app_id')->nullable();
             $table->string('shop_twitter')->nullable();
             $table->string('shop_twitter_app_id')->nullable();
-            $table->string('shop_google-plus')->nullable();
-            $table->string('shop_google-plus_app_id')->nullable();
+            $table->string('shop_google_plus')->nullable();
+            $table->string('shop_google_plus_app_id')->nullable();
             $table->string('shop_descripton')->nullable();
             $table->string('shop_author')->nullable();
             $table->string('shop_generator')->nullable();

@@ -18,7 +18,7 @@
             </div>     
 
             <div class="panel-body" >
-                <form id="system_setting" class="form-horizontal form-custom" role="form" action="{{route('admin.system.system-setting.store')}}">
+                <form id="system_setting" class="form-horizontal form-custom" role="form" action="{{route('admin.system.system-setting.store')}}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="form-group">
@@ -97,18 +97,18 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="shop_twitter" class="col-sm-3 control-label font-bold color-black">shop_twitter</label>
+                        <label for="shop_google_plus" class="col-sm-3 control-label font-bold color-black">shop_google_plus</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="shop_twitter"
-                                   placeholder="shop_twitter" name="shop_twitter" />
+                            <input type="text" class="form-control" id="shop_google_plus"
+                                   placeholder="shop_google_plus" name="shop_google_plus" />
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="shop_google-plus_app_id" class="col-sm-3 control-label font-bold color-black">shop_google-plus_app_id</label>
+                        <label for="shop_google_plus_app_id" class="col-sm-3 control-label font-bold color-black">shop_google-plus_app_id</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="shop_google-plus_app_id"
-                                   placeholder="shop_google-plus_app_id" name="shop_google-plus_app_id" />
+                                   placeholder="shop_google_plus_app_id" name="shop_google_plus_app_id" />
                         </div>
                     </div>
                     
