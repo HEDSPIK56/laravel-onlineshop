@@ -146,7 +146,9 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Tsawler\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
     ],
     /*
       |--------------------------------------------------------------------------
@@ -202,5 +204,6 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
         'Cart' => \Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Image'     => Intervention\Image\Facades\Image::class
     ],
 ];

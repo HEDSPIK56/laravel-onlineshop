@@ -16,6 +16,7 @@
     @show
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
     @yield('styles')
 </head>
 <!-- Container -->

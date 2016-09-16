@@ -480,6 +480,7 @@ class CartTest extends Orchestra\Testbench\TestCase
                 'price' => 10.00,
                 'tax' => 2.10,
                 'subtotal' => 10.0,
+                'options' => new \Gloudemans\Shoppingcart\CartItemOptions,
             ],
             '370d08585360f5c568b18d1f2e4ca1df' => [
                 'rowId' => '370d08585360f5c568b18d1f2e4ca1df',
@@ -489,6 +490,7 @@ class CartTest extends Orchestra\Testbench\TestCase
                 'price' => 10.00,
                 'tax' => 2.10,
                 'subtotal' => 10.0,
+                'options' => new \Gloudemans\Shoppingcart\CartItemOptions,
             ]
         ], $content->toArray());
     }
@@ -554,8 +556,10 @@ class CartTest extends Orchestra\Testbench\TestCase
             return $cartItem->name == 'Some item';
         });
 
-        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem);
-        $this->assertEquals(1, $cartItem->id);
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $cartItem);
+        $this->assertCount(1, $cartItem);
+        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem->first());
+        $this->assertEquals(1, $cartItem->first()->id);
     }
 
     /** @test */
@@ -593,8 +597,10 @@ class CartTest extends Orchestra\Testbench\TestCase
             return $cartItem->options->color == 'red';
         });
 
-        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem);
-        $this->assertEquals(1, $cartItem->id);
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $cartItem);
+        $this->assertCount(1, $cartItem);
+        $this->assertInstanceOf(\Gloudemans\Shoppingcart\CartItem::class, $cartItem->first());
+        $this->assertEquals(1, $cartItem->first()->id);
     }
 
     /** @test */
@@ -608,7 +614,7 @@ class CartTest extends Orchestra\Testbench\TestCase
 
         $cartItem = $cart->get('027c91341fd5cf4d2579b49c4b6a90da');
 
-        $this->assertEquals('Mockery_0_Gloudemans_Shoppingcart_Contracts_Buyable', PHPUnit_Framework_Assert::readAttribute($cartItem, 'associatedModel'));
+        $this->assertContains('Gloudemans_Shoppingcart_Contracts_Buyable', PHPUnit_Framework_Assert::readAttribute($cartItem, 'associatedModel'));
     }
 
     /** @test */
@@ -787,6 +793,48 @@ class CartTest extends Orchestra\Testbench\TestCase
     }
 
     /** @test */
+    public function it_can_return_cart_formated_numbers_by_config_values()
+    {
+        $this->setConfigFormat(2, ',', '.');
+
+        $cart = $this->getCart();
+
+        $item = $this->getBuyableMock(1, 'Some title', 1000.00);
+        $item2 = $this->getBuyableMock(2, 'Some title', 2000.00);
+
+        $cart->add($item, 1);
+        $cart->add($item2, 2);
+
+        $this->assertEquals('5.000,00', $cart->subtotal());
+        $this->assertEquals('1.050,00', $cart->tax());
+        $this->assertEquals('6.050,00', $cart->total());
+
+        $this->assertEquals('5.000,00', $cart->subtotal);
+        $this->assertEquals('1.050,00', $cart->tax);
+        $this->assertEquals('6.050,00', $cart->total);
+    }
+
+    /** @test */
+    public function it_can_return_cartItem_formated_numbers_by_config_values()
+    {
+        $this->setConfigFormat(2, ',', '.');
+
+        $cart = $this->getCart();
+        $item = $this->getBuyableMock(1, 'Some title', 2000.00);
+
+        $cart->add($item, 2);
+
+        $cartItem = $cart->get('027c91341fd5cf4d2579b49c4b6a90da');
+
+        $this->assertEquals('2.000,00', $cartItem->price());
+        $this->assertEquals('2.420,00', $cartItem->priceTax());
+        $this->assertEquals('4.000,00', $cartItem->subtotal());
+        $this->assertEquals('4.840,00', $cartItem->total());
+        $this->assertEquals('420,00', $cartItem->tax());
+        $this->assertEquals('840,00', $cartItem->taxTotal());
+    }
+
+    /** @test */
     public function it_can_store_the_cart_in_a_database()
     {
         $this->artisan('migrate', [
@@ -903,6 +951,22 @@ class CartTest extends Orchestra\Testbench\TestCase
         $this->assertEquals(3.80, $cart->tax(2));
     }
 
+    /** @test */
+    public function it_will_destroy_the_cart_when_the_user_logs_out_and_the_config_setting_was_set_to_true()
+    {
+        $this->app['config']->set('cart.destroy_on_logout', true);
+
+        $session = Mockery::mock(\Illuminate\Session\SessionManager::class);
+
+        $session->shouldReceive('forget')->once()->with('cart');
+
+        $this->app->instance(\Illuminate\Session\SessionManager::class, $session);
+
+        $user = Mockery::mock(\Illuminate\Contracts\Auth\Authenticatable::class);
+
+        event(new \Illuminate\Auth\Events\Logout($user));
+    }
+
     /**
      * Get an instance of the cart.
      *
@@ -935,6 +999,20 @@ class CartTest extends Orchestra\Testbench\TestCase
         $item->shouldReceive('getBuyablePrice')->andReturn($price);
 
         return $item;
+    }
+
+    /**
+     * Set the config number format
+     * 
+     * @param $decimals
+     * @param $decimalPoint
+     * @param $thousandSeperator
+     */
+    private function setConfigFormat($decimals, $decimalPoint, $thousandSeperator)
+    {
+        $this->app['config']->set('cart.format.decimals', $decimals);
+        $this->app['config']->set('cart.format.decimal_point', $decimalPoint);
+        $this->app['config']->set('cart.format.thousand_seperator', $thousandSeperator);
     }
 }
 

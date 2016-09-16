@@ -15,28 +15,6 @@ var setupCommonApp = {
         }
     },
     
-    setupTinyMCE: function(){
-        tinymce.init({
-	    selector: "textarea",
-	    resize: "both",
-	    relative_urls: false,
-	    //plugins: ["autoresize", "image", "code", "lists", "code","example", "link"],
-        plugins: [
-          'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
-          'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-          'save table contextmenu directionality emoticons template paste textcolor'
-        ],
-	    indentation : '20pt',
-	    file_browser_callback: function(field_name, url, type, win) {
-	        if (type == 'image') $('#my_form input').click();
-	    },
-	    image_list: "/imglist",
-	    toolbar: [
-	        "undo redo | styleselect | bold italic | link image | alignleft aligncenter alignright | preview | spellchecker"
-	    ]
-	});
-    },
-    
     uploadFile: function(){
         $("#upload_file").change(function(e){
             setupCommonApp.reviewImageBeforeUpload(this, "#review_image");
@@ -55,7 +33,6 @@ var setupCommonApp = {
     
     setup: function () {
         this.uploadFile();
-        this.setupTinyMCE();
         this.addToCart();
     },
     run: function () {

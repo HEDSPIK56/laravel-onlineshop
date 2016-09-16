@@ -18,7 +18,7 @@
     <link href="{{ URL::asset('css/common/common.css') }}" rel="stylesheet">
     <script src="{{ URL::asset('js/common/admin.js') }}"></script>
     <script src="{{ URL::asset('js/common/common.js') }}"></script>
-    <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+    <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
     @yield('styles')
 </head>

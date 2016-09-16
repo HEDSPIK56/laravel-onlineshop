@@ -16,16 +16,20 @@
         "gloudemans/shoppingcart": "^2.1",
         "maddhatter/laravel-fullcalendar": "~1.0",
         "maatwebsite/excel": "~2.0",
-        "laravelcollective/html": "~5.0",
         "anouar/paypalpayment": "~1.0",
-        "cviebrock/eloquent-sluggable": "3.1.4"
+        "cviebrock/eloquent-sluggable": "3.1.4",
+        "tsawler/laravel-filemanager": "^0.6.2",
+        "ckeditor/ckeditor": "^4.5",
+        "triasrahman/media-upload": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "symfony/css-selector": "2.8.*|3.0.*",
-        "symfony/dom-crawler": "2.8.*|3.0.*"
+        "symfony/dom-crawler": "2.8.*|3.0.*",
+        "intervention/image": "2.*",
+        "laravelcollective/html": "5.2.*"
     },
     "autoload": {
         "classmap": [

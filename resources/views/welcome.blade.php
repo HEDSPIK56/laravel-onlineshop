@@ -10,7 +10,7 @@
             <h2>About Page</h2>
         </div>
         <form method="post">
-    <textarea id="mytextarea">Hello, World!</textarea>
+    <textarea id="editor">!</textarea>
   </form>
     </div>
 @endsection
