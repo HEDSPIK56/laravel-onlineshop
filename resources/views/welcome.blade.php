@@ -10,7 +10,15 @@
             <h2>About Page</h2>
         </div>
         <form method="post">
-    <textarea id="editor">!</textarea>
+    <textarea id="editor"></textarea>
   </form>
     </div>
+    <script type="text/javascript">
+             CKEDITOR.replace('editor', {
+                filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+                filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+                filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+                filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+            });
+        </script>
 @endsection
