@@ -53,4 +53,12 @@
         @yield('scripts')
 
     </body>
+    <script>
+        CKEDITOR.replace( 'editor', {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+        });
+    </script>
 </html>

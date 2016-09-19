@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'use_package_routes' => true,
+    'use_package_routes' => false,
     'middleware' => 'auth',
 
     'images_dir'         => 'public/vendor/laravel-filemanager/images/',
