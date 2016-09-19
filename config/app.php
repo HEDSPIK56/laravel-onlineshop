@@ -142,7 +142,6 @@ return [
          */
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
@@ -196,7 +195,6 @@ return [
         /**
          * Extenal App added
          */
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,

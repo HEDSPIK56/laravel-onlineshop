@@ -9,6 +9,6 @@
         <div class="page-header">
             <h2>About Page</h2>
         </div>
-        <textarea id="editor" name="content"></textarea>
+        <textarea id="editor" id="my-editor" name="content"></textarea>
     </div>
 @endsection

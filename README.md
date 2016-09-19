@@ -279,3 +279,6 @@ https://scotch.io/tutorials/ultimate-guide-on-sending-email-in-laravel
 
 https://github.com/mrakodol/Laravel-5-Bootstrap-3-Starter-Site
 http://tutsnare.com/upload-multiple-files-in-laravel/
+
+# Searchable, a search trait for Laravel
+https://github.com/nicolaslopezj/searchable
