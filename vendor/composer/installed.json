@@ -4513,5 +4513,53 @@
             "parser",
             "php"
         ]
+    },
+    {
+        "name": "nicolaslopezj/searchable",
+        "version": "1.9.2",
+        "version_normalized": "1.9.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nicolaslopezj/searchable.git",
+            "reference": "eee7c3ae94d8d0e98b397f0cf2dcb127bfddc555"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/eee7c3ae94d8d0e98b397f0cf2dcb127bfddc555",
+            "reference": "eee7c3ae94d8d0e98b397f0cf2dcb127bfddc555",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "illuminate/database": "4.2.x|~5.0",
+            "php": ">=5.4.0"
+        },
+        "time": "2016-06-28 21:40:28",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Nicolaslopezj\\Searchable\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Lopez",
+                "email": "nicolaslopezj@me.com"
+            }
+        ],
+        "description": "Eloquent model search trait.",
+        "keywords": [
+            "database",
+            "eloquent",
+            "laravel",
+            "model",
+            "search",
+            "searchable"
+        ]
     }
 ]

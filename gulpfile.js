@@ -8,7 +8,7 @@ gulp.task('bower', function () {
 });
 
 var vendors = '../../vendor/';
-var use_template = '../../assets';
+var use_template = '../resources/assets';
 
 var paths = {
     'jquery': vendors + '/jquery/dist',
@@ -66,6 +66,11 @@ elixir(function (mix) {
         paths.colorbox + '/jquery.colorbox.js',
         paths.justifiedGallery + '/js/jquery.justifiedGallery.js',
     ], 'public/js/common/site.js');
+
+    mix.scripts([
+        'ckeditor.js',
+        'adapters.jquery.js',
+    ], 'public/js/common/ckeditor.js');
         
     // Merge Admin CSSs.
     mix.styles([
@@ -99,19 +104,18 @@ elixir(function (mix) {
         'bootstrap-dataTables-paging.js',
         'dataTables.bootstrap.js',
         'datatables.fnReloadAjax.js',
-        'sb-admin-2.js',
     ], 'public/js/common/admin.js');
     
 
     // Template js
     mix.scripts([
-    use_template + '/js/common.js'
+    'common.js'
     ], 'public/js/common/common.js');
 
     // template css
     mix.sass([
-        use_template + '/scss/common.scss'
-    ], 'public/css/common/css');
+        'common.scss'
+    ], 'public/css/common/common.css');
 
     // automatically refreshes web browser after you make changes to your assets
 
