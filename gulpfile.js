@@ -25,8 +25,8 @@ var paths = {
     'jqueryui': vendors + '/jquery-ui',
     'justifiedGallery': vendors + '/Justified-Gallery/dist/',
     'jqueryValidation': vendors + '/jquery-validation/dist',
-    'moment': 'todo',
-    'bootstrap-datetimepicker': 'todo'
+    'moment': vendors + '/moment/min',
+    'datetimepicker': vendors + '/eonasdan-bootstrap-datetimepicker/build'
 };
 
 elixir.config.sourcemaps = false;
@@ -62,6 +62,7 @@ elixir(function (mix) {
         paths.dataTables + '/css/dataTables.bootstrap.css',
         paths.dataTablesBootstrap3Plugin + '/css/datatables-bootstrap3.css',
         paths.jqueryui + '/themes/base/minified/jquery-ui.min.css',
+        paths.datetimepicker + '/css/bootstrap-datetimepicker.css'
         
     ], 'public/css/common/site.css');
     
@@ -84,6 +85,8 @@ elixir(function (mix) {
         'dataTables.bootstrap.js',
         'datatables.fnReloadAjax.js',
         paths.jqueryValidation + '/jquery.validate.js',
+        paths.moment + '/moment.min.js',
+        paths.datetimepicker + '/js/bootstrap-datetimepicker.min.js'
         
     ], 'public/js/common/site.js');
 
