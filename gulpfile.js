@@ -8,7 +8,6 @@ gulp.task('bower', function () {
 });
 
 var vendors = '../../vendor/';
-var use_template = '../resources/assets';
 
 var paths = {
     'jquery': vendors + '/jquery/dist',
@@ -24,7 +23,10 @@ var paths = {
     'summernote': vendors + '/summernote/dist',
     'select2': vendors + '/select2/dist',
     'jqueryui': vendors + '/jquery-ui',
-    'justifiedGallery': vendors + '/Justified-Gallery/dist/'
+    'justifiedGallery': vendors + '/Justified-Gallery/dist/',
+    'jqueryValidation': vendors + '/jquery-validation/dist',
+    'moment': 'todo',
+    'bootstrap-datetimepicker': 'todo'
 };
 
 elixir.config.sourcemaps = false;
@@ -37,7 +39,7 @@ elixir(function (mix) {
     // Copy fonts straight to public
     mix.copy('resources/vendor/bootstrap/dist/fonts/**', 'public/fonts');
     mix.copy('resources/vendor/font-awesome/fonts/**', 'public/fonts');
-    mix.copy('resources/vendor/summernote/dist/font/**', 'public/css/font');
+    mix.copy('resources/vendor/summernote/dist/font/**', 'public/fonts');
 
     // Copy images straight to public
     mix.copy('resources/vendor/jquery-colorbox/example3/images/**', 'public/css/images');
@@ -45,10 +47,10 @@ elixir(function (mix) {
 
 
     // Copy flag resources
-    mix.copy('resources/vendor/flag-sprites/dist/css/flag-sprites.min.css', 'public/css/flags.css');
+    mix.copy('resources/vendor/flag-sprites/dist/css/flag-sprites.min.css', 'public/css/common/flags.css');
     mix.copy('resources/vendor/flag-sprites/dist/img/flags.png', 'public/img/flags.png');
 
-    // Merge Site CSSs.
+    // Define CSS Common.
     mix.styles([
         paths.bootstrap + '/css/bootstrap.css',
         paths.bootstrap + '/css/bootstrap-theme.css',
@@ -56,54 +58,56 @@ elixir(function (mix) {
         paths.bootswatch + '/bootstrap.css',
         paths.colorbox + '/example3/colorbox.css',
         paths.justifiedGallery + '/css/justifiedGallery.css',
+        paths.colorbox + '/example3/colorbox.css',
+        paths.dataTables + '/css/dataTables.bootstrap.css',
+        paths.dataTablesBootstrap3Plugin + '/css/datatables-bootstrap3.css',
+        paths.jqueryui + '/themes/base/minified/jquery-ui.min.css',
         
     ], 'public/css/common/site.css');
-
+    
+    // CSS: datetimepicker
+    
+    // End CSS datetimepicker
+    
     // Merge Site scripts.
     mix.scripts([
         paths.jquery + '/jquery.js',
         paths.bootstrap + '/js/bootstrap.js',
         paths.colorbox + '/jquery.colorbox.js',
         paths.justifiedGallery + '/js/jquery.justifiedGallery.js',
+        paths.dataTables + '/js/jquery.dataTables.js',
+        paths.dataTables + '/js/dataTables.bootstrap.js',
+        paths.dataTablesBootstrap3Plugin + '/js/datatables-bootstrap3.js',
+        paths.datatablesResponsive + '/js/dataTables.responsive.js',
+        paths.select2 + '/js/select2.js',
+        'bootstrap-dataTables-paging.js',
+        'dataTables.bootstrap.js',
+        'datatables.fnReloadAjax.js',
+        paths.jqueryValidation + '/jquery.validate.js',
+        
     ], 'public/js/common/site.js');
 
+    // CKEditor
     mix.scripts([
         'ckeditor.js',
         'adapters.jquery.js',
     ], 'public/js/common/ckeditor.js');
-        
+    
+    // Datetimepicker JS
+    // ENd datetime picker Js
+    
     // Merge Admin CSSs.
     mix.styles([
-        paths.bootstrap + '/css/bootstrap.css',
-        paths.bootstrap + '/css/bootstrap-theme.css',
-        paths.fontawesome + '/css/font-awesome.css',
-        paths.bootswatch + '/bootstrap.css',
-        paths.colorbox + '/example3/colorbox.css',
-        paths.dataTables + '/css/dataTables.bootstrap.css',
-        paths.dataTablesBootstrap3Plugin + '/css/datatables-bootstrap3.css',
         paths.metisMenu + '/metisMenu.css',
         paths.summernote + '/summernote.css',
         paths.select2 + '/css/select2.css',
-        paths.jqueryui + '/themes/base/minified/jquery-ui.min.css',
         'sb-admin-2.css',
     ], 'public/css/common/admin.css');
 
     // Merge Admin scripts.
     mix.scripts([
-        paths.jquery + '/jquery.js',
-        paths.jqueryui + '/ui/jquery-ui.js',
-        paths.bootstrap + '/js/bootstrap.js',
-        paths.colorbox + '/jquery.colorbox.js',
-        paths.dataTables + '/js/jquery.dataTables.js',
-        paths.dataTables + '/js/dataTables.bootstrap.js',
-        paths.dataTablesBootstrap3Plugin + '/js/datatables-bootstrap3.js',
-        paths.datatablesResponsive + '/js/dataTables.responsive.js',
         paths.metisMenu + '/metisMenu.js',
         paths.summernote + '/summernote.js',
-        paths.select2 + '/js/select2.js',
-        'bootstrap-dataTables-paging.js',
-        'dataTables.bootstrap.js',
-        'datatables.fnReloadAjax.js',
     ], 'public/js/common/admin.js');
     
 

@@ -1,57 +1,136 @@
-var gulp = require('gulp'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync').create();
+var gulp = require('gulp');
+var bower = require('gulp-bower');
+var elixir = require('laravel-elixir');
+//var browserSync = require('browser-sync').create();
 
-var DEST = 'public/';
-
-gulp.task('scripts', function() {
-    return gulp.src('src/js/*.js')
-      .pipe(concat('common.js'))
-      .pipe(gulp.dest(DEST+'/js'))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(uglify())
-      .pipe(gulp.dest(DEST+'/js'))
-      .pipe(browserSync.stream());
+gulp.task('bower', function () {
+    return bower();
 });
 
-// TODO: Maybe we can simplify how sass compile the minify and unminify version
-var compileSASS = function (filename, options) {
-  return sass('src/scss/*.scss', options)
-        .pipe(autoprefixer('last 2 versions', '> 5%'))
-        .pipe(concat(filename))
-        .pipe(gulp.dest(DEST+'/css'))
-        .pipe(browserSync.stream());
+var vendors = '../../vendor/';
+var use_template = '../resources/assets';
+
+var paths = {
+    'jquery': vendors + '/jquery/dist',
+    'bootstrap': vendors + '/bootstrap/dist',
+    'bootswatch': vendors + '/bootswatch/simplex',
+    'fontawesome': vendors + '/font-awesome',
+    'colorbox': vendors + '/jquery-colorbox',
+    'dataTables': vendors + '/datatables/media',
+    'dataTablesBootstrap3Plugin': vendors + '/datatables-bootstrap3-plugin/media',
+    'flag': vendors + '/flag-sprites/dist',
+    'metisMenu': vendors + '/metisMenu/dist',
+    'datatablesResponsive': vendors + '/datatables-responsive',
+    'summernote': vendors + '/summernote/dist',
+    'select2': vendors + '/select2/dist',
+    'jqueryui': vendors + '/jquery-ui',
+    'justifiedGallery': vendors + '/Justified-Gallery/dist/',
+    'jqueryValidation': vendors + '/jquery-validation/dist',
+    'moment': '',
+    'bootstrap-datetimepicker': '',
 };
 
-gulp.task('sass', function() {
-    return compileSASS('common.css', {});
-});
+elixir.config.sourcemaps = false;
 
-gulp.task('sass-minify', function() {
-    return compileSASS('custom.min.css', {style: 'compressed'});
-});
+elixir(function (mix) {
 
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        server: {
-            baseDir: './'
-        },
-        startPath: './production/index.html'
-    });
-});
+    // Run bower install
+    mix.task('bower');
 
-gulp.task('watch', function() {
-  // Watch .html files
-  gulp.watch('production/*.html', browserSync.reload);
-  // Watch .js files
-  gulp.watch('src/js/*.js', ['scripts']);
-  // Watch .scss files
-  gulp.watch('src/scss/*.scss', ['sass', 'sass-minify']);
-});
+    // Copy fonts straight to public
+    mix.copy('resources/vendor/bootstrap/dist/fonts/**', 'public/fonts');
+    mix.copy('resources/vendor/font-awesome/fonts/**', 'public/fonts');
+    mix.copy('resources/vendor/summernote/dist/font/**', 'public/css/font');
 
-// Default Task
-gulp.task('default', ['browser-sync', 'watch']);
+    // Copy images straight to public
+    mix.copy('resources/vendor/jquery-colorbox/example3/images/**', 'public/css/images');
+    mix.copy('resources/vendor/jquery-ui/themes/base/images/**', 'public/css/images');
+
+
+    // Copy flag resources
+    mix.copy('resources/vendor/flag-sprites/dist/css/flag-sprites.min.css', 'public/css/flags.css');
+    mix.copy('resources/vendor/flag-sprites/dist/img/flags.png', 'public/img/flags.png');
+
+    // Merge Site CSSs.
+    mix.styles([
+        paths.bootstrap + '/css/bootstrap.css',
+        paths.bootstrap + '/css/bootstrap-theme.css',
+        paths.fontawesome + '/css/font-awesome.css',
+        paths.bootswatch + '/bootstrap.css',
+        paths.colorbox + '/example3/colorbox.css',
+        paths.justifiedGallery + '/css/justifiedGallery.css',
+        
+    ], 'public/css/common/site.css');
+    
+    // CSS: datetimepicker
+    
+    // End CSS datetimepicker
+    
+    // Merge Site scripts.
+    mix.scripts([
+        paths.jquery + '/jquery.js',
+        paths.bootstrap + '/js/bootstrap.js',
+        paths.colorbox + '/jquery.colorbox.js',
+        paths.justifiedGallery + '/js/jquery.justifiedGallery.js',
+    ], 'public/js/common/site.js');
+
+    // CKEditor
+    mix.scripts([
+        'ckeditor.js',
+        'adapters.jquery.js',
+    ], 'public/js/common/ckeditor.js');
+    
+    // Datetimepicker JS
+    // ENd datetime picker Js
+    
+    // Merge Admin CSSs.
+    mix.styles([
+        paths.bootstrap + '/css/bootstrap.css',
+        paths.bootstrap + '/css/bootstrap-theme.css',
+        paths.fontawesome + '/css/font-awesome.css',
+        paths.bootswatch + '/bootstrap.css',
+        paths.colorbox + '/example3/colorbox.css',
+        paths.dataTables + '/css/dataTables.bootstrap.css',
+        paths.dataTablesBootstrap3Plugin + '/css/datatables-bootstrap3.css',
+        paths.metisMenu + '/metisMenu.css',
+        paths.summernote + '/summernote.css',
+        paths.select2 + '/css/select2.css',
+        paths.jqueryui + '/themes/base/minified/jquery-ui.min.css',
+        'sb-admin-2.css',
+    ], 'public/css/common/admin.css');
+
+    // Merge Admin scripts.
+    mix.scripts([
+        paths.jquery + '/jquery.js',
+        paths.jqueryui + '/ui/jquery-ui.js',
+        paths.bootstrap + '/js/bootstrap.js',
+        paths.colorbox + '/jquery.colorbox.js',
+        paths.dataTables + '/js/jquery.dataTables.js',
+        paths.dataTables + '/js/dataTables.bootstrap.js',
+        paths.dataTablesBootstrap3Plugin + '/js/datatables-bootstrap3.js',
+        paths.datatablesResponsive + '/js/dataTables.responsive.js',
+        paths.metisMenu + '/metisMenu.js',
+        paths.summernote + '/summernote.js',
+        paths.select2 + '/js/select2.js',
+        'bootstrap-dataTables-paging.js',
+        'dataTables.bootstrap.js',
+        'datatables.fnReloadAjax.js',
+    ], 'public/js/common/admin.js');
+    
+
+    // Template js
+    mix.scripts([
+    'common.js'
+    ], 'public/js/common/common.js');
+
+    // template css
+    mix.sass([
+        'common.scss'
+    ], 'public/css/common/common.css');
+
+    // automatically refreshes web browser after you make changes to your assets
+
+    // mix.browserSync({
+    //     proxy: 'project.dev'
+    // });
+});
