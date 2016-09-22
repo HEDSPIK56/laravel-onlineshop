@@ -20,7 +20,7 @@
     <script src="{{ URL::asset('js/common/site.js') }}"></script>
     <script src="{{ URL::asset('js/common/admin.js') }}"></script>
     <script src="{{ URL::asset('js/common/common.js') }}"></script>
-    <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<!--    <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>-->
     @yield('styles')
 </head>
 <body>
@@ -76,12 +76,12 @@
 </script>
 @yield('scripts')
 <script>
-        CKEDITOR.replace( 'editor', {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
-        });
-    </script>
+//        CKEDITOR.replace( 'editor', {
+//            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+//            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+//            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+//            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+//        });
+</script>
 </body>
 </html>
