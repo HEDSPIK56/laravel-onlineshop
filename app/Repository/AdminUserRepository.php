@@ -10,6 +10,7 @@ namespace App\Repository;
 
 use App\User;
 use Illuminate\Support\Facades\File;
+use App\Profile;
 
 /**
  * Description of AdminUserRepository
@@ -28,6 +29,7 @@ class AdminUserRepository
     {
         //unset avatar
         unset($data['avatar']);
+        $data['name'] = $data['first_name'];
         $user = new User();
         $user->fill($data);
         $user->activated = 1;
@@ -42,6 +44,18 @@ class AdminUserRepository
                 $user->roles()->sync([]);
             }
             return $user;
+        }
+        return false;
+    }
+
+    public function createProfile($user, $data)
+    {
+        $data['user_id'] = $user->id;
+        $data['member_since'] = date('Y-m-d');
+        $profile = new Profile();
+        $profile->fill($data);
+        if($profile->save()){
+            return true;
         }
         return false;
     }

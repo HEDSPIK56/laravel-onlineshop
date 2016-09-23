@@ -282,3 +282,5 @@ http://tutsnare.com/upload-multiple-files-in-laravel/
 
 # Searchable, a search trait for Laravel
 https://github.com/nicolaslopezj/searchable
+
+http://vendroid.venmond.com/pages-user-profile-form.php

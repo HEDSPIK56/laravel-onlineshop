@@ -14,7 +14,7 @@
         "dflydev/apache-mime-types": "^1.0",
         "gloudemans/shoppingcart": "^2.1",
         "maddhatter/laravel-fullcalendar": "~1.0",
-        "maatwebsite/excel": "~2.0",
+        "maatwebsite/excel": "~2.1.0",
         "anouar/paypalpayment": "~1.0",
         "cviebrock/eloquent-sluggable": "3.1.4",
         "tsawler/laravel-filemanager": "^0.6.2",

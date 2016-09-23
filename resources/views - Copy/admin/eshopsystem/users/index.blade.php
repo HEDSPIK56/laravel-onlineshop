@@ -20,7 +20,7 @@
                     @foreach($users as $user)
                     <tr>
                         <td>
-                            <img src="{{ $user->getAvatar() }}" class="img-thumbnail">
+                            <img src="{{ $user->getAvatar() }}" class="img-thumbnail profile-image">
                         </td>
                         <td>
                             {{ $user->name }}

@@ -106,6 +106,11 @@ Route::group(['middleware' => 'auth'], function (){
         'uses' => 'TaskController@index'
     ]);
 
+    // Route::get('/test-media-upload', [
+    //     'as' => 'test-media-upload',
+    //     'uses' => 'MediaUploadController@index'
+    // ]);
+
     Route::post('/task', [
         'as' => 'postTask',
         'uses' => 'TaskController@store'

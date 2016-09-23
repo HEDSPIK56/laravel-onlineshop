@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Admin\EShopSystem;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminController;
 use App\Repository\AdminUserRepository;
 use App\Repository\AdminRoleRepository;
 use App\Http\Requests\Admin\System\CreateUserRequest;
 
-class UsersController extends Controller
+class UsersController extends AdminController
 {
 
     protected $userRes;
@@ -59,6 +59,7 @@ class UsersController extends Controller
             $user->avatar = $this->userRes->processUploadAvatar($request,$user->id);
             $user->save();
         }
+        $profile = $this->userRes->createProfile($user, $request->all());
         $request->session()->flash('status', 'User successfully created');
 
         return redirect()->route('admin.system.user.index');

@@ -90,7 +90,7 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
-
+    
     public function getAvatarName()
     {
         return $this->getAttribute('avatar');
@@ -105,7 +105,7 @@ class User extends Authenticatable
         $imgUrl = "";
         if(empty($this->getAvatarName()))
         {
-            $imgUrl = asset('/images/users/1/admin.png');
+            $imgUrl = asset('/images/users/no_images/no_images.png');
         }
         else
         {

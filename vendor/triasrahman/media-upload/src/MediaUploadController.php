@@ -15,6 +15,7 @@ class MediaUploadController extends \Illuminate\Routing\Controller
      */
     public function index(Request $request, $type = 'default')
     {
+        die("dsds0");
         // Get the configuration
         $config = Config::get('media-upload');
 

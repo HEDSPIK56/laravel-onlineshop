@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Role;
 use App\User;
+use App\Profile;
 use App\Permission;
 
 class UserRolesPermissonSeeder extends Seeder
@@ -62,6 +63,19 @@ class UserRolesPermissonSeeder extends Seeder
         ]);
 
         $user = User::where('email', 'taihanh0310@gmail.com')->first();
+
+        Profile::create([
+            'user_id'         => $user->id,
+            'first_name' => 'Tai Hanh',
+            'last_name' => 'Nguyen',
+            'phone_number' => '01676460626',
+            'address' => '364 Cong Hoa, Tan Binh, Ho CHi Minh',
+            'date_of_birth' => '1991-10-10',
+            'sex' => 'F',
+            'marital_status' => 'Y',
+            'about' => 'Hoan thanh web site nay'
+        ]);
+
         $user->roles()->attach($root->id); // id only
 
         $editUser = new Permission();

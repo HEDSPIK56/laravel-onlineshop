@@ -8,7 +8,17 @@ use Carbon\Carbon;
 class Profile extends Model
 {
     protected $fillable = [
-        'user_id', 'phone_number', 'address', 'date_of_birth'
+        'user_id', 
+        'phone_number', 
+        'address', 
+        'date_of_birth',
+        'sex',
+        'marital_status',
+        'about',
+        'facebook_link',
+        'google_plus_link',
+        'twitter_link',
+        'member_since'
     ];
     
     public function getYearOld()
@@ -17,5 +27,12 @@ class Profile extends Model
             return 10;
         }
         return 0;
+    }
+
+    public function getDateOfBirth(){
+        if(!empty($this->attributes['date_of_birth'])){
+            $this->attributes['date_of_birth'];
+        }
+        return Carbon::now();
     }
 }
