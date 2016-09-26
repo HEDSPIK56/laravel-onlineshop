@@ -25,6 +25,7 @@ var paths = {
     'jqueryui': vendors + '/jquery-ui',
     'justifiedGallery': vendors + '/Justified-Gallery/dist/',
     'jqueryValidation': vendors + '/jquery-validation/dist',
+    'bootstrapValidator': vendors + '/bootstrap-validator/dist',
     'moment': vendors + '/moment/min',
     'datetimepicker': vendors + '/eonasdan-bootstrap-datetimepicker/build'
 };
@@ -84,7 +85,7 @@ elixir(function (mix) {
         'bootstrap-dataTables-paging.js',
         'dataTables.bootstrap.js',
         'datatables.fnReloadAjax.js',
-        paths.jqueryValidation + '/jquery.validate.js',
+        paths.bootstrapValidator + '/validator.js',
         paths.moment + '/moment.min.js',
         paths.datetimepicker + '/js/bootstrap-datetimepicker.min.js'
         

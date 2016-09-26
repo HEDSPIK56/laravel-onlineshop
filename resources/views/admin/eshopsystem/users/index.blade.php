@@ -18,7 +18,7 @@
             <!-- group button -->
             <div class="btn-group">
               <button type="button" class="btn btn-primary">Export excel</button>
-              <button type="button" class="btn btn-primary">Add new</button>
+              <a href="{{ route('admin.system.user.create') }}" class="btn btn-primary">Add new</a>
             </div>
 <!-- end button group -->
             <!-- search fields -->
@@ -59,7 +59,7 @@
 </div>
                         </td>
                         <td>
-                            <img src="{{ $user->getAvatar() }}" alt="{{ $user->getAvatarName() }}" class="img-circle" />
+                            <img src="{{ $user->getAvatar() }}" alt="{{ $user->getAvatarName() }}" class="profile-image img-circle" />
                         </td>
                         <td>{{ $user->email }}</td>
                         <td>{{ isset($user->profile) ? $user->profile->getDateOfBirth(): '' }}</td>

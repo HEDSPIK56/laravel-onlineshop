@@ -30,10 +30,24 @@ var setupCommonApp = {
           console.log(form);
       });  
     },
+
+    datepickerSetup: function(){
+      $('input.datepicker').datetimepicker({
+        format: 'YYYY-MM-DD',
+        viewMode: 'years',
+      });
+    },
+
+    formValidation: function(){
+      $('#myForm').validator();
+      //http://1000hz.github.io/bootstrap-validator/#validator-markup
+    },
     
     setup: function () {
         this.uploadFile();
         this.addToCart();
+        this.datepickerSetup();
+        this.formValidation();
     },
     run: function () {
         this.setup();

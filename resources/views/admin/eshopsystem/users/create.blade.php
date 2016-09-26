@@ -14,7 +14,7 @@
 @include('errors.list')
 <div class="row">
     <div class="col-sm-12">
-    {!! Form::open(['route' => 'admin.system.user.store','files' => true]) !!}
+        <form action="{{ route('admin.system.user.store') }}" method="post" enctype="multipart/form-data" novalidate data-toggle="validator" role="form" id="myForm">
         <div class="row">
             <div class="col-sm-6">
             <div class="row">
@@ -22,7 +22,8 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Email</label>
                 <div class="col-sm-9">
-                  <input type="email" name="email" class="form-control" placeholder="email@yourcompany.com">
+                  <input type="email" name="email" class="form-control" placeholder="email@yourcompany.com" required data-error="Email address is invalid">
+                  <div class="help-block with-errors"></div>
                 </div>
               </div>
               
@@ -30,7 +31,8 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Password</label>
                 <div class="col-sm-9 controls">
-                  <input type="password" class="form-control" placeholder="password" name="password">
+                  <input type="password" class="form-control" placeholder="password" name="password" required data-minlength="6" id="inputPassword">
+                  <div class="help-block">Minimum of 6 characters</div>
                 </div>
                 <!-- col-sm-10 --> 
               </div>
@@ -39,7 +41,8 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Confirm Password</label>
                 <div class="col-sm-9 controls">
-                  <input type="password" class="form-control" placeholder="confirm password" name="password_confirmation">
+                  <input type="password" class="form-control" data-match="#inputPassword" placeholder="confirm password" name="password_confirmation" data-match-error="Whoops, these don't match">
+                  <div class="help-block with-errors"></div>
                 </div>
                 <!-- col-sm-10 --> 
               </div>
@@ -69,7 +72,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">First Name</label>
                 <div class="col-sm-9 controls">
-                  <input type="text" placeholder="first name" class="form-control" name="first_name"> 
+                  <input type="text" placeholder="first name" class="form-control" name="first_name" required> 
                 </div>
                 <!-- col-sm-10 --> 
               </div>
@@ -78,7 +81,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Last Name</label>
                 <div class="col-sm-9 controls">
-                  <input type="text" placeholder="last name" class="form-control" name="last_name">
+                  <input type="text" placeholder="last name" class="form-control" name="last_name" required>
                 </div>
                 <!-- col-sm-10 --> 
               </div>
@@ -103,8 +106,8 @@
               
               <div class="form-group">
                 <label class="col-sm-3 control-label">Birthday</label>
-                <div class="col-sm-9" id="datetimepicker1">
-                  <input type="text" class="form-control" name="date_of_birth" id="datetimepicker1">
+                <div class="col-sm-9">
+                  <input type="text" class="form-control datepicker" name="date_of_birth" required>
                 </div>
                 <!-- col-sm-10 --> 
               </div>
@@ -112,7 +115,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Address</label>
                 <div class="col-sm-9" >
-                  <input type="text" class="form-control" name="address">
+                  <input type="text" class="form-control" name="address" required>
                 </div>
                 <!-- col-sm-10 --> 
               </div>
@@ -134,7 +137,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">About</label>
                 <div class="col-sm-9 controls">
-                      <textarea rows="3" class="form-control" id="editer" name="about"></textarea>
+                      <textarea rows="3" class="form-control" id="editer" name="about" required></textarea>
                     
                 </div>
                 <!-- col-sm-10 --> 
@@ -146,7 +149,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Mobile Phone</label>
                 <div class="col-sm-9 controls">
-                  <input type="text" placeholder="mobile phone" class="form-control" name="phone_number">
+                  <input type="number" placeholder="mobile phone" class="form-control" name="phone_number">
                 </div>
               </div>
               <!-- form-group -->
@@ -154,7 +157,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Google plus</label>
                 <div class="col-sm-9 controls">
-                  <input type="text" placeholder="Google plus" class="form-control" name="google_plus_link">
+                  <input type="url" placeholder="Google plus" class="form-control" name="google_plus_link">
                 </div>
                 <!-- col-sm-10 --> 
               </div>
@@ -163,7 +166,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Facebook</label>
                 <div class="col-sm-9 controls">
-                  <input type="text" placeholder="facebook" class="form-control" name="facebook_link">
+                  <input type="url" placeholder="facebook" class="form-control" name="facebook_link">
                   </div> 
               </div>
               <!-- form-group -->
@@ -171,7 +174,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Twitter</label>
                 <div class="col-sm-9 controls">
-                 <input type="text" placeholder="twitter" class="form-control" name="twitter_link">
+                 <input type="url" placeholder="twitter" class="form-control" name="twitter_link">
                 </div>
               </div>
               <!-- form-group --> 
@@ -181,17 +184,12 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="form-group">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
             </div>
           </div>
         </div>
-        {!! Form::close() !!}
+        </form>
     </div>
 </div>
-<script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
-
 @endsection
