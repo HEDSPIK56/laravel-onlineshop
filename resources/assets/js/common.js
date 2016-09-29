@@ -11,13 +11,16 @@ var setupCommonApp = {
             var reader = new FileReader();
             reader.onload = function (e) {
                 $(input_review).attr('src', e.target.result);
-            }
+            };
+            
+            reader.readAsDataURL(input.files[0]);
         }
     },
     
     uploadFile: function(){
         $("#upload_file").change(function(e){
             setupCommonApp.reviewImageBeforeUpload(this, "#review_image");
+            $("#review_image").show();
         });
     },
     

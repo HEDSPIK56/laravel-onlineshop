@@ -4331,54 +4331,6 @@
         "description": "A file upload/editor intended for use with Laravel 5 and CKEditor"
     },
     {
-        "name": "triasrahman/media-upload",
-        "version": "v1.0.3",
-        "version_normalized": "1.0.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/triasrahman/laravel-media-upload.git",
-            "reference": "52883747f34c876e5ceeca1917834fb1f7e45fa0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/triasrahman/laravel-media-upload/zipball/52883747f34c876e5ceeca1917834fb1f7e45fa0",
-            "reference": "52883747f34c876e5ceeca1917834fb1f7e45fa0",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "5.*",
-            "intervention/image": "~2.0",
-            "php": ">=5.4.0"
-        },
-        "time": "2015-06-12 19:12:52",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Triasrahman\\MediaUpload\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Trias Nur Rahman",
-                "email": "contact@triasrahman.com"
-            }
-        ],
-        "description": "Simple and easy AJAX media upload for Laravel",
-        "keywords": [
-            "ajax",
-            "file",
-            "image",
-            "laravel",
-            "media",
-            "upload"
-        ]
-    },
-    {
         "name": "ckeditor/ckeditor",
         "version": "4.5.11",
         "version_normalized": "4.5.11.0",

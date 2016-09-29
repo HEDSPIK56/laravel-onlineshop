@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c45c5e616f50dc8474fbd9965c00d384",
-    "content-hash": "9a6fef89c95802b3c0d2830db42eac9d",
+    "hash": "4256458ac7cdbfc9a57bd52570957887",
+    "content-hash": "734e46277e267ea9bd8e9f5ce3aa1ce2",
     "packages": [
         {
             "name": "anouar/paypalpayment",
@@ -2897,52 +2897,6 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2015-12-08 16:14:14"
-        },
-        {
-            "name": "triasrahman/media-upload",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/triasrahman/laravel-media-upload.git",
-                "reference": "52883747f34c876e5ceeca1917834fb1f7e45fa0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/triasrahman/laravel-media-upload/zipball/52883747f34c876e5ceeca1917834fb1f7e45fa0",
-                "reference": "52883747f34c876e5ceeca1917834fb1f7e45fa0",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.*",
-                "intervention/image": "~2.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Triasrahman\\MediaUpload\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Trias Nur Rahman",
-                    "email": "contact@triasrahman.com"
-                }
-            ],
-            "description": "Simple and easy AJAX media upload for Laravel",
-            "keywords": [
-                "ajax",
-                "file",
-                "image",
-                "laravel",
-                "media",
-                "upload"
-            ],
-            "time": "2015-06-12 19:12:52"
         },
         {
             "name": "tsawler/laravel-filemanager",

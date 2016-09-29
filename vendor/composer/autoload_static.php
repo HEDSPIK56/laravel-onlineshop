@@ -11,8 +11,8 @@ class ComposerStaticInit5a7016322eb35b1f3000143c09a7c4f2
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
@@ -43,7 +43,6 @@ class ComposerStaticInit5a7016322eb35b1f3000143c09a7c4f2
         'T' => 
         array (
             'Tsawler\\Laravelfilemanager\\' => 27,
-            'Triasrahman\\MediaUpload\\' => 24,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
         ),
         'S' => 
@@ -145,10 +144,6 @@ class ComposerStaticInit5a7016322eb35b1f3000143c09a7c4f2
         'Tsawler\\Laravelfilemanager\\' => 
         array (
             0 => __DIR__ . '/..' . '/tsawler/laravel-filemanager/src',
-        ),
-        'Triasrahman\\MediaUpload\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/triasrahman/media-upload/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -3786,8 +3781,6 @@ class ComposerStaticInit5a7016322eb35b1f3000143c09a7c4f2
         'TijsVerkoyen\\CssToInlineStyles\\Exception' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Exception.php',
         'TijsVerkoyen\\CssToInlineStyles\\Selector' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Selector.php',
         'TijsVerkoyen\\CssToInlineStyles\\Specificity' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Specificity.php',
-        'Triasrahman\\MediaUpload\\MediaUploadController' => __DIR__ . '/..' . '/triasrahman/media-upload/src/MediaUploadController.php',
-        'Triasrahman\\MediaUpload\\MediaUploadServiceProvider' => __DIR__ . '/..' . '/triasrahman/media-upload/src/MediaUploadServiceProvider.php',
         'Tsawler\\Laravelfilemanager\\LaravelFilemanagerServiceProvider' => __DIR__ . '/..' . '/tsawler/laravel-filemanager/src/LaravelFilemanagerServiceProvider.php',
         'Tsawler\\Laravelfilemanager\\controllers\\Controller' => __DIR__ . '/..' . '/tsawler/laravel-filemanager/src/controllers/Controller.php',
         'Tsawler\\Laravelfilemanager\\controllers\\CropController' => __DIR__ . '/..' . '/tsawler/laravel-filemanager/src/controllers/CropController.php',

@@ -19,7 +19,6 @@
         "cviebrock/eloquent-sluggable": "3.1.4",
         "tsawler/laravel-filemanager": "^0.6.2",
         "ckeditor/ckeditor": "^4.5",
-        "triasrahman/media-upload": "^1.0",
         "nicolaslopezj/searchable": "1.*"
     },
     "require-dev": {

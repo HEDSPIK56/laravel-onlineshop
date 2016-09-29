@@ -147,8 +147,7 @@ return [
         Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Tsawler\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        Triasrahman\MediaUpload\MediaUploadServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class
     ],
     /*
       |--------------------------------------------------------------------------

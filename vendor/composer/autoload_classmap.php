@@ -3398,8 +3398,6 @@ return array(
     'TijsVerkoyen\\CssToInlineStyles\\Exception' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Exception.php',
     'TijsVerkoyen\\CssToInlineStyles\\Selector' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Selector.php',
     'TijsVerkoyen\\CssToInlineStyles\\Specificity' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Specificity.php',
-    'Triasrahman\\MediaUpload\\MediaUploadController' => $vendorDir . '/triasrahman/media-upload/src/MediaUploadController.php',
-    'Triasrahman\\MediaUpload\\MediaUploadServiceProvider' => $vendorDir . '/triasrahman/media-upload/src/MediaUploadServiceProvider.php',
     'Tsawler\\Laravelfilemanager\\LaravelFilemanagerServiceProvider' => $vendorDir . '/tsawler/laravel-filemanager/src/LaravelFilemanagerServiceProvider.php',
     'Tsawler\\Laravelfilemanager\\controllers\\Controller' => $vendorDir . '/tsawler/laravel-filemanager/src/controllers/Controller.php',
     'Tsawler\\Laravelfilemanager\\controllers\\CropController' => $vendorDir . '/tsawler/laravel-filemanager/src/controllers/CropController.php',

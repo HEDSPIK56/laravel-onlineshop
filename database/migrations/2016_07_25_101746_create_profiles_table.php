@@ -22,7 +22,7 @@ class CreateProfilesTable extends Migration
             $table->date('date_of_birth');
             $table->enum('sex', ['M', 'F'])->default('M');
             $table->enum('marital_status', ['Y', 'N'])->default('N');
-            $table->string('about')->nullable();
+            $table->text('about')->nullable();
             $table->string('facebook_link')->nullable();
             $table->string('google_plus_link')->nullable();
             $table->string('twitter_link')->nullable();
