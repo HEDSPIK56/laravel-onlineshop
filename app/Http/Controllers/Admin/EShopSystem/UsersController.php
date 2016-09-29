@@ -73,7 +73,8 @@ class UsersController extends AdminController
      */
     public function show($id)
     {
-        //
+        $user = $this->userRes->readUserById($id);
+        return view('admin.eshopsystem.users.detail', compact('user'));
     }
 
     /**

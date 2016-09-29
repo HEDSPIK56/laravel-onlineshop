@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title') About :: @parent @endsection
 @section('content')
+{!! Breadcrumbs::render('home') !!}
 	@include('partials.banner',[
 								'heading' => $heading,
 								'body' => $body

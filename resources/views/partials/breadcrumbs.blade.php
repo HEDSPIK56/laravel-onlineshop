@@ -1,4 +1,3 @@
-<!-- refer http://laravel-breadcrumbs.davejamesmiller.com/en/latest/defining.html#dynamic-titles-and-links -->
 @if ($breadcrumbs)
 <ol class="breadcrumb">
     @foreach ($breadcrumbs as $breadcrumb)

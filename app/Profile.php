@@ -8,7 +8,9 @@ use Carbon\Carbon;
 class Profile extends Model
 {
     protected $fillable = [
-        'user_id', 
+        'user_id',
+        'first_name',
+        'last_name', 
         'phone_number', 
         'address', 
         'date_of_birth',
@@ -20,6 +22,10 @@ class Profile extends Model
         'twitter_link',
         'member_since'
     ];
+
+    public function getFullName(){
+        return $this->attributes['last_name'] . " " . $this->attributes['first_name'];
+    }
     
     public function getYearOld()
     {

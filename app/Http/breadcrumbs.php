@@ -39,3 +39,27 @@ Breadcrumbs::register('page', function($breadcrumbs, $page)
     $breadcrumbs->parent('category', $page->category);
     $breadcrumbs->push($page->title, route('page', $page->id));
 });
+
+/**
+ * Admin section
+ */
+Breadcrumbs::register('Dashboard', function($breadcrumbs)
+{
+    $breadcrumbs->push('Dashboard', route('dashboard.index'));
+});
+
+Breadcrumbs::register('admin.user.index', function($breadcrumbs)
+{
+    $breadcrumbs->parent('Dashboard');
+    $breadcrumbs->push('User', route('admin.system.user.index'));
+});
+
+Breadcrumbs::register('admin.user.detail', function($breadcrumbs, $user)
+{
+    $breadcrumbs->parent('admin.user.index');
+    $breadcrumbs->push($user->profile->getFullName(), route('admin.system.user.show',['id' => $user->id]));
+});
+
+/**
+ * End admin section
+ */
