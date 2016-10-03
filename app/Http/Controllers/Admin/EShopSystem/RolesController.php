@@ -16,6 +16,7 @@ class RolesController extends Controller
     protected $roles;
     private $permission;
     //http://demo.itsolutionstuff.com/acl/roles
+    //http://itsolutionstuff.com/post/laravel-52-user-acl-roles-and-permissions-with-middleware-using-entrust-from-scratch-tutorialexample.html
 
     public function __construct(AdminRoleRepository $roles, AdminPermissionRepository $permission)
     {
