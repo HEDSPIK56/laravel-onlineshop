@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Repository\AdminUserRepository;
 use App\Repository\AdminRoleRepository;
 use App\Http\Requests\Admin\System\CreateUserRequest;
+use App\Condition\AdminUserSearchCondition;
 
 class UsersController extends AdminController
 {
@@ -28,9 +29,11 @@ class UsersController extends AdminController
      * @return \Illuminate\Http\Response
      */
     //http://demo.laraship.com/admin/users
-    public function index()
+    public function index(Request $request)
     {
-        $users = $this->userRes->getListUser();
+        $condition = new AdminUserSearchCondition();
+        $condition->setAttributes($request->all());
+        $users = $this->userRes->getListUser($condition);
         return view('admin.eshopsystem.users.index', compact('users'));
     }
 
@@ -85,10 +88,10 @@ class UsersController extends AdminController
      */
     public function edit($id)
     {
-        $user      = $this->user->find($id);
-        $roles     = $this->role->all();
+        $user      = $this->userRes->readUserById($id);
+        $roles     = $this->roleRes->getListRoleNoCondition();
         $userRoles = $user->roles();
-        return view('users.edit', compact('user', 'roles', 'userRoles'));
+        return view('admin.eshopsystem.users.edit', compact('user', 'roles', 'userRoles'));
     }
 
     /**

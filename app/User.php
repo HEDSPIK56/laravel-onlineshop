@@ -144,4 +144,29 @@ class User extends Authenticatable
         $this->attributes['updated_by'] = strtolower($email);
     }
 
+
+    /**
+     * Query scope
+     */
+    public function scopeActive($query)
+    {
+        //return $query->where('visible', '=', 'Y');
+        return $query;
+    }
+
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        // if ($keyword != '')
+        // {
+        //     $query->where(function ($query) use ($keyword) {
+        //         $query->where("name", "LIKE", "%$keyword%")
+        //                 ->orWhere("tags", "LIKE", "%$keyword%")
+        //                 ->orWhere("keywords", "LIKE", "%$keyword%")
+        //                 ->orWhere("desciption", "LIKE", "%$keyword%")
+        //                 ->orWhere("price", "LIKE", "%$keyword%");
+        //     });
+        // }
+        return $query;
+    }
+
 }

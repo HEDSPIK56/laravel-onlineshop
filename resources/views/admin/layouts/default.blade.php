@@ -26,8 +26,9 @@
 <body>
     <div id="wrapper">
             @include('admin.partials.nav')
-            <div id="page-wrapper">
+            <div id="page-wrapper" class="container-fluid">
                 @yield('main')
+                <!-- https://codecanyon.net/item/vanguard-advanced-php-login-and-user-management/14521866 -->
             </div>
         </div>
     </div>

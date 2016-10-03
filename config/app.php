@@ -204,4 +204,6 @@ return [
         'Cart' => \Gloudemans\Shoppingcart\Facades\Cart::class,
         'Image'     => Intervention\Image\Facades\Image::class
     ],
+
+    'pagination' => env('APP_PAGINATION', '2'),
 ];

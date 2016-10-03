@@ -8,7 +8,11 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">User list</h1>
+        <h1 class="page-header">Create New User
+        <div class="pull-right">
+            {!! Breadcrumbs::render('admin.user.create') !!}
+        </div>
+        </h1>
     </div>
 </div>
 @include('errors.list')
@@ -56,7 +60,7 @@
                         <div class="form-group">
                             <label for="role" class="control-label col-md-3">Role</label>
                             <div class="col-md-9 controls">
-                                <select class="form-control select2 " id="role" name="role">
+                                <select class="form-control select2 " id="role" name="role[]" multiple>
                                     @foreach($roles as $role)
                                     <option value="{{ $role->id }}"> {{ $role->display_name }}</option>
                                     @endforeach
@@ -215,7 +219,9 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    {!! Form::submit('Create', ['class' => 'btn']) !!}
+                    <button type="submit" class="btn btn-primary">
+                <i class="fa fa-save"></i>
+                Create User            </button>
                 </div>
             </div>
         </div>
@@ -225,7 +231,7 @@
 @endsection
 
 @section('scripts')
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeYNkLLBWSCNilg_vytX3rq2kOQxyJ9fA&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={!! config('services.google_map.api_key') !!}&libraries=places"></script>
 <script type="text/javascript">
     
     $(document).ready(function () {

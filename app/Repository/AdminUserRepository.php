@@ -22,11 +22,15 @@ class AdminUserRepository
 
     public function getListUser($condition = null)
     {
+        if($condition){
+            return User::paginate($condition->getLimit());
+        }
         return User::all();
     }
 
     public function createUser($data)
     {
+        //var_dump($data);die;
         //unset avatar
         unset($data['avatar']);
         $data['name'] = $data['first_name'];

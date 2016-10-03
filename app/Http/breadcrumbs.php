@@ -54,6 +54,18 @@ Breadcrumbs::register('admin.user.index', function($breadcrumbs)
     $breadcrumbs->push('User', route('admin.system.user.index'));
 });
 
+Breadcrumbs::register('admin.user.create', function($breadcrumbs)
+{
+    $breadcrumbs->parent('admin.user.index');
+    $breadcrumbs->push('Creat User', route('admin.system.user.create'));
+});
+
+Breadcrumbs::register('admin.user.edit', function($breadcrumbs, $user)
+{
+    $breadcrumbs->parent('admin.user.index');
+    $breadcrumbs->push($user->profile->getFullName(), route('admin.system.user.edit',['id' => $user->id]));
+});
+
 Breadcrumbs::register('admin.user.detail', function($breadcrumbs, $user)
 {
     $breadcrumbs->parent('admin.user.index');

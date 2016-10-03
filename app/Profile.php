@@ -27,18 +27,34 @@ class Profile extends Model
         return $this->attributes['last_name'] . " " . $this->attributes['first_name'];
     }
     
-    public function getYearOld()
+    public function getAgeAttribute()
     {
         if(!empty($this->attributes['date_of_birth'])){
-            return 10;
+            return Carbon::parse($this->attributes['date_of_birth'])->age;
         }
         return 0;
     }
 
     public function getDateOfBirth(){
         if(!empty($this->attributes['date_of_birth'])){
-            $this->attributes['date_of_birth'];
+            return $this->attributes['date_of_birth'];
         }
         return Carbon::now();
+    }
+
+    public function getSexToStringAttribute()
+    {
+        if($this->attributes['sex'] == 'F'){
+            return "Female";
+        }
+        return "Male";
+    }
+
+    public function getMarialStatusToStringAttribute()
+    {
+        if($this->attributes['marital_status'] == 'Y'){
+            return "Married";
+        }
+        return "Single";
     }
 }

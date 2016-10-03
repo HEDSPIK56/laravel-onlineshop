@@ -7,38 +7,18 @@
  */
 
 namespace App\Condition;
-
 use App\BaseAbstractBean;
-
 /**
- * Description of AdminRoleSearchCondition
+ * Description of AdminUserSearchCondition
  *
  * @author nthanh
  */
-class AdminRoleSearchCondition extends BaseAbstractBean
+class AdminUserSearchCondition extends BaseAbstractBean
 {
-
     public $keyword;
     public $limit;
     public $sortType;
-    public $name;
-    public $display_name;
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function getDisplayName()
-    {
-        return $this->display_name;
-    }
-
-    public function getSortType()
-    {
-        return "DESC";
-    }
-
+    
     public function getLimit()
     {
         if (!$this->limit)
@@ -47,10 +27,13 @@ class AdminRoleSearchCondition extends BaseAbstractBean
         }
         return (int) $this->limit;
     }
-
+    
+    public function getSortType()
+    {
+        return "DESC";
+    }
     public function getKeyWord()
     {
         return $this->keyword;
     }
-
 }

@@ -60,7 +60,6 @@
 	<div class="col-md-9">
 		<div class="panel panel-default">
             <div class="panel-heading">About
-            	<button class="btn btn-default pull-right">Edit</button>
             </div>
             <div class="panel-body">
             	<div class="row">
@@ -77,6 +76,14 @@
             				<label class="col-sm-5">Address: </label>
             				<div class="col-sm-7">{{ $user->profile->address }}</div>
             			</div>
+                        <div class="row">
+                            <label class="col-sm-5">Sex: </label>
+                            <div class="col-sm-7">{{ $user->profile->sex_to_string }}</div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-5">Marial Status: </label>
+                            <div class="col-sm-7">{{ $user->profile->marial_status_to_string }}</div>
+                        </div>
             		</div>
             		<div class="col-sm-6">
             		<div class="row">
@@ -85,14 +92,56 @@
             			</div>
             			<div class="row">
             				<label class="col-sm-5">Birth day: </label>
-            				<div class="col-sm-7">{{ $user->profile->first_name }}</div>
+            				<div class="col-sm-7">{{ $user->profile->getDateOfBirth() }} ({{$user->profile->age}} years) </div>
             			</div>
             			<div class="row">
             				<label class="col-sm-5">Number phone: </label>
             				<div class="col-sm-7">{{ $user->profile->phone_number }}</div>
             			</div>
+                        <div class="row">
+                            <label class="col-sm-5">Facebook Link: </label>
+                            <div class="col-sm-7"> <a href="{{ $user->profile->facebook_link }}" target="_self">{{ $user->profile->facebook_link }}</a></div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-5">Google plus: </label>
+                            <div class="col-sm-7"><a href="{{ $user->profile->google_plus_link }}" target="_self">{{ $user->profile->google_plus_link }}</a></div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-5">Twitter: </label>
+                            <div class="col-sm-7"><a href="{{ $user->profile->twitter_link }}" target="_self">{{ $user->profile->twitter_link }}</a></div>
+                        </div>
             		</div>
             	</div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Permisson role</div>
+            <div class="panel-body">
+                <div class="table-responsive" id="users-table-wrapper">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Role name</th>
+                                <th>Permisson name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($user->roles as $role)
+                                <tr>
+                                    <td>{{ $role->display_name }}</td>
+                                    <td>
+                                        @if(!empty($role->perms))
+                                            @foreach($role->perms()->get() as $per)
+                                                <label class="label label-success"> {{ $per->display_name }} </label>
+                                            @endforeach
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 	</div>

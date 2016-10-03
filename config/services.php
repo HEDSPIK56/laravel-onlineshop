@@ -39,6 +39,10 @@ return [
         'client_secret' => '17b9a15d03236486d1835959ca2a7ed2',
         'redirect' => 'http://www.cuahangbachhoa247.com/callback'
     ],
+    
+    'google_map' => [
+      'api_key' => 'AIzaSyDeYNkLLBWSCNilg_vytX3rq2kOQxyJ9fA'
+    ],
 ];
 //http://blog.damirmiladinov.com/laravel/laravel-5.2-socialite-facebook-login.html#.V2yPlfmLTcs
 //'http://localhost:8888/laravel-onlineshop/public/callback',

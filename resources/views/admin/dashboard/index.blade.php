@@ -7,11 +7,13 @@
 @section('main')
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Dashboard</h1>
+        <h1 class="page-header">Welcome: dsads
+        <div class="pull-right">
+            {!! Breadcrumbs::render('Dashboard') !!}
+        </div>
+        </h1>
     </div>
-    <!-- /.col-lg-12 -->
 </div>
-<!-- /.row -->
 <div class="row">
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-primary">
@@ -102,7 +104,6 @@
         </div>
     </div>
 </div>
-<!-- /.row -->
 <div class="row">
     <div class="col-lg-8">
         <div class="panel panel-default">
@@ -542,5 +543,4 @@
     </div>
     <!-- /.col-lg-4 -->
 </div>
-<!-- /.row -->
 @endsection

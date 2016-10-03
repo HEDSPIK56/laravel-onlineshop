@@ -15,6 +15,7 @@ class RolesController extends Controller
 
     protected $roles;
     private $permission;
+    //http://demo.itsolutionstuff.com/acl/roles
 
     public function __construct(AdminRoleRepository $roles, AdminPermissionRepository $permission)
     {
