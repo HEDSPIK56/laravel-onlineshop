@@ -33,7 +33,8 @@ class RolesController extends Controller
 
     public function create()
     {
-        return view('admin.eshopsystem.roles.create');
+        $permission = $this->permission->getListPermission();
+        return view('admin.eshopsystem.roles.create', compact('permission'));
     }
 
     public function store(RoleRequest $request)
@@ -42,10 +43,9 @@ class RolesController extends Controller
         {
             $request = \Request::instance();
         }
-        $result = $this->roles->createRole($request->all());
+        $result = $this->roles->createRole($request->all(), $request->input('permission'));
         if ($result)
         {
-            //success
             return redirect()->route('admin.system.role.index');
         }
         return redirect()->back()->withErrors(['errors' => 'Cannot save role']);
