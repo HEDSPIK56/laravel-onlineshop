@@ -59,7 +59,6 @@ elixir(function (mix) {
         paths.bootswatch + '/bootstrap.css',
         paths.colorbox + '/example3/colorbox.css',
         paths.justifiedGallery + '/css/justifiedGallery.css',
-        paths.colorbox + '/example3/colorbox.css',
         paths.dataTables + '/css/dataTables.bootstrap.css',
         paths.dataTablesBootstrap3Plugin + '/css/datatables-bootstrap3.css',
         paths.jqueryui + '/themes/base/minified/jquery-ui.min.css',
@@ -67,9 +66,31 @@ elixir(function (mix) {
         
     ], 'public/css/common/site.css');
     
-    // CSS: datetimepicker
-    
-    // End CSS datetimepicker
+
+    // Define Dailishop CSS
+    mix.styles([
+        'dailyshop/jquery.simpleLens.css',
+        'dailyshop/jquery.smartmenus.bootstrap.css',
+        'dailyshop/nouislider.css',
+        'dailyshop/sequence-theme.modern-slide-in.css',
+        'dailyshop/slick.css',
+        'dailyshop/style.css',
+    ], 'public/css/common/dailyshop.css');
+    // End define dailyshop CSS
+
+    // Define Dailyshop JS
+    mix.scripts([
+        'dailyshop/custom.js',
+        'dailyshop/jquery.simpleGallery.js',
+        'dailyshop/jquery.simpleLens.js',
+        'dailyshop/jquery.smartmenus.bootstrap.js',
+        'dailyshop/jquery.smartmenus.js',
+        'dailyshop/nouislider.js',
+        'dailyshop/sequence.js',
+        'dailyshop/sequence-theme.modern-slide-in.js',
+        'dailyshop/slick.js',
+    ], 'public/js/common/dailyshop.js');
+    // End define Dailyshop JS
     
     // Merge Site scripts.
     mix.scripts([
