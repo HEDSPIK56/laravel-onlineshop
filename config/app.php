@@ -205,5 +205,5 @@ return [
         'Image'     => Intervention\Image\Facades\Image::class
     ],
 
-    'pagination' => env('APP_PAGINATION', '2'),
+    'pagination' => env('APP_PAGINATION', '15'),
 ];

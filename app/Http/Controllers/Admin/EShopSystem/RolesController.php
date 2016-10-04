@@ -10,6 +10,9 @@ use App\Repository\AdminRoleRepository;
 use App\Condition\AdminRoleSearchCondition;
 use App\Http\Requests\Admin\System\RoleRequest;
 use App\Repository\AdminPermissionRepository;
+use App\Http\Requests\Admin\System\RoleUpdateRequest;
+use App\Condition\AdminRoleCondition;
+
 class RolesController extends Controller
 {
 
@@ -47,7 +50,7 @@ class RolesController extends Controller
         $result = $this->roles->createRole($request->all(), $request->input('permission'));
         if ($result)
         {
-            return redirect()->route('admin.system.role.index');
+            return redirect()->route('admin.system.role.index')->with('success','Role created successfully');
         }
         return redirect()->back()->withErrors(['errors' => 'Cannot save role']);
     }
@@ -55,10 +58,30 @@ class RolesController extends Controller
     public function show($id)
     {
         $role = $this->roles->readRole($id);
-        $roles_permisson = "";//$role->perms();
-        $ids = $this->roles->getIdsRolePermisson($id);
+        $roles_permisson = $role->perms()->get();
+        return view('admin.eshopsystem.roles.show', compact('role', 'roles_permisson'));
+    }
+
+    public function edit($id)
+    {
+        $role = $this->roles->readRole($id);
+        $roles_permisson = $role->perms();
+        $ids = $roles_permisson->lists('id')->toArray();
         $permissions = $this->permission->getListPermission();
-        return view('admin.eshopsystem.roles.show', compact('role', 'roles_permisson','permissions','ids'));
+        return view('admin.eshopsystem.roles.edit', compact('role', 'roles_permisson','permissions','ids'));
+    }
+
+    public function update(RoleUpdateRequest $request, $id)
+    {
+        $condition = new AdminRoleCondition();
+        $condition->setAttributes($request->all());
+        
+        $result = $this->roles->updateRole($condition);
+        if ($result)
+        {
+            return redirect()->route('admin.system.role.index')->with('success','Role created successfully');
+        }
+        return redirect()->back()->withErrors(['errors' => 'Cannot update role']);
     }
 
 }

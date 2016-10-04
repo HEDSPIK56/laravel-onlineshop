@@ -28,7 +28,6 @@ class UsersController extends AdminController
      *
      * @return \Illuminate\Http\Response
      */
-    //http://demo.laraship.com/admin/users
     public function index(Request $request)
     {
         $condition = new AdminUserSearchCondition();

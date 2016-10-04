@@ -15,6 +15,9 @@
         </h1>
     </div>
 </div>
+<!-- errors message and success message -->
+@include('errors.list')
+<!-- end errors messge and success message -->
 
 <div class="row tab-search">
     <div class="col-md-3">

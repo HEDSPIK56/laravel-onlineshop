@@ -8,6 +8,7 @@
 
 namespace App\Repository;
 use App\Role;
+use App\Condition\AdminRoleCondition;
 
 /**
  * Description of AdminRoleRepository
@@ -54,21 +55,34 @@ class AdminRoleRepository
         $role->fill($data);
         if ($role->save())
         {
-            $role->attachPermission($permisson_data);
+            $role->perms()->sync($permisson_data);
             return true;
         }
         return false;
     }
 
-    public function updateRole($data, $id)
+    public function attachPermissonToRole($role, $role_ids = array())
     {
-        $role = Role::findOrFail($id);
-        if (!$role)
-        {
-            return false;
+        return $role->perms()->sync($role_ids);
+    }
+
+    /**
+     * 
+     * @param AdminRoleCondition $roleCondtion
+     * @return type
+     */
+    public function updateRole($roleCondtion)
+    {
+        $role = Role::findOrFail($roleCondtion->getId());
+        if($role){
+            $role->fill((array)$roleCondtion);
+            $result = $role->save();
+            if($result){
+                $this->attachPermissonToRole($role, $roleCondtion->getPermissionIds());
+                return true;
+            }
         }
-        $role->fill($data);
-        return $role->save();
+        return false;
     }
 
     public function readRole($id)

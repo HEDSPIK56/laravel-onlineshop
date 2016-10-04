@@ -5,7 +5,7 @@ namespace App\Http\Requests\Admin\System;
 use App\Http\Requests\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RoleRequest extends Request
+class RoleUpdateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,6 @@ class RoleRequest extends Request
     public function authorize()
     {
         return Auth::user()->hasRole(['admin', ['root']]);
-        //return true;
     }
 
     /**
@@ -26,7 +25,6 @@ class RoleRequest extends Request
     public function rules()
     {
         return [
-            'name'         => 'required|unique:roles,name|max:255',
             'display_name' => 'required',
             'description' => 'required',
             'permission' => 'required',
