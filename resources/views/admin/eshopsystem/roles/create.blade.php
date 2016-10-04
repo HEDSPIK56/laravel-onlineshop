@@ -9,50 +9,76 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Role Management
-        <div class="pull-right">
-            {!! Breadcrumbs::render('admin.user.index') !!}
-        </div>
+            <div class="pull-right">
+                {!! Breadcrumbs::render('admin.user.index') !!}
+            </div>
         </h1>
     </div>
 </div>
 
 @include('errors.list')
 
-{!! Form::open(array('route' => 'admin.system.role.store','method'=>'POST')) !!}
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+<form action="{{ route('admin.system.role.store') }}" method="post" novalidate data-toggle="validator" role="form" id="myForm">
+
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Role informations</div>
+                <div class="panel-body">
+                    <!-- role name -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Role name </label>
+                        <div class="col-md-9 controls">
+                            <input type="text" name="name" class="form-control" placeholder="Role name" required value="{{ old('name') }}">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <!-- end role name -->
+
+                    <!-- display role name -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Display name </label>
+                        <div class="col-md-9 controls">
+                            <input type="text" name="display_name" class="form-control" placeholder="Display name ole name" required value="{{ old('display_name') }}">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <!-- end display role name -->
+
+                    <!-- display role name -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Description </label>
+                        <div class="col-md-9 controls">
+                            <textarea rows="3" class="form-control" value="{{ old('description') }}" name="description" placeholder="Description about this role" required></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <!-- end display role name -->
+                </div>
             </div>
         </div>
-		<div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Display Name:</strong>
-                {!! Form::text('display_name', null, array('placeholder' => 'Display Name','class' => 'form-control')) !!}
+        <div class="col-sm-6 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Permission list</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        @foreach($permission as $value)
+                            <div class="checkbox">
+                                <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                                {{ $value->display_name }}</label>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Description:</strong>
-                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Permission:</strong>
-                <br/>
-                @foreach($permission as $value)
-                	<label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                	{{ $value->display_name }}</label>
-                	<br/>
-                @endforeach
-            </div>
-        </div>
+    </div>
+    <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-			<button type="submit" class="btn btn-primary">Submit</button>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Create role</button>
         </div>
-	</div>
-	{!! Form::close() !!}
+    </div>
+</form>
 
 @endsection

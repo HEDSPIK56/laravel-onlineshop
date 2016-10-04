@@ -21,10 +21,11 @@
 
 <div class="row tab-search">
     <div class="col-md-3">
-        @permission('role-create')
-        <a href="{{ route('admin.system.role.create') }}" class="btn btn-success" id="add-user">
+        <!-- @permission('role-create')
+        <a href="{{ route('admin.system.role.create') }}" class="btn btn-success">
             <i class="glyphicon glyphicon-plus"></i>Add new role</a>
-        @endpermission
+        @endpermission -->
+        <a href="{{ route('admin.system.role.create') }}" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i>Add new role</a>
     </div>
     <form method="GET" action="" accept-charset="UTF-8" id="users-form">
         <div class="col-md-9">
