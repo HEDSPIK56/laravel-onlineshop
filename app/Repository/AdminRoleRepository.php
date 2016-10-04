@@ -48,12 +48,13 @@ class AdminRoleRepository
         return array();
     }
 
-    public function createRole($data = array())
+    public function createRole($data = array(), $permisson_data)
     {
         $role = new Role();
         $role->fill($data);
         if ($role->save())
         {
+            $role->attachPermission($permisson_data);
             return true;
         }
         return false;
