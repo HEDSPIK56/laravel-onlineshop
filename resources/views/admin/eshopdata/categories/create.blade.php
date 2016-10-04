@@ -1,19 +1,39 @@
-@extends('layouts.admin')
+@extends('admin.layouts.default')
+{{-- Web site Title --}}
+@section('title') User list :: @parent @endsection
+{{-- end title --}}
 
-@section('content')
-<div class="container">
+{{-- content--}}
+@section('main')
+    {{-- bread scumb--}}
     <div class="row">
-        <div class="col-sm-12">
-            @include('admin.partials.errors')
+        <div class="col-lg-12">
+            <h1 class="page-header">Categories list
+                <div class="pull-right">
+                    {!! Breadcrumbs::render('admin.user.index') !!}
+                </div>
+            </h1>
+        </div>
+    </div>
+    {{-- end bread scumb--}}
+
+    <!-- errors message and success message -->
+    @include('errors.list')
+    <!-- end errors messge and success message -->
+
+
             <form method="POST" action="{{route('admin.data.category.store')}}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                 <div class="form-group">
                     <label for="categoryName">Category name</label>
-                    <input type="text" name="name" class="form-control" id="categoryName" placeholder="Category name" value="{{ old('name')}}">
+                    <input type="text" name="name" class="form-control" id="categoryName" placeholder="Category name"
+                           value="{{ old('name')}}">
                 </div>
                 <div class="form-group">
                     <label for="standarInfor">Standar info</label>
-                    <textarea name="standard_info" class="form-control" rows="3" id="standarInfor" placeholder="Standar info">
+                    <textarea name="standard_info" class="form-control" rows="3"
+                              placeholder="Standar info" id="editor">
                         {{ old('standard_info')}}
                     </textarea>
                 </div>
@@ -52,7 +72,8 @@
                     <label for="userSearch">Use search</label>
                     <select class="form-control" name="use_search">
                         <option value="Y" @if ('Y' == old('use_search')) selected="selected" @endif >Use search</option>
-                        <option value="N" @if ('N' == old('use_search')) selected="selected" @endif >Don't use search</option>
+                        <option value="N" @if ('N' == old('use_search')) selected="selected" @endif >Don't use search
+                        </option>
                     </select>
                 </div>
 
@@ -66,15 +87,14 @@
                 <!--end use search -->
                 <div class="form-group">
                     <label>Item per page</label>
-                    <input type="text" name="item_per_page" class="form-control" placeholder="Item per page (a/b/c)" value="{{ old('item_per_page')}}">
+                    <input type="text" name="item_per_page" class="form-control" placeholder="Item per page (a/b/c)"
+                           value="{{ old('item_per_page')}}">
                 </div>
                 <div class="form-group">
                     <label>Item per line</label>
-                    <input type="text" name="item_per_line" class="form-control" placeholder="Item per line (a/b/c)" value="{{ old('item_per_line')}}">
+                    <input type="text" name="item_per_line" class="form-control" placeholder="Item per line (a/b/c)"
+                           value="{{ old('item_per_line')}}">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
-        </div>
-    </div>
-</div>
 @endsection
