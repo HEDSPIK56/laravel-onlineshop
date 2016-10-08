@@ -177,6 +177,10 @@ Route::group(['middleware' => 'auth'], function (){
          * Category
          */
         Route::resource('/data/category', 'Admin\EShopDataEntry\CategoriesController');
+        Route::post('data/category/copy', [
+            'as' => 'admin.data.category.copy',
+            'uses' => 'Admin\EShopDataEntry\CategoriesController@copy'
+        ]);
         /**
          * End category
          */
