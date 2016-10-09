@@ -24,7 +24,8 @@ class Category extends Model
         'align_type',
         'item_per_page',
         'item_per_line',
-        'load_more'
+        'load_more', 
+        'created_by'
     ];
 
     /**

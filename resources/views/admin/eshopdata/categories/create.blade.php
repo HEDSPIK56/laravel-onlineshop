@@ -67,6 +67,15 @@
                     </div>
                 </div>
                 <!-- end use breadcum-->
+
+                <!-- load more option -->
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="1" name="load_more">Load more</label>
+                    </div>
+                </div>
+                <!-- end load more -->
+
                 <!-- use search -->
                 <div class="form-group">
                     <label for="userSearch">Use search</label>
