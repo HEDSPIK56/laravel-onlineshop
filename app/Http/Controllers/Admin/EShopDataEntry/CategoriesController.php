@@ -4,13 +4,21 @@ namespace App\Http\Controllers\Admin\EShopDataEntry;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Data\CategoryRequest;
 use App\Category;
 use Illuminate\Support\Facades\Response;
+use App\Repositories\AdminDataCategoryRepository;
+use App\Http\Controllers\Admin\AdminController;
 
-class CategoriesController extends Controller
+class CategoriesController extends AdminController
 {
+    protected $_cateRep;
+    
+    public function __construct(AdminDataCategoryRepository $cat)
+    {
+        parent::__construct();
+        $this->_cateRep = $cat;
+    }
 
     /**
      * Display a listing of the resource.
@@ -53,7 +61,8 @@ class CategoriesController extends Controller
 
     public function copy(Request $request)
     {
-        
+        $this->_cateRep->copyCategory($condition);
+        return redirect()->route('admin.eshopdata.categories.index')->with('success','copy product successfully');
     }
 
     /**

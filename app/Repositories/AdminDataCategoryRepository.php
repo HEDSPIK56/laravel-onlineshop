@@ -9,6 +9,7 @@
 namespace App\Repositories;
 use App\Category;
 use app\Helper\ShopArrayHelper;
+use App\Condition\AdminCopyCategoryCondition;
 
 class AdminDataCategoryRepository
 {
@@ -36,7 +37,7 @@ class AdminDataCategoryRepository
     }
 
     /**
-     * @param $condition
+     * @param AdminCopyCategoryCondition $condition
      * @author: NTHanh
      * @inheritdoc: copy 1 one or multi category
      *            one category add more product
