@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('price')->default(0);
             $table->bigInteger('market_price')->default(0);
             $table->boolean('status')->default(true);
-            $table->text('desciption')->nullable();
+            $table->longText('desciption')->nullable();
             $table->string('use_icon')->nullable();
             $table->dateTime('use_icon_period_from')->nullable();
             $table->dateTime('use_icon_period_to')->nullable();
@@ -33,9 +33,12 @@ class CreateProductsTable extends Migration
             $table->enum('use_slideshow', ['Y', 'N'])->default('Y');
             $table->integer('number_view')->default(0);
             $table->integer('number_like')->default(0);
+            $table->longText('user_like')->nullable();
             $table->integer('number_bookmark')->default(0);
+            $table->longText('user_bookmark')->nullable();
             $table->integer('number_share')->default(0);
             $table->integer('number_item')->default(0);
+            $table->float('product_point')->default(0);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->string('deleted_by')->nullable();

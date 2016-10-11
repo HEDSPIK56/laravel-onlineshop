@@ -9,6 +9,7 @@ use App\Category;
 use Illuminate\Support\Facades\Response;
 use App\Repositories\AdminDataCategoryRepository;
 use App\Http\Controllers\Admin\AdminController;
+use App\Condition\AdminCopyCategoryCondition;
 
 class CategoriesController extends AdminController
 {
@@ -59,10 +60,24 @@ class CategoriesController extends AdminController
         return redirect()->route('admin.data.category.index');
     }
 
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @param AdminCopyCategoryCondition $condition
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function copy(Request $request)
     {
-        $this->_cateRep->copyCategory($condition);
-        return redirect()->route('admin.eshopdata.categories.index')->with('success','copy product successfully');
+        $condition = new AdminCopyCategoryCondition();
+        $condition->setAttributes([
+            'ids' => $request->input('id')
+        ]);
+        $result = $this->_cateRep->copyCategory($condition);
+        if($result){
+            return redirect()->route('admin.data.category.index')->with('success','copy category successfully');
+        }
+        return redirect()->route('admin.data.category.index')->with('error','copy category failed');
+
     }
 
     /**

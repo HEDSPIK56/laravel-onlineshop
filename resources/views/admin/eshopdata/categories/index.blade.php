@@ -92,8 +92,9 @@
                     <td>{{ $category->item_per_page }}</td>
                     <td>{{ $category->item_per_line }}</td>
                     <td class="text-center">
-                        <form action="{{ route('admin.data.category.copy',['id' => $category->id]) }}" method="post">
+                        <form action="{{ route('admin.data.category.copy') }}" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="id"  value="{{ $category->id }}">
                             <button type="submit" class="btn btn-default btn-circle btn-copy"><i class="fa fa-files-o" aria-hidden="true"></i></button>
                         </form>
                         <a href="{{ route('admin.data.category.show',['id' => $category->id]) }}" class="btn btn-success btn-circle" title="" data-toggle="tooltip" data-placement="top" data-original-title="View User">
