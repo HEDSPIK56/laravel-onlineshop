@@ -94,16 +94,78 @@
                     </select>
                 </div>
                 <!--end use search -->
-                <div class="form-group">
-                    <label>Item per page</label>
-                    <input type="text" name="item_per_page" class="form-control" placeholder="Item per page (a/b/c)"
-                           value="{{ old('item_per_page')}}">
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <label>PC</label>
+                        <select class="form-control" id="per_page_pc">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Tablet</label>
+                        <select class="form-control" id="per_page_tablet">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Mobile</label>
+                        <select class="form-control" id="per_page_mobile">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="item_per_page" id="item_per_page" value="{{ old('item_per_page','1/1/1') }}">
                 </div>
-                <div class="form-group">
-                    <label>Item per line</label>
-                    <input type="text" name="item_per_line" class="form-control" placeholder="Item per line (a/b/c)"
-                           value="{{ old('item_per_line')}}">
+
+                <!-- item per page -->
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <label>PC</label>
+                        {{ Form::selectRange('per_line_pc', 1, 100,null, ['class' => 'form-control', 'id' => 'per_page_pc']) }}
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Tablet</label>
+                        {{ Form::selectRange('per_line_tablet', 1, 100,null, ['class' => 'form-control', 'id' => 'per_page_tablet']) }}
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Mobile</label>
+                        {{ Form::selectRange('per_page_mobile', 1, 100,null, ['class' => 'form-control', 'id' => 'per_page_mobile']) }}
+                    </div>
+                    <input type="hidden" name="item_per_line" id="item_per_line" value="{{ old('item_per_line','1/1/1') }}">
                 </div>
+                <!-- end item per page -->
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
 @endsection
