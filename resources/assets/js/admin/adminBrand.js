@@ -6,7 +6,7 @@ var setupAdminBrand = {
     
     setup: function(){
         
-    },ss
+    },
     
     run: function () {
         this.setup();

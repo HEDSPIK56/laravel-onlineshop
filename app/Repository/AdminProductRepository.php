@@ -69,7 +69,7 @@ class AdminProductRepository
      */
     public function getListProduct($condition)
     {
-        return Product::all();
+        return Product::paginate($condition->getLimit());
     }
 
     /**

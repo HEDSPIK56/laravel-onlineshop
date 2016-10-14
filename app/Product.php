@@ -29,7 +29,10 @@ class Product extends Model
         'use_slideshow',
         'number_view',
         'number_like',
+        'user_like',
         'number_bookmark',
+        'user_bookmark',
+        'product_point',
         'number_share',
         'number_item'
     ];
@@ -216,6 +219,14 @@ class Product extends Model
     public function getPrice()
     {
         return (int) $this->attributes['price'];
+    }
+
+    public function getPriceFormat(){
+        return number_format($this->getPrice());
+    }
+
+    public function getNumberItemFormat(){
+        return number_format($this->attributes['number_item']);    
     }
 
 }

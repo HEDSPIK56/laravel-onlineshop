@@ -1,79 +1,109 @@
-@extends('layouts.admin')
+@extends('admin.layouts.default')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="col-sm-4">
-                <a href="{{route('admin.data.product.create')}}" class="btn btn-primary btn-block">Add new product</a>
+{{-- Web site Title --}}
+@section('title') Product list :: @parent @endsection
+
+{{-- Content --}}
+@section('main')
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">User list
+            <div class="pull-right">
+                {!! Breadcrumbs::render('admin.user.index') !!}
             </div>
-            <div class="col-sm-8 text-right">
-                <form class="form-inline" action="admin.data.product.index">
-                    <div class="form-group">
-                        <input type="text" name="search-category" id="search_category" class="form-control" placeholder="search category"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Show</label>
-                        <select class="form-control" name="limit">
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="40">40</option>
-                            <option value="80">70</option>
-                            <option value="160">120</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+        </h1>
+    </div>
+</div>
+
+<!-- errors message and success message -->
+    @include('errors.list')
+            <!-- end errors messge and success message -->
+
+<div class="row tab-search">
+    <div class="col-md-2">
+        <a href="https://demo.vanguardapp.io/user/create" class="btn btn-success">
+            <i class="glyphicon glyphicon-plus"></i>
+            Export Excel        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="https://demo.vanguardapp.io/user/create" class="btn btn-success">
+            <i class="glyphicon glyphicon-plus"></i>
+            Import excel        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ route('admin.data.product.create') }}" class="btn btn-success">
+            <i class="glyphicon glyphicon-plus"></i>Add new</a>
+    </div>
+    <form method="GET" action="" accept-charset="UTF-8" id="users-form">
+        <div class="col-md-2">
+            <select id="status" class="form-control" name="status"><option value="" selected="selected">All</option><option value="Active">Active</option><option value="Banned">Banned</option><option value="Unconfirmed">Unconfirmed</option></select>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" name="search" value="" placeholder="Search for users...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" id="search-users-btn">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="table-responsive top-border-table" id="product-table-wrapper">
+    <table class="table">
+        <tr>
+            <th>STT</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Number Item</th>
+            <th>Product Status</th>
+            <th>Active</th>
+        </tr>
+        @foreach ($products as $key => $product)
+        <tr>
+            <td>{{ ++$key  }}</td>
+            <img src="{{ $product->getImage() }}" alt="{{ $user->name() }}" class="thumbnail-image img-circle" />
+            <td>
+                {{ $product->name }}
+            </td>
+            <td>
+                {{ $product->getPriceFormat() }}
+            </td>
+            <td>
+                {{ $product->getNumberItemFormat() }}
+            </td>
+            <td>
+                @if( $product->status )
+                <span class="label label-primary">Yes</span>
+                @else
+                <span class="label label-danger">No</span>
+                @endif
+            </td>
+            <td class="text-center">
+                <form action="{{ route('admin.data.product.copy') }}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="id"  value="{{ $product->id }}">
+                    <button type="submit" class="btn btn-default btn-circle btn-copy"><i class="fa fa-files-o" aria-hidden="true"></i></button>
                 </form>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="table-responsive">
-                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                        <tr>
-                            <th>STT</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Discount</th>
-                            <th>Price</th>
-                            <th>Maket price</th>
-                            <th>Status</th>
-                            <th>Images</th>
-                            <th>Visible</th>
-                            <th>Use slide show</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($products as $product)
-                        <tr>
-                            <td>STT</td>
-                            <td>{{ $product->name }}</td>
-                            <td>{{ $product->category->name }}</td>
-                            <td></td>
-                            <td>{{ $product->price }}</td>
-                            <td>{{ $product->market_price}}</td>
-                            <td>{{ $product->status}}</td>
-                            <td></td>
-                            <td>{{ $product->visible }}</td>
-                            <td>{{ $product->use_slideshow }}</td>
-                            <td>
-                                <button class="btn btn-default">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
-                                {!! Form::open(['route' => ['admin.data.product.copy'], 'method' => 'POST']) !!}
-                                <input type="hidden" name="product_id" value="{{ $product->id }}"/>
-                                {!! Form::submit('Copy', ['class' => 'btn btn-primary']) !!}
-                                {!!  Form::close() !!}
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                <a href="{{ route('admin.data.product.show',['id' => $product->id]) }}" class="btn btn-success btn-circle" title="" data-toggle="tooltip" data-placement="top" data-original-title="View User">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                </a>
+                <a href="{{ route('admin.data.product.edit',['id' => $product->id]) }}" class="btn btn-primary btn-circle edit" title="" data-toggle="tooltip" data-placement="top" data-original-title="Edit User">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+                <form action="{{ route('admin.data.product.destroy',['id' => $product->id]) }}" method="delete">
+                    <button type="submit" class="btn btn-danger btn-circle btn-delete"><i class="glyphicon glyphicon-trash"></i></button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+
+        <!-- paging -->
+        {!! $products->render() !!}
+        <!-- end paging-->
 </div>
 @endsection

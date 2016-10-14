@@ -11,4 +11,4 @@ var setupAdminProduct = {
     run: function () {
         this.setup();
     }
-};s
+};
