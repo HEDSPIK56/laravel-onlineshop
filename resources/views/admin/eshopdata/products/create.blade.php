@@ -42,10 +42,14 @@
 
     {{-- Right tab menu --}}
     <div class="col-sm-9 col-md-8 col-lg-9 tab-right">
-        <div class="panel widget panel-bd-left light-widget">
+        <form class="panel widget panel-bd-left light-widget" action="{{ route('admin.data.product.store') }}" enctype="multipart/form-data" method="post" novalidate data-toggle="validator" role="form" id="myForm">
             <div class="panel-heading no-title"> 
                 <div class="vd_panel-menu text-right">
-                    <div> <a class="btn vd_btn vd_bg-blue btn-sm save-btn"><i class="fa fa-save append-icon"></i> Save Changes</a> <a data-toggle="modal" data-target="#myModal" class="btn btn-default btn-sm"><i class="fa fa-times append-icon"></i> Cancel Changes</a> </div>
+                    <div> 
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn vd_btn vd_bg-blue btn-sm save-btn"><i class="fa fa-save append-icon"></i> Save Changes</button>
+                        <button type="reset" class="btn btn-default btn-sm"><i class="fa fa-times append-icon"></i>Cancel Changes</button>
+                    </div>
                 </div>
             </div>
             <div class="panel-body">
@@ -139,7 +143,7 @@
                     <!-- end tabprice -->
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 

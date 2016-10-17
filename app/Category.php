@@ -25,7 +25,9 @@ class Category extends Model
         'item_per_page',
         'item_per_line',
         'load_more', 
-        'created_by'
+        'created_by',
+        'use_question_answer',
+        'use_share_social_network'
     ];
 
     /**
