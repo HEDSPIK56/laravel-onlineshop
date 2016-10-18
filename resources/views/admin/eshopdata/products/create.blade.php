@@ -30,12 +30,9 @@
             <ul class="nav nav-tabs nav-stacked">
                 <li class="active"><a href="#tabinfo" data-toggle="tab"> <i class="fa fa-info-circle append-icon"></i> Information </a></li>
                 <li><a href="#tabprice" data-toggle="tab"> <i class="fa fa-money append-icon"></i> Prices </a></li>
-                <li><a href="#tabseo" data-toggle="tab"> <i class="fa fa-book append-icon"></i> SEO </a></li>
-                <li><a href="#tabship" data-toggle="tab"> <i class="fa fa-truck append-icon"></i> Shipping</a></li>
                 <li><a href="#tabasso" data-toggle="tab"> <i class="fa fa-link append-icon"></i> Association </a></li>
                 <li><a href="#tabimage" data-toggle="tab"> <i class="fa fa-picture-o append-icon"></i> Images </a></li>
                 <li><a href="#tabquantities" data-toggle="tab"> <i class="fa fa-folder-open append-icon"></i> Quantities</a></li>
-                <li><a href="#tabattach" data-toggle="tab"> <i class="fa fa-paperclip append-icon"></i> Attachment</a></li>
             </ul>
         </div>
     </div>
@@ -101,22 +98,15 @@
                                 <hr>
                             </div>
                         </div>
-                    </div>
-                    <!-- end tabprice -->
-
-                    <!-- tab tabprice -->
-                    <div id="tabseo" class="tab-pane">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h3>Search Engine Optimization</h3>
-                                <hr>
+                        
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Name</label>
+                            <div class="col-md-9 controls">
+                                <input type="text" name="name" class="form-control" placeholder="Product name" required value="{{ old('name') }}">
+                                <div class="help-block with-errors"></div>
                             </div>
                         </div>
                     </div>
-                    <!-- end tabprice -->
-
-                    <!-- tab tabprice -->
-                    <div id="tabship" class="tab-pane"></div>
                     <!-- end tabprice -->
 
                     <!-- tab tabprice -->
@@ -127,24 +117,32 @@
                                 <hr>
                             </div>
                         </div>
-                    </div>
-                    <!-- end tabprice -->
 
-                    <!-- tab tabprice -->
-                    <div id="tabimage" class="tab-pane"></div>
-                    <!-- end tabprice -->
-
-                    <!-- tab tabprice -->
-                    <div id="tabquantities" class="tab-pane"></div>
-                    <!-- end tabprice -->
-
-                    <!-- tab tabprice -->
-                    <div id="tabattach" class="tab-pane"></div>
-                    <!-- end tabprice -->
+                        <div class="form-group">
+                            <label for="category_id" class="control-label col-md-3">Categories</label>
+                            <div class="col-md-9 controls">
+                                <select class="form-control " id="category_id" name="category_id">
+                                    @foreach($categories as $cat)
+                                        <option value="{{ $cat->id }}"> {{ $cat->name }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="help-block">Select category for new product</div>
+                            </div>
+                        </div>
                 </div>
+                <!-- end tabprice -->
+
+                <!-- tab tabprice -->
+                <div id="tabimage" class="tab-pane"></div>
+                <!-- end tabprice -->
+
+                <!-- tab tabprice -->
+                <div id="tabquantities" class="tab-pane"></div>
+                <!-- end tabprice -->
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 </div>
 
 @endsection

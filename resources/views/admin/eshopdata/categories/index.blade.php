@@ -67,9 +67,8 @@
             <tr>
                 <th>STT</th>
                 <th>Name</th>
-                <th>Standard info</th>
                 <th>Visible</th>
-                <th>Use Search</th>
+                <th>Search</th>
                 <th>View Type</th>
                 <th>Align Type</th>
                 <th>Load More</th>
@@ -83,7 +82,6 @@
                 <tr>
                     <td>{{ ++$key  }}</td>
                     <td>{{ $category->name }}</td>
-                    <td>{{ $category->standard_info }}</td>
                     <td>{{ $category->visible }}</td>
                     <td>{{ $category->use_search }}</td>
                     <td>{{ $category->view_type_name}}</td>
