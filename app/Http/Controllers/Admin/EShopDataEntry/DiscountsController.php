@@ -36,7 +36,7 @@ class DiscountsController extends AdminController
      */
     public function create()
     {
-        //
+        return view('admin.eshopdata.discounts.create');
     }
 
     /**

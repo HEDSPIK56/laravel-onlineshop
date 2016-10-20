@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('category_id');
             $table->integer('discount_id')->nullable();
-            $table->integer('reward_point')->nullable();
             $table->string('name');
             $table->string('tags')->nullable();
             $table->string('keywords')->nullable();

@@ -125,6 +125,12 @@ elixir(function (mix) {
         'common.scss'
     ], 'public/css/common/common.css');
 
+
+    // Script Discount page
+    mix.scripts([
+        '/admin/adminDiscount.js'
+    ], 'public/js/admin/adminDiscount.js');
+    // End script discount page
     // automatically refreshes web browser after you make changes to your assets
 
     // mix.browserSync({
