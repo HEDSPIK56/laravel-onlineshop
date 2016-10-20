@@ -181,6 +181,15 @@ Route::group(['middleware' => 'auth'], function (){
             'as' => 'admin.data.category.copy',
             'uses' => 'Admin\EShopDataEntry\CategoriesController@copy'
         ]);
+
+        /**
+         * Category
+         */
+        Route::resource('/data/discount', 'Admin\EShopDataEntry\DiscountsController');
+        Route::post('data/discount/copy', [
+            'as' => 'admin.data.discount.copy',
+            'uses' => 'Admin\EShopDataEntry\DiscountsController@copy'
+        ]);
         /**
          * End category
          */

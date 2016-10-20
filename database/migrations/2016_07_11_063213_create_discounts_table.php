@@ -21,7 +21,6 @@ class CreateDiscountsTable extends Migration
             $table->enum('price_type', ['Price', 'Percentage']);
             $table->timestamp('period_from')->nullable();
             $table->timestamp('period_to')->nullable();
-            $table->enum('deleted', ['Y', 'N']);
             $table->softDeletes();
             $table->timestamps();
         });

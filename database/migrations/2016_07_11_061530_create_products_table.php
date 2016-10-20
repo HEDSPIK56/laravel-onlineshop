@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('category_id');
             $table->integer('discount_id')->nullable();
+            $table->integer('reward_point')->nullable();
             $table->string('name');
             $table->string('tags')->nullable();
             $table->string('keywords')->nullable();
@@ -30,6 +31,7 @@ class CreateProductsTable extends Migration
             $table->dateTime('use_icon_period_to')->nullable();
             $table->text('images')->nullable();
             $table->enum('visible', ['Y', 'N'])->default('Y');
+            $table->enum('use_reward_point', ['Y', 'N'])->default('Y');
             $table->enum('use_slideshow', ['Y', 'N'])->default('Y');
             $table->integer('number_view')->default(0);
             $table->integer('number_like')->default(0);
@@ -39,9 +41,11 @@ class CreateProductsTable extends Migration
             $table->integer('number_share')->default(0);
             $table->integer('number_item')->default(0);
             $table->float('product_point')->default(0);
+            $table->integer('reward_point')->default(0);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->string('deleted_by')->nullable();
+            $table->bigInteger('quantity')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

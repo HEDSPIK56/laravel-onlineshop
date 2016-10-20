@@ -100,9 +100,12 @@
                         </div>
                         
                         <div class="form-group">
-                            <label class="col-md-3 control-label">Name</label>
+                            <label class="col-md-3 control-label">market price</label>
                             <div class="col-md-9 controls">
-                                <input type="text" name="name" class="form-control" placeholder="Product name" required value="{{ old('name') }}">
+                                <div class="input-group">
+                                    <span class="input-group-addon">$ </span>
+                                    <input type="number" name="market_price" class="form-control" placeholder="Maket price" required value="{{ old('market_price') }}">
+                                </div>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
