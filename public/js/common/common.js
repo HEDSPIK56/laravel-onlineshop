@@ -41,6 +41,12 @@ var setupCommonApp = {
       });
     },
 
+    datetimePickerSetup: function(){
+        $('input.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD',
+        });
+    },
+
     formValidation: function(){
       $('#myForm').validator();
       //http://1000hz.github.io/bootstrap-validator/#validator-markup
@@ -51,6 +57,7 @@ var setupCommonApp = {
         this.addToCart();
         this.datepickerSetup();
         this.formValidation();
+        this.datetimePickerSetup();
     },
     run: function () {
         this.setup();
