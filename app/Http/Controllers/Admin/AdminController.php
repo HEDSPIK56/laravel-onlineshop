@@ -26,4 +26,12 @@ class AdminController extends Controller
 
 	    return parent::render($request, $exception);
 	}
+
+    public function customMessageReponse($status = true, $route = null, $message = "Success")
+    {
+        if($status){
+            return redirect()->route($route)->with('success',$message);
+        }
+        return redirect()->route($route)->with('error',$message);
+    }
 }

@@ -47,6 +47,22 @@ var setupCommonApp = {
         });
     },
 
+    datetimePickerLinked: function(){
+        $('#datetimepicker_from').datetimepicker({
+            format: 'YYYY-MM-DD',
+        });
+        $('#datetimepicker_to').datetimepicker({
+            useCurrent: false,
+            format: 'YYYY-MM-DD',
+        });
+        $("#datetimepicker_from").on("dp.change", function (e) {
+            $('#datetimepicker_to').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker_to").on("dp.change", function (e) {
+            $('#datetimepicker_from').data("DateTimePicker").maxDate(e.date);
+        });
+    },
+
     formValidation: function(){
       $('#myForm').validator();
       //http://1000hz.github.io/bootstrap-validator/#validator-markup
@@ -58,6 +74,7 @@ var setupCommonApp = {
         this.datepickerSetup();
         this.formValidation();
         this.datetimePickerSetup();
+        this.datetimePickerLinked();
     },
     run: function () {
         this.setup();

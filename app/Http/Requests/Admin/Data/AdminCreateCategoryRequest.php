@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\\Admin\Data;
+namespace App\Http\Requests\Admin\Data;
 
 use App\Http\Requests\Request;
 
@@ -13,7 +13,7 @@ class AdminCreateCategoryRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**

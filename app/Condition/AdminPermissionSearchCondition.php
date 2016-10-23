@@ -40,7 +40,7 @@ class AdminPermissionSearchCondition
     {
         if (!$this->limit)
         {
-            return 15;
+            return config('app.pagination');
         }
         return (int) $this->limit;
     }

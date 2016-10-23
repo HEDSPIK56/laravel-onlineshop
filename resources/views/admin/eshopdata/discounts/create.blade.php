@@ -42,7 +42,7 @@
                 <div class="form-group row">
                     <div class="col-md-12 controls">
                         <span class="vd_radio radio-info">
-                            <input type="checkbox" value="1" name="discount_by_quantity">
+                            <input type="checkbox" value="1" name="discount_by_quantity" id="discount_by_quantity">
                             <label> discount_by_quantity </label>
                         </span>
                     </div>
@@ -52,7 +52,7 @@
                 <div class="form-group row">
                     <label class="col-md-3 control-label">min_quantity</label>
                     <div class="col-md-9 controls">
-                        <input type="number" name="min_quantity" class="form-control" placeholder="min_quantity" required value="{{ old('min_quantity') }}" disabled="disabled">
+                        <input type="number" name="min_quantity" id="min_quantity" class="form-control" placeholder="min_quantity" value="{{ old('min_quantity') }}" disabled="disabled">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                 <div class="form-group row">
                     <label for="period_from" class="col-md-3 control-label"> period_from: </label>
                     <div class="col-md-9 controls">
-                        <input type="date" class="form-control datetimepicker" name="period_from" value="{{ old('period_from') }}" required id="period_from" placeholder="period_from" disabled="disabled">
+                        <input type="date" class="form-control datetimepicker" name="period_from" value="{{ old('period_from') }}" id="period_from" placeholder="period_from" disabled="disabled">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                 <div class="form-group row">
                     <label for="period_to" class="col-md-3 control-label"> period_to: </label>
                     <div class="col-md-9 controls">
-                        <input type="date" class="form-control datetimepicker" name="period_to" value="{{ old('period_to') }}" required id="period_to" placeholder="period_to" disabled="disabled">
+                        <input type="date" class="form-control datetimepicker" name="period_to" value="{{ old('period_to') }}" id="period_to" placeholder="period_to" disabled="disabled">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>

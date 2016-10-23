@@ -109,6 +109,53 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">price</label>
+                            <div class="col-md-9 controls">
+                                <div class="input-group">
+                                    <span class="input-group-addon">$ </span>
+                                    <input type="number" name="price" class="form-control" placeholder="price" required value="{{ old('price') }}">
+                                </div>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Use icon</label>
+                            <div class="col-md-9 controls">
+                                <div class="input-group">
+                                    <label class="checkbox-inline"><input type="checkbox" value="new" name="use_icon[]">Nwq</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="new2" name="use_icon[]">Option 2</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="new3" name="use_icon[]">Option 3</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Use icon from - to</label>
+                            <div class="col-md-9 controls">
+                                <div class="input-group">
+                                    <label class="checkbox-inline"><input type="checkbox" value="new" name="use_icon[]">Nwq</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="new2" name="use_icon[]">Option 2</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="new3" name="use_icon[]">Option 3</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">visible</label>
+                            <div class="col-md-9 controls">
+                                    <label class="checkbox-inline"><input type="checkbox" value="Y" name="visible">visible</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">use_reward_point</label>
+                            <div class="col-md-9 controls">
+                                    <label class="checkbox-inline"><input type="checkbox" value="1" name="use_reward_point">use_reward_point</label>
+                            </div>
+                        </div>
                     </div>
                     <!-- end tabprice -->
 

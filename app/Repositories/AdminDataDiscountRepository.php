@@ -31,9 +31,21 @@ class AdminDataDiscountRepository
     {
         
     }
-    
-    public function insertDiscount($condition){
-        
+
+    /**
+     * @param $condition
+     */
+    public function insertDiscount($condition)
+    {
+        $discount = new Discount();
+        $data = (array)$condition->toArray();
+        unset($data['id']);
+        $discount->fill($data);
+
+        if($discount->save()){
+            return $discount;
+        }
+        return false;
     }
     
     public function updateDiscount($condition){

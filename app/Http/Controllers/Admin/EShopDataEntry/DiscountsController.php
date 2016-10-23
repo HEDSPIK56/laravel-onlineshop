@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Admin\AdminController;
 use App\Repositories\AdminDataDiscountRepository;
+use App\Condition\Admin\AdminDiscountSearchCondition;
+use App\Http\Requests\Admin\Data\AdminCreateDiscountRequest;
 
 class DiscountsController extends AdminController
 {
@@ -26,7 +28,11 @@ class DiscountsController extends AdminController
      */
     public function index(Request $request)
     {
-        //
+        $condition = new AdminDiscountSearchCondition();
+        $condition->setAttributes($request->all());
+        $discounts = $this->_discountRep->fetchListDiscount($condition);
+
+        return view('admin.eshopdata.discounts.index', compact('discounts'));
     }
 
     /**
@@ -45,9 +51,16 @@ class DiscountsController extends AdminController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminCreateDiscountRequest $request)
     {
-        //
+        $condition = new AdminDiscountSearchCondition();
+        $condition->setAttributes($request->all());
+        $result = $this->_discountRep->insertDiscount($condition);
+        if($result){
+            return redirect()->route('admin.data.discount.index')->with('success','insert discount successfully');
+        }
+        return redirect()->route('admin.data.discount.index')->with('error','insert discount failed');
+
     }
 
     /**

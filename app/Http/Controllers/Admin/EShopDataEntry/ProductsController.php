@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\EShopDataEntry;
 
+use App\Discount;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -51,7 +52,8 @@ class ProductsController extends Controller
     public function create()
     {
         $categories = Category::getAllCategory();
-        return view('admin.eshopdata.products.create', compact('categories'));
+        $discounts = Discount::all();
+        return view('admin.eshopdata.products.create', compact('categories','discounts'));
     }
 
     /**
