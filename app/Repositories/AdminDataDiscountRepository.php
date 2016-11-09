@@ -24,7 +24,7 @@ class AdminDataDiscountRepository
      */
     public function fetchListDiscount($condition)
     {
-        return null;
+        return Discount::active()->searchByKeyword($condition)->sortKeyCondition($condition)->paginate($condition->getLimit());
     }
     
     public function fetchOneDiscount($condition)

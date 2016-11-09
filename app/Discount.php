@@ -3,15 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\BaseModel;
 use App\Product;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Discount extends Model
+class Discount extends BaseModel
 {
 
     use SoftDeletes;
 
     protected $table = "discounts";
+
     protected $fillable = [
         'name',
         'discount_by_period',
@@ -21,13 +23,6 @@ class Discount extends Model
         'period_from',
         'period_to',
     ];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['deleted_at'];
 
     /**
      * Relationship Discount vs Product
@@ -43,7 +38,31 @@ class Discount extends Model
      */
     public function scopeActive($query)
     {
-        return $query->onlyTrashed();
+        //return $query->where('deleted_at', '<>', '');
+        return $query;
+    }
+
+    public function scopeSearchByKeyword($query, $condition)
+    {
+        $keyword = $condition->getKeyWord();
+
+        if ($keyword != '')
+        {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("name", "LIKE", "%$keyword%");
+            });
+        }
+        return $query;
+    }
+
+    public function scopeSortKeyCondition($query, $condition)
+    {
+        $sort_type = $condition->getSortType();
+
+        if(!is_null($sort_type)){
+            $query->orderBy($sort_type, 'desc');
+        }
+        return $query;
     }
 
     /**

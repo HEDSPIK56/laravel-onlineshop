@@ -55,7 +55,7 @@ class AdminDiscountSearchCondition extends BaseAbstractBean
 
     public function getSortType()
     {
-        return "DESC";
+        return "created_at";
     }
 
     public function getLimit()

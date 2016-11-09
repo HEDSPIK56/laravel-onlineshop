@@ -31,6 +31,7 @@ class DiscountsController extends AdminController
         $condition = new AdminDiscountSearchCondition();
         $condition->setAttributes($request->all());
         $discounts = $this->_discountRep->fetchListDiscount($condition);
+        // dd($discounts);
 
         return view('admin.eshopdata.discounts.index', compact('discounts'));
     }
